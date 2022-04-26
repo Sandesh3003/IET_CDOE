@@ -14,7 +14,7 @@ from distutils.command.config import config
 import os
 from pathlib import Path
 from django.core.mail import *
-from decouple import config
+# from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yt-93+fa52ju+$f#23-y1wpqzz&$#p=02(0h8_q@vq^@7x%fbl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'webcdoe.pythonanywhere.com']
 
@@ -137,4 +137,4 @@ EMAIL_HOST_USER = "web.cdoe@ietdavv.edu.in"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
