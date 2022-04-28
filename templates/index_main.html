@@ -47,6 +47,9 @@
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
 
+    <!-- Contact Us CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/contact_style.css' %}">
+
 </head>
 
 <body>
@@ -109,7 +112,7 @@
                                         <a href="shop.html">Gallery</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html">Contact</a>
+                                        <a href="{% url 'contact'%}">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -303,5 +306,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
     <script src="{% static 'assets/js/map-script.js' %}"></script>
 
+    <!-- Contact Us Dependencies -->
+    <script src="{% static 'assets/js/contact.js' %}"></script>
 </body>
 </html>
