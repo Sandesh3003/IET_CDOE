@@ -8162,7 +8162,7 @@
     background: #2553b8 !important; }
   
   .ftco-section {
-    padding: 7em 0; }
+    padding: 3.5em 0 7em 0; }
   
   .ftco-no-pt {
     padding-top: 0; }
@@ -8231,9 +8231,17 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: rgb(7, 41, 77);
+      background: #07294d;
       margin: 0 auto;
-      margin-bottom: 20px; }
+      margin-bottom: 20px; 
+      cursor: pointer;
+      transition: .3s;
+    }
+
+      .dbox .icon:hover{
+        background: #ffc600;
+      }
+
       .dbox .icon span {
         font-size: 20px;
         color: #fff; }
@@ -8266,12 +8274,12 @@
       -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
       box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important; }
     .btn.btn-primary {
-      background: #2553b8 !important;
-      border-color: #2553b8 !important;
+      background: #07294d !important;
+      border-color: #07294d !important;
       color: #fff; }
       .btn.btn-primary:hover, .btn.btn-primary:focus {
-        border-color: #1c408e !important;
-        background: #1c408e !important; }
+        border-color: #ffc600 !important;
+        background: #ffc600 !important; }
   
   .contactForm .label {
     color: #000;
