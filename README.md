@@ -12,6 +12,7 @@ $ cd IET_CDOE
 - Create a virtual environment to install dependencies in and activate it:
 
 ```sh
+$ pip install virtualenv
 $ virtualenv env
 $ env/Scripts/activate
 ```
