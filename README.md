@@ -26,7 +26,7 @@ session operates in a virtual environment set up by `virtualenv`.</i>
 
 - Copy and paste .env file into the root folder (IET_CDOE) of project: <a href='https://drive.google.com/file/d/1MF9a4W3QpLZ2Qv8t0XMmerBJ0se4S4J0/view'>Ask author for the .env file</a>
 
-- Once `pip` has finished downloading the dependencies:
+- Finally start local server:
 ```sh
 (env)$ python manage.py runserver
 ```
