@@ -1,7 +1,30 @@
 {% extends 'index_main.html' %}
 {% load static %}
 {% block main %}
+<!--====== MODAL PART START ======-->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Announcements</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+      <!--====== MODAL PART END ======-->
     <!--====== SLIDER PART START ======-->
 
     <section id="slider-part" class="slider-active ">
@@ -290,7 +313,7 @@
 
     <!--====== COURSE PART ENDS ======-->
 
-    <!--====== VIDEO FEATURE PART START ======-->
+    {% comment %} <!--====== VIDEO FEATURE PART START ======-->
 
     <section id="video-feature" class="bg_cover pt-60 pb-110" style="background-image: url({% static 'assets/images/14320264441.png' %})">
         <div class="container">
@@ -355,9 +378,9 @@
         <!-- feature bg -->
     </section>
 
-    <!--====== VIDEO FEATURE PART ENDS ======-->
+    <!--====== VIDEO FEATURE PART ENDS ======--> {% endcomment %}
 
-    <!--====== TEACHERS PART START ======-->
+    {% comment %} <!--====== TEACHERS PART START ======-->
 
     <section id="teachers-part" class="pt-70 pb-120">
         <div class="container">
@@ -441,7 +464,7 @@
         <!-- container -->
     </section>
 
-    <!--====== TEACHERS PART ENDS ======-->
+    <!--====== TEACHERS PART ENDS ======--> {% endcomment %}
 
     <!--====== PUBLICATION PART START ======-->
 

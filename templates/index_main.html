@@ -69,7 +69,10 @@
         </div>
     </div>
 
-    <!--====== PRELOADER PART START ======-->
+    <!--====== PRELOADER PART END ======-->
+
+    
+
     <!--====== NAV BAR ======-->
         <div class="navigation">
             <div class="container">
@@ -89,27 +92,18 @@
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item">
                                         <a class="" href="{% url 'index' %}">Home</a>
-                                        <ul class="sub-menu">
+                                        {% comment %} <ul class="sub-menu">
                                             <li><a class="" href="{% url 'index' %}">Home 01</a></li>
                                             <li><a href="index-2.html">Home 02</a></li>
                                             <li><a href="index-3.html">Home 03</a></li>
                                             <li><a href="index-4.html">Home 04</a></li>
-                                        </ul>
+                                        </ul> {% endcomment %}
                                     </li>
                                     <li class="nav-item">
                                         <a href="{% url 'index' %}#about-part">About Us</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="courses.html">Courses</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="events.html">Events</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="teachers.html">Teachers</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="shop.html">Gallery</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{% url 'contact'%}">Contact</a>
@@ -167,13 +161,12 @@
                             <ul class="mt-20">
                                 <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                             </ul>
                         </div>
                         <!-- footer about -->
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer-link mt-40">
                             <div class="footer-title pb-25">
                                 <h6>Sitemap</h6>
@@ -182,34 +175,14 @@
                                 <li><a href="index.html"><i class="fa fa-angle-right"></i>Home</a></li>
                                 <li><a href="about.html"><i class="fa fa-angle-right"></i>About us</a></li>
                                 <li><a href="courses.html"><i class="fa fa-angle-right"></i>Courses</a></li>
-                                <li><a href="blog.html"><i class="fa fa-angle-right"></i>News</a></li>
-                                <li><a href="events.html"><i class="fa fa-angle-right"></i>Event</a></li>
+                                <li><a href="blog.html"><i class="fa fa-angle-right"></i>News and Media</a></li>
+                                <li><a href="events.html"><i class="fa fa-angle-right"></i>Contact</a></li>
                             </ul>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>Gallery</a></li>
-                                <li><a href="shop.html"><i class="fa fa-angle-right"></i>Shop</a></li>
-                                <li><a href="teachers.html"><i class="fa fa-angle-right"></i>Teachers</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
-                                <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
-                            </ul>
+                           
                         </div>
                         <!-- footer link -->
                     </div>
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div class="footer-link support mt-40">
-                            <div class="footer-title pb-25">
-                                <h6>Support</h6>
-                            </div>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>FAQS</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>Privacy</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>Policy</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>Documentation</a></li>
-                            </ul>
-                        </div>
-                        <!-- support -->
-                    </div>
+                    
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-address mt-40">
                             <div class="footer-title pb-25">
