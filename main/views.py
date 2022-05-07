@@ -10,6 +10,9 @@ from django.template.loader import render_to_string
 def index(request):
     return render(request, 'index.html')
 
+def coomingsoon(request):
+    return render(request, 'cooming_soon.html')
+
 def contact(request):
     if request.method == 'POST':
         name = request.POST['name']
