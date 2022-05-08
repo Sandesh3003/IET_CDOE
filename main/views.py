@@ -5,10 +5,18 @@ from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
-
+from .models import Program
 # Create your views here.
+def prog(request,pk):
+    program=Program.objects.get(id=pk) 
+    context={'program':program}
+    return render(request,"main\course_page.html")
+
+
 def index(request):
-    return render(request, 'index.html')
+    program=Program.objects.all()
+    context={'programs':program}
+    return render(request, 'index.html',context)
 
 def coomingsoon(request):
     return render(request, 'cooming_soon.html')
