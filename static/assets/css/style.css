@@ -784,7 +784,7 @@ p {
     top: 110%;
     left: 0;
     background-color: #07294d;
-    width: 180px;
+    width: 200px;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.4s linear;
@@ -1462,7 +1462,7 @@ p {
 
 #about-part {
     position: relative;
-    padding-bottom: 220px;
+    padding-bottom: 60px;
 }
 
 .about-bg {
@@ -2518,9 +2518,13 @@ p {
     display: none;
 }
 
-.back-to-top:hover {
+.back-to-top:hover, .footer_copyright {
     color: #fff;
     background-color: #021d3a;
+}
+
+.footer_copyright a{
+    color: #ffc600;
 }
 
 /*=====================================================
