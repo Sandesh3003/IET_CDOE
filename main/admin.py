@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(Program)
 admin.site.register(Announcement)
 admin.site.register(Notice)
+admin.site.register(Faculty)

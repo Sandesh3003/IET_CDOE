@@ -31,3 +31,14 @@ class Notice(models.Model):
 
     def __str__(self) :
         return (self.subject)
+
+class Faculty(models.Model):
+
+    name = models.CharField(max_length=100, blank=False)
+    post = models.CharField(max_length=100, blank=False)
+    linked_in = models.URLField(blank=True)
+    facebook = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
+
+    def __str__(self) :
+        return (self.name)

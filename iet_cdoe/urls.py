@@ -21,7 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('contact', views.contact, name="contact"),
+    path('faculty', views.faculty, name="faculty"),
     path('comingsoon', views.comingsoon, name="comingsoon"),
+    path('online_programs', views.online_programs, name="online_programs"),
     path('notices', views.notices, name="notices"),
     path('<str:pk>/',views.prog,name="course")
 ]

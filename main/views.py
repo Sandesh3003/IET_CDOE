@@ -22,6 +22,15 @@ def index(request):
 def comingsoon(request):
     return render(request, 'coming_soon.html')
 
+def faculty(request):
+    return render(request, 'faculty.html', {'faculty': Faculty.objects.all()})
+
+def online_programs(request):
+    return render(request, 'coming_soon.html')
+
+def distance_learning_programs(request):
+    return render(request, 'coming_soon.html')
+
 def notices(request):
     notice=Notice.objects.all()
     return render(request, 'notices.html', {'notices': notice})
