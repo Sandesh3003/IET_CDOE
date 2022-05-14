@@ -1,0 +1,55 @@
+{% extends 'index_main.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block main %}
+<div id="wrap">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mt-5">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Notices</li>
+            </ol>
+        </nav>
+        <h3>Notices</h3>
+        <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered" id="datatable">
+            <thead>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Title</th>
+                    <th>Date of Publication</th>
+                    <th>Attachement</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for notice in notices %}
+                <tr class="gradeA">
+                    <td>{{notice.id}}</td>
+                    <td>{{notice.subject}}</td>
+                    <td>{{notice.date}}</td>
+                    <td><a href="{{notice.attachement}}" target="_blank">Click Here</a></td>
+                </tr>
+                {% endfor %}
+            </tbody> 
+        </table>
+    </div>
+</div>
+<style>
+    .dataTables_wrapper{
+        margin: 1.5rem 0 5rem 0;
+    }
+</style>
+{% endblock %}
+{% block script %}
+<script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+<script>
+   $(document).ready( function () {
+    $('#datatable').DataTable();
+} );
+</script>
+{% endblock %}

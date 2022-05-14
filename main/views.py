@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
-from .models import Program
+from .models import *
 # Create your views here.
 def prog(request,pk):
     program=Program.objects.get(id=pk) 
@@ -15,11 +15,16 @@ def prog(request,pk):
 
 def index(request):
     program=Program.objects.all()
-    context={'programs':program}
+    announcement=Announcement.objects.all()
+    context={'programs':program, 'announcements': announcement}
     return render(request, 'index.html',context)
 
-def coomingsoon(request):
-    return render(request, 'cooming_soon.html')
+def comingsoon(request):
+    return render(request, 'coming_soon.html')
+
+def notices(request):
+    notice=Notice.objects.all()
+    return render(request, 'notices.html', {'notices': notice})
 
 def contact(request):
     if request.method == 'POST':

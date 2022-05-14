@@ -12,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--====== Title ======-->
-    <title>Devi Ahilya Vishwavidyalaya, Indore</title>
+    <title>DAVV - CDOE</title>
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" type="image/png">
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" type="image/png">
 
     <!--====== Slick css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
@@ -41,14 +41,17 @@
     <!--====== Default css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
 
-    <!--====== Style css ======-->
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
-
+    
     <!-- Contact Us CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/contact_style.css' %}">
+    
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    
+    {% block head %}
+    {% endblock %}
 
 </head>
 
@@ -103,19 +106,26 @@
                                         <a href="{% url 'index' %}#about-part">About Us</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="courses.html">Courses</a>
+                                        <a class="" href="{% url 'index' %}">Programs</a>
+                                        <ul class="sub-menu">
+                                            <li><a class="" href="{% url 'comingsoon' %}">Distance Learning</a></li>
+                                            <li><a href="index-2.html">Online</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'notices' %}">Notices</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{% url 'contact'%}">Contact</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="right-icon text-right">
+                            <!-- <div class="right-icon text-right">
                                 <ul>
                                     <li><a href="javascript:void(0)" id="search"><i class="fa fa-search"></i></a></li>
                                     <li><a href="#"><i class="fa fa-shopping-bag"></i><span>0</span></a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                             <!-- right icon -->
                         </nav>
                         <!-- nav -->
@@ -156,7 +166,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-about mt-40">
                             <div class="logo">
-                                <a href="#"><h1>IETDAVV</a>
+                                <a href="{% url 'index' %}" style="color: #ffc600;"><h1>DAVV - CDOE</a>
                             </div>
                             <ul class="mt-20">
                                 <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
@@ -172,11 +182,11 @@
                                 <h6>Sitemap</h6>
                             </div>
                             <ul>
-                                <li><a href="index.html"><i class="fa fa-angle-right"></i>Home</a></li>
-                                <li><a href="about.html"><i class="fa fa-angle-right"></i>About us</a></li>
-                                <li><a href="courses.html"><i class="fa fa-angle-right"></i>Courses</a></li>
-                                <li><a href="blog.html"><i class="fa fa-angle-right"></i>News and Media</a></li>
-                                <li><a href="events.html"><i class="fa fa-angle-right"></i>Contact</a></li>
+                                <li><a href="{% url 'index' %}"><i class="fa fa-angle-right"></i>Home</a></li>
+                                <li><a href="{% url 'index' %}#about-part"><i class="fa fa-angle-right"></i>About us</a></li>
+                                <li><a href="{% url 'comingsoon' %}"><i class="fa fa-angle-right"></i>Distance Learning Programs</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Online Programs</a></li>
+                                <li><a href="{% url 'contact' %}"><i class="fa fa-angle-right"></i>Contact</a></li>
                             </ul>
                            
                         </div>
@@ -268,5 +278,7 @@
 
     <!--====== Main js ======-->
     <script src="{% static 'assets/js/main.js' %}"></script>
+    {% block script %}
+    {% endblock %}
 </body>
 </html>

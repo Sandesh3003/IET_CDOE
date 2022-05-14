@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('contact', views.contact, name="contact"),
-    path('coomingsoon', views.coomingsoon, name="coomingsoon"),
+    path('comingsoon', views.comingsoon, name="comingsoon"),
+    path('notices', views.notices, name="notices"),
     path('<str:pk>/',views.prog,name="course")
 ]

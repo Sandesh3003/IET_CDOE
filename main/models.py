@@ -13,3 +13,21 @@ class Program(models.Model):
     Course_objective=models.TextField(null=True,blank=True)
     fees=models.CharField(max_length=200)
     apply_now=models.CharField(max_length=200)
+
+class Announcement(models.Model):
+
+    title = models.CharField(max_length=100, blank=False)
+    link = models.URLField(blank=False)
+    new = models.BooleanField(default=True)
+
+    def __str__(self) :
+        return (self.title)
+
+class Notice(models.Model):
+
+    subject = models.CharField(max_length=200, blank=False)
+    date = models.DateField(auto_now=True)
+    attachement = models.URLField(blank=False)
+
+    def __str__(self) :
+        return (self.subject)
