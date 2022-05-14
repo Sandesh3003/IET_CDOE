@@ -20,6 +20,10 @@ def index(request):
     return render(request, 'index.html',context)
 
 def comingsoon(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        x = EmailComingSoon(email=email)
+        x.save()
     return render(request, 'coming_soon.html')
 
 def faculty(request):
