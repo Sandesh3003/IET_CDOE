@@ -2,9 +2,10 @@
 {% load static %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{%static 'assets/css/comingsoon.css'%}" />
+<style>.comingsoon{background-image:url("{% static 'assets/images/back-01.png' %}")}</style>
 {%endblock%}
 {% block main %}
-<div class="comingsoon">
+<div class="comingsoon" >
     <div class="content">
         <p>New courses</p>
         <h1><span>Coming </span> Soon!!</h1>  
@@ -18,7 +19,7 @@
         </form>
       </div>
     </div>
-    <img src="{%static 'assets/images/rocket-03.png'%}" class="rocket">   
+    <img src="{%static 'assets/images/rocket-01.png'%}" class="rocket">   
 </div>
 <script src="{%static 'assets/js/coming.js'%}"></script>
 

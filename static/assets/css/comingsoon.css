@@ -8,13 +8,12 @@
 }
 .comingsoon{
     width: 100vw;
-    height:90vh;
-    background-color: white;
+    height:80vh;
+    display: block;
     background-position: center;
-    background-size: cover;
+    background-size:cover ;
     padding: 0 10%;
-    /* position: absolute; */
-    z-index: -1;
+    position: relative;
 
 }
 .content{
@@ -24,25 +23,25 @@
     color: #fff;
 }
 .content h1{
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 600;
-    color: chartreuse;
+    color:#e04b5a;
 }
 .content h1 span{
     color:#07294d ;
 }
 .content h2{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     color:#07294d ;
     
 }
 .content p{
-  font-size: x-large;
+  font-size:xx-large ;
 }
 .rocket{
-    width: 250px;
+    width: 200px;
     position:absolute;
-    right: 10%;
+    right: 13%;
     bottom: 0;
     animation: rocket 4s linear infinite; 
 }
@@ -87,12 +86,12 @@
   
   .btn,
   input {
-    background: chartreuse;
-    color:#07294d ;
+    background: #e04b5a;
+    color:#dadada ;
     outline: none;
     border: 0;
     width: 180px;
-    font-size: 20px;
+    font-size: 28px;
     height: 58px;
     border-radius: 60px;
     margin: 0;
