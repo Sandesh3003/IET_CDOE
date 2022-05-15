@@ -10,10 +10,11 @@
 				meantime.</h2>
 
 			<h2>We'll notify you when it's ready</h2>
-			<form class="form-inline d-flex flex-column justify-content-center align-items-center" id="fh5co-header-subscribe">
+			<form class="form-inline d-flex flex-column justify-content-center align-items-center" id="fh5co-header-subscribe" method="post" action="/comingsoon">
+				{% csrf_token %}
 				<div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
 					<div class="form-group">
-						<input type="text" class="form-control" id="email" placeholder="Get notify by email">
+						<input type="text" class="form-control" id="email" placeholder="Get notify by email" name="email">
 						<button type="submit" class="btn btn-primary">Send</button>
 					</div>
 				</div>

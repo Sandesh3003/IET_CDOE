@@ -42,3 +42,10 @@ class Faculty(models.Model):
 
     def __str__(self) :
         return (self.name)
+
+class EmailComingSoon(models.Model):
+
+    email = models.EmailField(max_length=254)
+
+    def __str__(self) :
+        return (self.email)
