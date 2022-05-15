@@ -1,25 +1,27 @@
-{% extends 'index_main.html' %}
+{%extends "index_main.html"%}
 {% load static %}
-
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{%static 'assets/css/comingsoon.css'%}" />
+<style>.comingsoon{background-image:url("{% static 'assets/images/back-01.png' %}")}</style>
+{%endblock%}
 {% block main %}
-<div class="container my-5">
-	<div class="row">
-		<div class="col-md-12 text-center">
-			<h1> Coming Soon!!</h1>
-			<h2>We are launching new courses very soon!! Check out our available courses in the
-				meantime.</h2>
-
-			<h2>We'll notify you when it's ready</h2>
-			<form class="form-inline d-flex flex-column justify-content-center align-items-center" id="fh5co-header-subscribe" method="post" action="/comingsoon">
-				{% csrf_token %}
-				<div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
-					<div class="form-group">
-						<input type="text" class="form-control" id="email" placeholder="Get notify by email" name="email">
-						<button type="submit" class="btn btn-primary">Send</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
+<div class="comingsoon" >
+    <div class="content">
+        <p>New courses</p>
+        <h1><span>Coming </span> Soon!!</h1>  
+        <h2>Meanwhile explore our existing courses </h2>   
+    <div class="button">
+        <form>
+          <button type="button" class="btn notify-btn">Notify Me</button>
+          <input id="input" type="email" placeholder="Email" required>
+          <button type="button" class="submit-btn">Send</button>
+          <button type="button" class="btn thanku-btn">Thank You!</button>
+        </form>
+      </div>
+    </div>
+    <img src="{%static 'assets/images/rocket-01.png'%}" class="rocket">   
 </div>
-{% endblock %}
+<script src="{%static 'assets/js/coming.js'%}"></script>
+
+ {% endblock %}
+
