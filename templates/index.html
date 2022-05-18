@@ -48,19 +48,22 @@
             <div class="row">
                 <div class="col-lg-9">
                     <div class="section-title">
-                        <!-- <h3>About us</h3> -->
-                        <h2>Welcome to DAVV-CDOE</h2>
-                        <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p> -->
+                        
+                        <!-- <h2>Welcome to DAVV-CDOE</h2> -->
+                        <h2>{{Content.welcome_header}}</h2>
+                        
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="section-title mt-50">
-                        <!-- <h5>About us</h5> -->
-                        <h3>About CDOE </h3>
+                       
+                        <!-- <h3>About CDOE </h3> -->
+                        <h3>{{Content.about_head}}</h3>
                     </div>
                     <!-- section title -->
                     <div class="about-cont">
-                        <p>The Centre for Distance and Online Education (CDOE) is an integral part of  Devi Ahilya Vishwavidyalaya University of Indore. Adopting flexible and innovative methods of education to ensure 'independent learning' to anyone, anytime and anywhere, the Centre offers programmes of the study that are customized to meet the learning requirements of knowledge seekers as well as to ensure that they learn at their own pace and convenience.Distance education courses will be coming soon giving  an opportunity to study at home supported with self learning study materials. Online learning offers all course levels like UG and PG. By taking advantage of the advances in information and communication technologies to widen the reach of education and to enhance quality of education through the use of multi-media methods of teaching and learning, the Centre aims at giving the students an opportunity to learn and appear for the examination of the course which will be conducted by the University.</p>
+                        <!-- <p>The Centre for Distance and Online Education (CDOE) is an integral part of  Devi Ahilya Vishwavidyalaya University of Indore. Adopting flexible and innovative methods of education to ensure 'independent learning' to anyone, anytime and anywhere, the Centre offers programmes of the study that are customized to meet the learning requirements of knowledge seekers as well as to ensure that they learn at their own pace and convenience.Distance education courses will be coming soon giving  an opportunity to study at home supported with self learning study materials. Online learning offers all course levels like UG and PG. By taking advantage of the advances in information and communication technologies to widen the reach of education and to enhance quality of education through the use of multi-media methods of teaching and learning, the Centre aims at giving the students an opportunity to learn and appear for the examination of the course which will be conducted by the University.</p> -->
+                        <p>{{Content.about_body}}</p>
                         <!-- <a href="#" class="main-btn mt-55">Learn More</a> -->
                     </div>
                 </div>
@@ -68,7 +71,7 @@
                 <div class="col-lg-5 offset-lg-1 d-flex flex-column justify-content-center align-items-center">
                     <div class="about-event mt-30">
                         <div class="event-title">
-                            <img src="{% static 'assets/images/cdoe_department_image.png' %}" alt="About">
+                            <img src="{{Content.header_image.url}}" alt="About">
                         </div>
                 </div>
             </div>

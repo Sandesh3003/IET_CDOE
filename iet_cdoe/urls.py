@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from main import views
 
+from django.conf import settings
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
@@ -25,5 +28,6 @@ urlpatterns = [
     path('comingsoon', views.comingsoon, name="comingsoon"),
     path('online_programs', views.online_programs, name="online_programs"),
     path('notices', views.notices, name="notices"),
-    path('<str:pk>/',views.prog,name="course")
+    # path('<str:pk>/',views.prog,name="course")
 ]
+

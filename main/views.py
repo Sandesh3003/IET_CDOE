@@ -7,16 +7,18 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from .models import *
 # Create your views here.
-def prog(request,pk):
-    program=Program.objects.get(id=pk) 
-    context={'program':program}
-    return render(request,"main\course_page.html")
+# def prog(request,pk):
+#     program=Program.objects.get(id=pk) 
+#     context={'program':program}
+#     return render(request,"main\course_page.html")
 
 
 def index(request):
     program=Program.objects.all()
+    Content=index_content.objects.filter()[:1].get()
     announcement=Announcement.objects.all()
-    context={'programs':program, 'announcements': announcement}
+    Footer=footer.objects.filter()[:1].get()
+    context={'programs':program, 'announcements': announcement,'Content':Content,'Footer':Footer}
     return render(request, 'index.html',context)
 
 def comingsoon(request):
