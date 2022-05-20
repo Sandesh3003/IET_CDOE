@@ -18,6 +18,7 @@ from django.urls import path
 from main import views
 
 from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -31,3 +32,4 @@ urlpatterns = [
     # path('<str:pk>/',views.prog,name="course")
 ]
 
+urlpatterns += static(settings.MEDIA_URL, doucment_root=settings.MEDIA_ROOT)

@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from .models import *
+
 # Create your views here.
 # def prog(request,pk):
 #     program=Program.objects.get(id=pk) 
@@ -26,20 +27,20 @@ def comingsoon(request):
         email = request.POST['email']
         x = EmailComingSoon(email=email)
         x.save()
-    return render(request, 'coming_soon.html')
+    return render(request, 'coming_soon.html', {'Footer': footer.objects.filter()[:1].get()})
 
 def faculty(request):
-    return render(request, 'faculty.html', {'faculty': Faculty.objects.all()})
+    return render(request, 'faculty.html', {'faculty': Faculty.objects.all(), 'Footer': footer.objects.filter()[:1].get()})
 
 def online_programs(request):
-    return render(request, 'coming_soon.html')
+    return render(request, 'coming_soon.html', {'Footer': footer.objects.filter()[:1].get()})
 
 def distance_learning_programs(request):
-    return render(request, 'coming_soon.html')
+    return render(request, 'coming_soon.html', {'Footer': footer.objects.filter()[:1].get()})
 
 def notices(request):
     notice=Notice.objects.all()
-    return render(request, 'notices.html', {'notices': notice})
+    return render(request, 'notices.html', {'notices': notice, 'Footer': footer.objects.filter()[:1].get()})
 
 def contact(request):
     if request.method == 'POST':
@@ -57,4 +58,4 @@ def contact(request):
         return HttpResponseRedirect('contact')
 
     else:
-        return render(request, 'contact.html')
+        return render(request, 'contact.html', {'Footer': footer.objects.filter()[:1].get()})

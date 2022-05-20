@@ -5,7 +5,7 @@ class index_content(models.Model):
     welcome_header=models.CharField(max_length=200)
     about_head=models.CharField(max_length=200)
     about_body=models.TextField(null=False,blank=False)
-    header_image=models.ImageField(null=True ,upload_to='dynamic_images/')
+    header_image=models.ImageField(null=True ,upload_to='index/')
 class footer(models.Model):
     fb_link=models.URLField()
     twitter_link=models.URLField()
