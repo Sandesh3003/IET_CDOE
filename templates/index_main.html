@@ -166,9 +166,9 @@
                                 <a href="{% url 'index' %}" style="color: #ffc600;"><h1>DAVV - CDOE</a>
                             </div>
                             <ul class="mt-20">
-                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="{{Footer.insta_link}}"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a href="{{Footer.twitter_link}}"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="{{Footer.insta_link}}"><i class="fa fa-instagram"></i></a></li>
                             </ul>
                         </div>
                         <!-- footer about -->
@@ -202,7 +202,7 @@
                                         <i class="fa fa-home"></i>
                                     </div>
                                     <div class="cont">
-                                        <p>143 castle road 517 district, kiyev port south Canada</p>
+                                        <p>{{Footer.address}}</p>
                                     </div>
                                 </li>
                                 <li>
@@ -210,7 +210,7 @@
                                         <i class="fa fa-phone"></i>
                                     </div>
                                     <div class="cont">
-                                        <p>+3 123 456 789</p>
+                                        <p>{{Footer.contact_num}}</p>
                                     </div>
                                 </li>
                                 <li>
@@ -218,7 +218,7 @@
                                         <i class="fa fa-envelope-o"></i>
                                     </div>
                                     <div class="cont">
-                                        <p>info@yourmail.com</p>
+                                        <p>{{Footer.email_id}}</p>
                                     </div>
                                 </li>
                             </ul>
