@@ -29,6 +29,7 @@ urlpatterns = [
     path('comingsoon', views.comingsoon, name="comingsoon"),
     path('online_programs', views.online_programs, name="online_programs"),
     path('notices', views.notices, name="notices"),
+    path('course', views.course, name="course"),
     # path('<str:pk>/',views.prog,name="course")
 ]
 

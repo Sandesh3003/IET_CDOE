@@ -42,6 +42,9 @@ def notices(request):
     notice=Notice.objects.all()
     return render(request, 'notices.html', {'notices': notice, 'Footer': footer.objects.filter()[:1].get()})
 
+def course(request):
+    return render(request, 'course.html', {'Footer': footer.objects.filter()[:1].get()})
+
 def contact(request):
     if request.method == 'POST':
         name = request.POST['name']

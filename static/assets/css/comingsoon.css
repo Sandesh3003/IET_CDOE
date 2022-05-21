@@ -1,12 +1,12 @@
 *
 {
-
-    margin-top: 0px;
-    padding: 0%;
-    font-family: 'poppins',sans-serif;
-    box-sizing: border-box;
+  
+  margin-top: 0px;
+  padding: 0%;
+  box-sizing: border-box;
 }
 .comingsoon{
+    font-family: 'poppins',sans-serif;
     height:80vh;
     display: block;
     background-position: center;
@@ -118,7 +118,6 @@
   }
   
   input:not(:valid) + .submit-btn {
-    pointer-events: none;
     color: #dddddd;
   }
   

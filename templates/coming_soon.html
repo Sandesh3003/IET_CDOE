@@ -2,26 +2,47 @@
 {% load static %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{%static 'assets/css/comingsoon.css'%}" />
-<style>.comingsoon{background-image:url("{% static 'assets/images/back-01.png' %}")}</style>
-{%endblock%}
+<style>
+  .comingsoon {
+    background-image:url("{% static 'assets/images/back-01.png' %}")
+  }
+</style>
+{% endblock %}
 {% block main %}
-<div class="comingsoon" >
-    <div class="content">
-        <p>New courses</p>
-        <h1><span>Coming </span> Soon!!</h1>  
-        <h2>Meanwhile explore our existing courses </h2>   
+<div class="comingsoon">
+  <div class="content">
+    <p>New courses</p>
+    <h1><span>Coming </span> Soon!!</h1>
+    <h2>Meanwhile explore our existing courses </h2>
     <div class="button">
-        <form>
-          <button type="button" class="btn notify-btn">Notify Me</button>
-          <input id="input" type="email" placeholder="Email" required>
-          <button type="button" class="submit-btn">Send</button>
-          <button type="button" class="btn thanku-btn">Thank You!</button>
-        </form>
-      </div>
+      <form>
+        <button type="button" class="btn notify-btn">Notify Me</button>
+        <input id="input" type="email" placeholder="Email" required>
+        <button type="button" class="submit-btn">Send</button>
+        <button type="button" class="btn thanku-btn">Thank You!</button>
+      </form>
     </div>
-    <img src="{%static 'assets/images/rocket-01.png'%}" class="rocket">   
+  </div>
+  <img src="{%static 'assets/images/rocket-01.png'%}" class="rocket">
 </div>
-<script src="{%static 'assets/js/coming.js'%}"></script>
+<script>
+  let input = document.querySelector('#input')
+  let notifyBtn = document.querySelector('.notify-btn')
+  let submitBtn = document.querySelector('.submit-btn')
+  let thankubtn = document.querySelector('.thanku-btn')
 
- {% endblock %}
+  notifyBtn.addEventListener('click', () => {
+    notifyBtn.classList.add('active')
+    submitBtn.classList.add('active')
+    input.classList.add('active')
+  })
 
+  submitBtn.addEventListener('click', () => {
+    submitBtn.classList.remove('active')
+    input.classList.remove('active')
+    thankubtn.classList.add('active')
+  })
+
+</script>
+
+{% endblock %}
