@@ -23,14 +23,14 @@
 20. PAGE BANNER
 21. ABOUT PAGE
 22. COURSES PAGE
-23. COURSE SINGEl PAGE
+23. COURSE single PAGE
 24. EVENT PAGE
-25. EVENT SINGEL PAGE
-26. TEACHERS SInGEL PAGE
+25. EVENT single PAGE
+26. TEACHERS single PAGE
 27. BLOG PAGE
-28. BLOG SINGEL PAGE
+28. BLOG single PAGE
 29. SHOP PAGE
-30. SHOP SINGEL PAGE
+30. SHOP single PAGE
 31. CONTACT PAGE 
 32. ACCORDION
 33. PRIVACY POLICY
@@ -3270,7 +3270,7 @@ p {
 }
 
 /*=====================================================
-    23. COURSE SINGEl PAGE css 
+    23. COURSE single PAGE css 
 ======================================================*/
 
 .courses-single-left {
@@ -3885,7 +3885,7 @@ p {
 }
 
 /*=====================================================
-    25. EVENT SINGEL PAGE css 
+    25. EVENT single PAGE css 
 ======================================================*/
 
 .events-area {
@@ -3999,7 +3999,7 @@ p {
 }
 
 /*=====================================================
-    26. TEACHERS SInGEL PAGE css 
+    26. TEACHERS single PAGE css 
 ======================================================*/
 
 .teachers-left {
@@ -4282,7 +4282,7 @@ p {
 }
 
 /*=====================================================
-    28. BLOG SINGEL PAGE css 
+    28. BLOG single PAGE css 
 ======================================================*/
 
 .blog-details .cont {
@@ -4536,7 +4536,7 @@ p {
 }
 
 /*=====================================================
-    30. SHOP SINGEL PAGE css 
+    30. SHOP single PAGE css 
 ======================================================*/
 
 .shop-details {
