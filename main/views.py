@@ -59,3 +59,7 @@ def contact(request):
 
     else:
         return render(request, 'contact.html', {'Footer': footer.objects.filter()[:1].get()})
+
+
+def course(request):
+    return render(request, 'course.html', {'Footer': footer.objects.filter()[:1].get()})
