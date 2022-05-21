@@ -96,7 +96,7 @@
     margin: 0;
     padding: 10px 15px;
     box-sizing: border-box;
-    transition: all 0.3s ease-in;
+    /* transition: all 0.3s ease-in; */
     position: relative;
     cursor: pointer;
   }
@@ -115,6 +115,7 @@
     cursor: text;
     z-index: 100;
     opacity: 1;
+    top: -50px;
   }
   
   input:not(:valid) + .submit-btn {
@@ -137,6 +138,7 @@
     z-index: -1;
     opacity: 0;
     left: 0;
+    top: -100px;
   }
   
   .thanku-btn.active {
@@ -152,7 +154,7 @@
     color: #fff;
     position: absolute;
     right: 20%;
-    top: 5px;
+    top: 5px; 
     border-radius: 60px;
     width: 80px;
     height: 48px;
