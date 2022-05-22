@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+* {
+    transition: all 0.3s ease-out;
+  }
 body{
 	margin:0;
 	flex-wrap: wrap;
@@ -34,6 +37,7 @@ body{
 	flex-basis: 100%;
 	max-width: 100%;
 	margin-bottom: 70px;
+    color: #000;
 }
 
 .team-section .section-title h1{
@@ -51,7 +55,7 @@ body{
     border-radius: 8px;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.15);
     padding: 16px;
-    margin:  56px 24px;
+    margin:  56px 44px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,13 +66,29 @@ body{
     transition: all 0.2s ease-out;
     box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
     top: -4px;
+    margin-top: -4px;
     border: 1px solid #cccccc;
     background-color: white;
   }
 
 .card:hover:before {
-    transform: scale(2.15);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: #00838d;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
   }
+.card:hover:before {
+        transform: scale(2.15);
+    }
+
 
 .card-image {
     width: 150px;
@@ -118,24 +138,27 @@ button {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    transition: opacity 0.4s;
+    transition: opacity 0.2s;
 	color: #fff;
 	background-color: #0077b5;
 }
 
 button:hover {
-    opacity: 0.5;
+    background-color: #fff;
 }
 
 button i {
     color: #fff;
     font-size: 1.4em;
 }
-i, span, a{
+i, a{
 	color: #fff;
 }
 
-/* Social media colors */
+i,span:hover,a:hover{
+    color:#0077b5;
+}
+
 
 /*responsive*/
 @media(max-width: 991px){
