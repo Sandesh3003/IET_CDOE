@@ -29,7 +29,7 @@
 
     <section id="slider-part" class="slider-active" style="height: 85vh;">
       {% for slide in index.slides.all %}
-        <div class="single-slider bg_cover pt-150" style="height: 85vh; background-image: url('static/images{{ slide.image.url }}')" data-overlay="4">
+        <div class="single-slider bg_cover pt-150" style="height: 85vh; background-image: url('{{ slide.image.url }}')" data-overlay="4">
         </div>
       {% endfor %}
     </section>
@@ -66,7 +66,7 @@
                 <div class="col-lg-5 offset-lg-1 d-flex flex-column justify-content-center align-items-center">
                     <div class="about-event mt-30">
                         <div class="event-title">
-                            <img src="static/images{{index.header_image.url}}" alt="About">
+                            <img src="{{index.header_image.url}}" alt="About">
                         </div>
                 </div>
             </div>

@@ -417,8 +417,3 @@ $(function() {
 
 
 });
-
-// MODAL JS
-$(window).load(function(){        
-    $('#noticeModal').modal('show');
-     }); 

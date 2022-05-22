@@ -31,6 +31,4 @@ urlpatterns = [
     path('notices', views.notices, name="notices"),
     path('course', views.course, name="course"),
     # path('<str:pk>/',views.prog,name="course")
-]
-
-urlpatterns += static(settings.MEDIA_URL, doucment_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
