@@ -11,7 +11,8 @@
 <section id="wrap">
     <div class="container">
         <h2 class="section-title text-center" style="margin-top: 50px;">Notices</h2>
-        <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered" id="datatable">
+        <table cellpadding="0" cellspacing="0" border="0" class=" datatable table table-striped table-bordered"
+            id="datatable">
             <thead>
                 <tr>
                     <th>Sr.No.</th>
@@ -29,12 +30,12 @@
                     <td><a href="{{notice.attachement}}" target="_blank">Click Here</a></td>
                 </tr>
                 {% endfor %}
-            </tbody> 
+            </tbody>
         </table>
     </div>
 </section>
 <style>
-    .dataTables_wrapper{
+    .dataTables_wrapper {
         margin: 1.5rem 0 5rem 0;
     }
 </style>
@@ -44,11 +45,11 @@
 <script src="https://cdn.datatables.net/1.12.0/js/dataTables.semanticui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
 <script>
-   $(document).ready( function () {
-    $('#datatable').DataTable({
-        info: false,
-        lengthChange: false,
+    $(document).ready(function () {
+        $('#datatable').DataTable({
+            info: false,
+            lengthChange: false,
+        });
     });
-} );
 </script>
 {% endblock %}

@@ -15,8 +15,8 @@
         </div>
         <div class="modal-body bg-light">
             {% for announcement in announcements %}
-          <div class="card m-2 p-2 d-flex flex-row">
-            {{announcement.title}} &nbsp;<a href="{{ announcement.link }}">Click Here to View </a> &nbsp; {% if announcement.new is True %}<img src="{% static 'assets/images/new.gif' %}" alt="new_gif" width="24rem">{% endif %}
+          <div class="card m-2 p-2 d-flex flex-row justify-content-start align-items-center">
+            {{announcement.title}} &nbsp;<a href="{{ announcement.link }}">Click Here to View </a> &nbsp; {% if announcement.new is True %}<img src="{% static 'assets/images/new.gif' %}" alt="new_gif" width="24rem" height="24em">{% endif %}
           </div>
           {% endfor %}
         </div>
