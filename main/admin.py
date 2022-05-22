@@ -7,6 +7,18 @@ admin.site.register(Program)
 admin.site.register(Announcement)
 admin.site.register(Notice)
 admin.site.register(Faculty)
-admin.site.register(index_content)
-admin.site.register(EmailComingSoon)
-admin.site.register(footer)
+admin.site.register(Index)
+admin.site.register(ComingSoonMailList)
+admin.site.register(Slide)
+
+def send_newsletter(modeladmin, request, queryset):
+    for newsletter in queryset:
+        newsletter.send(request)
+
+send_newsletter.short_description = "Send selected Mail to all subscribers"
+
+
+class NewsletterAdmin(admin.ModelAdmin):
+    actions = [send_newsletter]
+
+admin.site.register(Newsletter, NewsletterAdmin)

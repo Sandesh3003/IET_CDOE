@@ -28,15 +28,10 @@
     <!--====== SLIDER PART START ======-->
 
     <section id="slider-part" class="slider-active" style="height: 85vh;">
-        <div class="single-slider bg_cover pt-150" style="height: 85vh; background-image: url({% static 'assets/images/slider/s-1.jpg' %})" data-overlay="4">
+      {% for slide in index.slides.all %}
+        <div class="single-slider bg_cover pt-150" style="height: 85vh; background-image: url('static/images{{ slide.image.url }}')" data-overlay="4">
         </div>
-        <!-- single slider -->
-        <div class="single-slider bg_cover pt-150" style="height: 85vh; background-image: url({% static 'assets/images/slider/s-3.jpg' %})" data-overlay="4">
-        </div>
-        <!-- single slider -->
-        <div class="single-slider bg_cover pt-150" style="height: 85vh; background-image: url({% static 'assets/images/slider/s-2.jpg' %})" data-overlay="4">
-        </div>
-        <!-- single slider -->
+      {% endfor %}
     </section>
 
     <!--====== SLIDER PART ENDS ======-->
@@ -50,7 +45,7 @@
                     <div class="section-title">
                         
                         <!-- <h2>Welcome to DAVV-CDOE</h2> -->
-                        <h2>{{Content.welcome_header}}</h2>
+                        <h2>{{index.welcome_header}}</h2>
                         
                     </div>
                 </div>
@@ -58,12 +53,12 @@
                     <div class="section-title mt-50">
                        
                         <!-- <h3>About CDOE </h3> -->
-                        <h3>{{Content.about_head}}</h3>
+                        <h3>{{index.about_head}}</h3>
                     </div>
                     <!-- section title -->
                     <div class="about-cont">
                         <!-- <p>The Centre for Distance and Online Education (CDOE) is an integral part of  Devi Ahilya Vishwavidyalaya University of Indore. Adopting flexible and innovative methods of education to ensure 'independent learning' to anyone, anytime and anywhere, the Centre offers programmes of the study that are customized to meet the learning requirements of knowledge seekers as well as to ensure that they learn at their own pace and convenience.Distance education courses will be coming soon giving  an opportunity to study at home supported with self learning study materials. Online learning offers all course levels like UG and PG. By taking advantage of the advances in information and communication technologies to widen the reach of education and to enhance quality of education through the use of multi-media methods of teaching and learning, the Centre aims at giving the students an opportunity to learn and appear for the examination of the course which will be conducted by the University.</p> -->
-                        <p>{{Content.about_body}}</p>
+                        <p>{{index.about_body}}</p>
                         <!-- <a href="#" class="main-btn mt-55">Learn More</a> -->
                     </div>
                 </div>
@@ -71,7 +66,7 @@
                 <div class="col-lg-5 offset-lg-1 d-flex flex-column justify-content-center align-items-center">
                     <div class="about-event mt-30">
                         <div class="event-title">
-                            <img src="static{{Content.header_image.url}}" alt="About">
+                            <img src="static/images{{index.header_image.url}}" alt="About">
                         </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-{%extends "index_main.html"%}
+{% extends 'index_main.html' %}
 {% load static %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{%static 'assets/css/comingsoon.css'%}" />
@@ -15,10 +15,12 @@
     <h1><span>Coming </span> Soon!!</h1>
     <h2>Meanwhile explore our existing courses </h2>
     <div class="button">
-      <form>
+      <form method="POST">
+        {% csrf_token %}
         <button type="button" class="btn notify-btn">Notify Me</button>
-        <input id="input" type="email" placeholder="Email" required>
-        <button type="button" class="submit-btn">Send</button>
+        {{ form }}
+        <!-- <input id="input" type="email" name="email" placeholder="Email" required> -->
+        <input type="submit" class="submit-btn">Send</input>
         <button type="button" class="btn thanku-btn">Thank You!</button>
       </form>
     </div>
