@@ -13,7 +13,10 @@
 
     <!--====== Title ======-->
     <title>DAVV - CDOE</title>
-
+  
+    {% block head %}
+    {% endblock %}
+    
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" type="image/png">
 
@@ -50,8 +53,6 @@
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     
-    {% block head %}
-    {% endblock %}
 
 </head>
 

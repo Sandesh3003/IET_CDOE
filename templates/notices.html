@@ -3,14 +3,14 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/dataTables.semanticui.min.css">
 {% endblock %}
 
 {% block main %}
 <section id="wrap">
     <div class="container">
-        <h2 class="section-title mt-50 text-center">Notices</h2>
+        <h2 class="section-title text-center" style="margin-top: 50px;">Notices</h2>
         <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered" id="datatable">
             <thead>
                 <tr>
@@ -41,9 +41,14 @@
 {% endblock %}
 {% block script %}
 <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.0/js/dataTables.semanticui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
 <script>
    $(document).ready( function () {
-    $('#datatable').DataTable();
+    $('#datatable').DataTable({
+        info: false,
+        lengthChange: false,
+    });
 } );
 </script>
 {% endblock %}
