@@ -27,7 +27,7 @@
                     <td>{{notice.id}}</td>
                     <td>{{notice.subject}}</td>
                     <td>{{notice.date}}</td>
-                    <td><a href="{{notice.attachement}}" target="_blank">Click Here</a></td>
+                    <td><a href="{{notice.attachement}}" class="attachement_btn" target="_blank">Click Here</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -37,6 +37,18 @@
 <style>
     .dataTables_wrapper {
         margin: 1.5rem 0 5rem 0;
+    }
+    .attachement_btn{
+        background-color: #ffc600;
+        color: #021d3a;
+        padding: .4rem;
+        border-radius: .9rem;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transition: all .2s;
+    }
+    .attachement_btn:hover{
+        background-color: #021d3a;
+        color: #fff;
     }
 </style>
 {% endblock %}
