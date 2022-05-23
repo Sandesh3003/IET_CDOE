@@ -4783,8 +4783,8 @@
     pointer-events: auto;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0.3rem;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    border-radius: 5rem;
     outline: 0; }
   
   .modal-backdrop {
@@ -4812,8 +4812,8 @@
     justify-content: space-between;
     padding: 1rem 1rem;
     border-bottom: 1px solid #dee2e6;
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem; }
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; }
     .modal-header .close {
       padding: 1rem 1rem;
       margin: -1rem -1rem -1rem auto; }
@@ -4827,7 +4827,9 @@
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1rem; }
+    padding: 1rem; 
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
   
   .modal-footer {
     display: -webkit-box;
