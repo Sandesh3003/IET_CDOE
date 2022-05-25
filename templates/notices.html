@@ -10,20 +10,22 @@
 {% block main %}
 <section id="wrap">
     <div class="container">
-        <h2 class="section-title text-center" style="margin-top: 50px;">Notices</h2>
-        <table cellpadding="0" cellspacing="0" border="0" class=" datatable table table-striped table-bordered"
-            id="datatable">
+        <h2 style="color:#07294d" class="section-title text-center mt-5">Notices</h2>
+        <table cellpadding="0" cellspacing="0"  class="datatable table table-striped table-bordered" border="1" id="datatable" >
             <thead>
-                <tr>
-                    <th>Sr.No.</th>
-                    <th>Title</th>
-                    <th>Date of Publication</th>
-                    <th>Attachement</th>
+                <tr style="background-color:#021d3a; line-height:25px; line-height:25px;">
+                    <th style="color:#ffc600; text-align: center;">Sr.No.</th>
+                    <th style="color:#ffc600;text-align: center;">Title </th>
+
+                    <th style="color:#ffc600; text-align: center;">Date of Publication</th>
+                    <th style="color:#ffc600;text-align: center;">Attachment</th>
                 </tr>
+            
             </thead>
             <tbody>
                 {% for notice in notices %}
                 <tr class="gradeA">
+                   
                     <td>{{notice.id}}</td>
                     <td>{{notice.subject}}</td>
                     <td>{{notice.date}}</td>
@@ -32,6 +34,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        
     </div>
 </section>
 <style>
@@ -50,6 +53,30 @@
         background-color: #021d3a;
         color: #fff;
     }
+    .dataTables_wrapper .dataTables_filter input {
+    background: #fff;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: transparent;
+    padding: 4px;
+}
+.download {
+    border-radius: 4px 4px;
+    background-color:#ffc60045;
+    padding: 4px 4px;
+    color: #000;
+    text-decoration: none;
+}
 </style>
 {% endblock %}
 {% block script %}
@@ -61,6 +88,7 @@
         $('#datatable').DataTable({
             info: false,
             lengthChange: false,
+            ordering: false,
         });
     });
 </script>
