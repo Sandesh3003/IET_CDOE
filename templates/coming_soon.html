@@ -14,37 +14,41 @@
     <p>New courses</p>
     <h1><span>Coming </span> Soon!!</h1>
     <h2>Meanwhile explore our existing courses </h2>
-    <div class="button">
-      <form method="POST">
-        {% csrf_token %}
-        <button type="button" class="btn notify-btn">Notify Me</button>
-        {{ form }}
-        <!-- <input id="input" type="email" name="email" placeholder="Email" required> -->
-        <input type="submit" class="submit-btn">Send</input>
-        <button type="button" class="btn thanku-btn">Thank You!</button>
+    <div class="">
+      <form action="#">
+        <input type="email" placeholder="Your email address...">
+        <button type="submit">Notify Me</button>
       </form>
     </div>
   </div>
   <img src="{%static 'assets/images/rocket-01.png'%}" class="rocket">
 </div>
 <script>
-  let input = document.querySelector('#input')
-  let notifyBtn = document.querySelector('.notify-btn')
-  let submitBtn = document.querySelector('.submit-btn')
-  let thankubtn = document.querySelector('.thanku-btn')
-
-  notifyBtn.addEventListener('click', () => {
-    notifyBtn.classList.add('active')
-    submitBtn.classList.add('active')
-    input.classList.add('active')
-  })
-
-  submitBtn.addEventListener('click', () => {
-    submitBtn.classList.remove('active')
-    input.classList.remove('active')
-    thankubtn.classList.add('active')
-  })
-
+  const msg = 'Please provide a valid email address';
+  const form = document.querySelector('form');
+  const button = form.querySelector('[type="submit"]');
+  
+  const error = document.createElement('p');
+  error.classList.add('error_text');
+  error.textContent = msg;
+  
+  function checkEmail (e) {
+    e.preventDefault();
+    const email = e.target.querySelector('[type="email"]').value;
+    if (!validateEmail(email)) {
+      form.classList.add('error');
+      form.insertBefore(error, button);
+    } else {
+      form.removeChild(error);
+      form.classList.remove('error');
+    }
+  }
+  function validateEmail (email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  form.addEventListener('submit', checkEmail);
+  
 </script>
 
 {% endblock %}
