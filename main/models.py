@@ -19,6 +19,7 @@ class Index(models.Model):
     twitter_link=models.URLField()
     insta_link=models.URLField()
     address=models.TextField()
+    map_link=models.URLField(max_length=200)
     contact_num=models.CharField(max_length=12)
     email_id=models.EmailField() 
 
