@@ -54,6 +54,11 @@ def notices(request):
 def course(request):
     index=Index.objects.filter()[:1].get()
     return render(request, 'course.html', {'index': index})
+
+def courses(request):
+    index=Index.objects.filter()[:1].get()
+    return render(request, 'courses.html', {'index': index})
+
 def mail(request):
     return render(request, 'comingsoon_response.html')
 
@@ -75,8 +80,4 @@ def contact(request):
         return HttpResponseRedirect('contact')
 
     else:
-        return render(request, 'contact.html', {'Footer': index.objects.filter()[:1].get()})
-
-
-def courses(request):
-    return render(request, 'courses.html', {'Footer': index.objects.filter()[:1].get()})
+        return render(request, 'contact.html', {'index': Index.objects.filter()[:1].get()})
