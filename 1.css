@@ -1,0 +1,112 @@
+
+        .new-on-cdoe-container .heading .emphasized {
+            color: #ffc600 !important;
+        }
+
+        .new-on-cdoe-container .mobile-lob-heading {
+            font-size: 2.25rem;
+            line-height: 2.5rem
+        }
+
+        @media(max-width:480px) {
+            .new-on-cdoe-container .mobile-lob-heading {
+                flex-basis: 10px
+            }
+        }
+
+        .new-on-cdoe-container .lob-new-badge {
+            bottom: 2px;
+            font-size: .75rem;
+            line-height: 20px;
+            padding: 3px 8px;
+            position: relative
+        }
+
+        .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper {
+            overflow-x: scroll
+        }
+
+        @media(min-width:768px) {
+            .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper {
+                overflow-x: hidden
+            }
+        }
+
+        .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper .subcategories-list {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1rem
+        }
+
+        .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper .subcategories-list .visibility-sentinel-start {
+            margin-right: -1rem
+        }
+
+        .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper .subcategories-list .visibility-sentinel-end {
+            margin-left: -1rem;
+            padding-right: 10px
+        }
+
+        .new-on-cdoe-container .subcategories-list-container .btn-icon.arrow-back {
+            position: absolute;
+            top: -2px;
+            z-index: 2
+        }
+
+        .new-on-cdoe-container .subcategories-list-container .btn-icon.arrow-forward {
+            position: absolute;
+            right: 0;
+            top: -2px
+        }
+
+        .new-on-cdoe-container .static-card-list {
+            gap: 18px;
+            overflow-x: auto
+        }
+
+        .new-on-cdoe-container .product-card-sizing-wrapper .product-card {
+            margin-right: 0 !important
+        }
+
+        @media(max-width:575.98px) {
+            .new-on-cdoe-container .explore-more-cta {
+                font-size: .875rem;
+                line-height: 1.25rem
+            }
+        }
+
+        .new-on-cdoe-container .line-of-business-tab-container {
+            border-bottom: 2px solid #eae6e5
+        }
+
+        .new-on-cdoe-container .line-of-business-tab {
+            background: none;
+            border: none;
+            color: #454545;
+            cursor: pointer;
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.5rem;
+            position: relative
+        }
+
+        .new-on-cdoe-container .line-of-business-tab.active {
+            color: #00262b
+        }
+
+        .new-on-cdoe-container .line-of-business-tab.active:after {
+            background: #00262b;
+            bottom: -2px;
+            content: "";
+            height: 2px;
+            left: 0;
+            position: absolute;
+            width: 100%
+        }
+
+        .new-on-cdoe-container .btn-icon.btn-icon-primary:focus {
+            background-color: #00262b !important;
+            box-shadow: none !important;
+            color: #fff !important;
+            outline: 0 !important
+        }

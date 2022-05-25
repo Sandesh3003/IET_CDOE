@@ -1,0 +1,112 @@
+{% extends 'index_main.html' %} {% load static %} {% block head %}
+<!-- head content like link tags goes here -->
+<link rel="stylesheet" href="{% static 'assets/css/courses.css' %}" />
+
+{% endblock %} {% block main %}
+<!-- body content goes below -->
+<div class="slide hi-slide">
+  <div class="hi-prev"></div>
+  <div class="hi-next"></div>
+  <ul>
+    <li>
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{% static 'assets/images/course/cu-1.jpg'%}"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">Course 1</h4>
+          <p class="card-text">{% lorem 1 b random %}</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{% static 'assets/images/course/cu-1.jpg'%}"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">Course 2</h4>
+          <p class="card-text">{% lorem 1 b random %}</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{% static 'assets/images/course/cu-1.jpg'%}"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">Course 3</h4>
+          <p class="card-text">{% lorem 1 b random %}</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{% static 'assets/images/course/cu-1.jpg'%}"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">Course 4</h4>
+          <p class="card-text">{% lorem 1 b random %}</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{% static 'assets/images/course/cu-1.jpg'%}"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">Course 5</h4>
+          <p class="card-text">{% lorem 1 b random %}</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{% static 'assets/images/course/cu-1.jpg'%}"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">Course 6</h4>
+          <p class="card-text">{% lorem 1 b random %}</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="{% static 'assets/js/jquery.hislide.js' %}"></script>
+<script src="{% static 'assets/js/course.js' %}"></script>
+<script>
+  $("slide").hiSlide();
+</script>
+
+{% endblock %}

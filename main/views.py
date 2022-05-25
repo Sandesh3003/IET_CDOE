@@ -75,4 +75,8 @@ def contact(request):
         return HttpResponseRedirect('contact')
 
     else:
-        return render(request, 'contact.html', {'index': index})
+        return render(request, 'contact.html', {'Footer': index.objects.filter()[:1].get()})
+
+
+def courses(request):
+    return render(request, 'courses.html', {'Footer': index.objects.filter()[:1].get()})
