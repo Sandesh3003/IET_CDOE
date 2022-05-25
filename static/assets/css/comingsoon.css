@@ -59,7 +59,7 @@
 
 
 form {
-	padding: 20px;
+	padding-top: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -87,7 +87,6 @@ form input[type="email"] {
 	padding-left: 20px;
 	border: 2px solid hsl(223, 68%, 12%);
 	font-size: 1rem;
-	color: rgb(255, 255, 255);
 	outline: none;
 }
 form input[type="email"]::placeholder {
