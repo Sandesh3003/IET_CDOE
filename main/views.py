@@ -35,11 +35,11 @@ def comingsoon(request):
         try:
             validate=ComingSoonMailList.objects.filter(email=emailid).get()
 
-            return render(request, 'index.html',context)
+            return render(request, 'coming_soon.html',context, {'status': 'Email ID already exist'})
         except:
             sub = ComingSoonMailList(email=emailid)
             sub.save()
-            return render(request, 'coming_soon.html',context)
+            return render(request, 'coming_soon.html',context, {'status': 'Email ID added'})
     else:
         return render(request, 'coming_soon.html', context) 
 
