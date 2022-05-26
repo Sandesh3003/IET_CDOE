@@ -103,8 +103,14 @@
                                     <li class="nav-item">
                                         <a class="nav-link">Programs</a>
                                         <ul class="sub-menu">
+<<<<<<< HEAD
                                             <li><a class="nav-link sub-nav-link" href="{% url 'comingsoon' %}">Distance Learning</a></li>
                                             <li><a class="nav-link sub-nav-link" href="{% url 'online_programs' %}">Online</a></li>
+=======
+                                            {% for program in programs %}
+                                            <li><a class="" href="{% url 'programs' program.program_name %}">{{program.program_name}}</a></li>
+                                            {% endfor %}
+>>>>>>> bdad160fbde0002d92ab31153de774978b9271dc
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -182,8 +188,8 @@
                             <ul>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-angle-right"></i>Home</a></li>
                                 <li><a href="{% url 'index' %}#about-part"><i class="fa fa-angle-right"></i>About us</a></li>
-                                <li><a href="{% url 'comingsoon' %}"><i class="fa fa-angle-right"></i>Distance Learning Programs</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Online Programs</a></li>
+                                <!-- <li><a href="#"><i class="fa fa-angle-right"></i>Distance Learning Programs</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i>Online Programs</a></li> -->
                                 <li><a href="{% url 'faculty' %}"><i class="fa fa-angle-right"></i>Faculty</a></li>
                                 <li><a href="{% url 'contact' %}"><i class="fa fa-angle-right"></i>Contact</a></li>
                             </ul>
