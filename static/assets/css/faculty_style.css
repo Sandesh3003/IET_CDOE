@@ -21,8 +21,8 @@ body{
 	padding:70px 15px 30px;
 }
 
-.container{
-	max-width: 1170px;
+.containerfac{
+	max-width: 2000px;
 	margin:auto;
 }
 
@@ -63,7 +63,7 @@ body{
 }
 
 .card:hover {
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-in-out;
     box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
     top: -4px;
     margin-top: -4px;
@@ -83,11 +83,10 @@ body{
     border-radius: 32px;
     transform: scale(2);
     transform-origin: 50% 50%;
-    transition: transform 0.15s ease-out;
+    transition: transform 0.15s ease-in-out;
   }
 .card:hover:before {
-        transform: scale(2.15);
-    }
+        transform: scale(1.05);    }
 
 
 .card-image {
@@ -131,36 +130,49 @@ p {
 	color: #fff;
 }
 
-button {
+.buttonli{
     margin: 12px 8px;
     width: 44px;
     height: 44px;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    transition: opacity 0.2s;
-	color: #fff;
-	background-color: #0077b5;
+    /* transition: opacity 0.2s; */
+	color: #0077b5;
+	background-color: #fff;
 }
 
-button:hover {
-    background-color: #fff;
+.buttonli:hover {
+    background-color: #0077b5;
 }
 
-button i {
-    color: #fff;
+.buttonli i {
+    color: #0077b5;
     font-size: 1.4em;
 }
 i, a{
 	color: #fff;
 }
 
-i,span:hover,a:hover{
-    color:#0077b5;
+i:hover{
+    color:#fff;
+
+}
+span:hover{
+    color:#fff;
+}
+a:hover{
+    color:#fff;
 }
 
 
 /*responsive*/
+@media(min-width: 1200px){
+	.container{
+       max-width: 1200px;
+
+   }
+}
 @media(max-width: 991px){
 	.team-section .team-items .item{
       flex-basis: calc(50% - 30px);
