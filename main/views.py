@@ -32,14 +32,15 @@ def comingsoon(request):
     context={'form': forms.ComingsoonForm(),'index':index,'programs':programs}
     if request.method == 'POST':
         emailid = request.POST['email']
-        try:
-            validate=ComingSoonMailList.objects.filter(email=emailid).get()
-
-            return render(request, 'coming_soon.html',context, {'status': 'Email ID already exist'})
-        except:
+        validate=ComingSoonMailList.objects.filter(email=emailid).all()
+        if(len(validate)!=0):
+            context['status']= 'Email ID already exist'
+            return render(request, 'coming_soon.html',context)
+        else:
             sub = ComingSoonMailList(email=emailid)
             sub.save()
-            return render(request, 'coming_soon.html',context, {'status': 'Email ID added'})
+            context['status']= 'Email ID added'
+            return render(request, 'coming_soon.html',context)
     else:
         return render(request, 'coming_soon.html', context) 
 
@@ -54,9 +55,15 @@ def programs(request,pk):
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
     context={'index':index,'programs':programs}
-    
+    subheads=course_type.objects.all()
     courses=course_head.objects.filter(program_name=pk).all()
-    context={'index':index,'programs':programs,'courses':courses}
+    
+    subhead_active = subheads[0]
+    subheads = subheads[1:]
+
+    context={'index':index,'programs':programs,
+            'courses':courses,'subheads':subheads, 
+            'subhead_active': subhead_active,}
     if(len(courses)==0):
         return comingsoon(request) 
     else:
