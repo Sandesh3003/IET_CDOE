@@ -15,12 +15,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-banner-cont">
-                    <h2>Learn basic javascript</h2>
+                    <h2>{{course_detail.course_name.course_name}}</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Courses</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Learn basic javasript</li>
+                            <li class="breadcrumb-item"><a href="#">{{course_detail.course_name.program_name.program_name}}</a></li>
+                            <li class="breadcrumb-item"><a href="#">{{course_detail.course_name.course_type.course_type}}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{course_detail.course_name.course_name}}</li>
                         </ol>
                     </nav>
                 </div> <!-- page banner cont -->
@@ -39,7 +41,7 @@
             <div class="col-lg-12">
                 <div class="courses-single-left mt-30">
                     <div class="title">
-                        <h3>Learn basis javascirpt from start for beginner</h3>
+                        <h3>{{course_detail.display_title}}</h3>
                     </div> <!-- title -->
                     <div class="course-terms">
                         <ul class="d-md-flex justify-content-around">
@@ -50,14 +52,14 @@
                                     </div>
                                     <div class="name">
                                         <span>Teacher</span>
-                                        <h6>Mark anthem</h6>
+                                        <h6>{{course_detail.faculty.name}}</h6>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="course-category">
                                     <span>Category</span>
-                                    <h6>Programaming </h6>
+                                    <h6>{{course_detail.category.category_name}} </h6>
                                 </div>
                             </li>
                             <li>
@@ -82,7 +84,7 @@
                     </div> <!-- course terms -->
 
                     <div class="courses-single-image pt-50">
-                        <img src="{% static 'assets/images/course/cu-1.jpg' %}" alt="Courses">
+                        <img src="{{course_detail.display_image.url}}" alt="Courses">
                     </div> <!-- courses single image -->
 
                     <div class="courses-tab mt-30">
