@@ -1,9 +1,11 @@
 from email.mime import image
 from re import template
+from tkinter import CASCADE
 from django.db import models
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives, send_mail
 from django.template.loader import render_to_string
+from django.contrib.auth.models import User
 
 class Slide(models.Model):
     image = models.ImageField(upload_to='images/slides/')
@@ -19,22 +21,42 @@ class Index(models.Model):
     twitter_link=models.URLField()
     insta_link=models.URLField()
     address=models.TextField()
+    map_link=models.URLField(max_length=200)
     contact_num=models.CharField(max_length=12)
     email_id=models.EmailField() 
 
-class Program(models.Model):
-    
-    name=models.CharField(max_length=200)
-    description=models.TextField(null=True,blank=True)
-    eligibility=models.CharField(max_length=200)
-    updated=models.DateTimeField(auto_now=True)
-    created=models.DateTimeField(auto_now_add=True)
+# class Program(models.Model):
+#     program_id=models.CharField(max_length=200)
+#     program_name=models.CharField(max_length=200)
+#     description=models.TextField(null=True,blank=True)
+#     eligibility=models.CharField(max_length=200)
+#     updated=models.DateTimeField(auto_now=True)
+#     created=models.DateTimeField(auto_now_add=True)
+#     Syllabus=models.TextField(null=True,blank=True)
+#     Program_objective=models.TextField(null=True,blank=True)
+#     Course_objective=models.TextField(null=True,blank=True)
+#     fees=models.CharField(max_length=200)
+#     apply_now=models.CharField(max_length=200)
+class Programs(models.Model):
+    program_id=models.CharField(max_length=100)
+    program_name=models.CharField(primary_key='True',max_length=200)
+    def __str__(self):
+        return (self.program_name) 
+class course_type(models.Model):
+    type_id=models.CharField(max_length=100)
+    course_type=models.CharField(primary_key='True',max_length=200)
+    def __str__(self):
+        return (self.course_type) 
 
-    Syllabus=models.TextField(null=True,blank=True)
-    Program_objective=models.TextField(null=True,blank=True)
-    Course_objective=models.TextField(null=True,blank=True)
-    fees=models.CharField(max_length=200)
-    apply_now=models.CharField(max_length=200)
+class course_head(models.Model):
+    course_id=models.CharField(max_length=100)  
+    program_name=models.ForeignKey(Programs,on_delete=models.CASCADE)
+    course_name=models.CharField(primary_key='True',max_length=200)
+    card_image=models.ImageField(upload_to='images/course_image/',null=True)
+    course_type=models.ForeignKey(course_type,on_delete=models.CASCADE)
+    def __str__(self):
+        return (self.course_name)
+    
 
 class Announcement(models.Model):
 

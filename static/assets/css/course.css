@@ -1,112 +1,80 @@
+body{
+    overflow-x: hidden;
+    background-image: url(../images/course/cu-1.jpg);
+}
 
-        .new-on-cdoe-container .heading .emphasized {
-            color: #ffc600 !important;
-        }
+.hi-slide{
+    position: relative;
+    width: 754px;
+    height: 292px;
+    margin: 115px auto 0;
+}
 
-        .new-on-cdoe-container .mobile-lob-heading {
-            font-size: 2.25rem;
-            line-height: 2.5rem
-        }
+.hi-slide .hi-prev, .hi-slide .hi-next{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.849) ;
+    color: black;
+    transition: all 0.7s;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-        @media(max-width:480px) {
-            .new-on-cdoe-container .mobile-lob-heading {
-                flex-basis: 10px
-            }
-        }
+.hi-slide .hi-next:hover ,
+.hi-slide .hi-prev:hover{
+    opacity: 1;
+    background-color: white;
+}
 
-        .new-on-cdoe-container .lob-new-badge {
-            bottom: 2px;
-            font-size: .75rem;
-            line-height: 20px;
-            padding: 3px 8px;
-            position: relative
-        }
+.hi-slide .hi-prev{
+    left: -70px;
+}
 
-        .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper {
-            overflow-x: scroll
-        }
+.hi-slide .hi-prev::before{
+    content:'<';
+}
 
-        @media(min-width:768px) {
-            .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper {
-                overflow-x: hidden
-            }
-        }
+.hi-slide .hi-next{
+    right: -70px;
+}
 
-        .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper .subcategories-list {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 1rem
-        }
+.hi-slide .hi-next::before{
+    content:'>';
+}
 
-        .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper .subcategories-list .visibility-sentinel-start {
-            margin-right: -1rem
-        }
+.hi-slide > ul {
+    list-style: none;
+    position:relative;
+    width: 754px;
+    height: 292px;
+    margin:0;
+    padding: 0;
+}
 
-        .new-on-cdoe-container .subcategories-list-container .subcategories-list-wrapper .subcategories-list .visibility-sentinel-end {
-            margin-left: -1rem;
-            padding-right: 10px
-        }
+.hi-slide > ul > li {
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    left: 377px;
+    top: 147px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: #333;
+    cursor: pointer;
+}
 
-        .new-on-cdoe-container .subcategories-list-container .btn-icon.arrow-back {
-            position: absolute;
-            top: -2px;
-            z-index: 2
-        }
-
-        .new-on-cdoe-container .subcategories-list-container .btn-icon.arrow-forward {
-            position: absolute;
-            right: 0;
-            top: -2px
-        }
-
-        .new-on-cdoe-container .static-card-list {
-            gap: 18px;
-            overflow-x: auto
-        }
-
-        .new-on-cdoe-container .product-card-sizing-wrapper .product-card {
-            margin-right: 0 !important
-        }
-
-        @media(max-width:575.98px) {
-            .new-on-cdoe-container .explore-more-cta {
-                font-size: .875rem;
-                line-height: 1.25rem
-            }
-        }
-
-        .new-on-cdoe-container .line-of-business-tab-container {
-            border-bottom: 2px solid #eae6e5
-        }
-
-        .new-on-cdoe-container .line-of-business-tab {
-            background: none;
-            border: none;
-            color: #454545;
-            cursor: pointer;
-            font-size: 1.125rem;
-            font-weight: 500;
-            line-height: 1.5rem;
-            position: relative
-        }
-
-        .new-on-cdoe-container .line-of-business-tab.active {
-            color: #00262b
-        }
-
-        .new-on-cdoe-container .line-of-business-tab.active:after {
-            background: #00262b;
-            bottom: -2px;
-            content: "";
-            height: 2px;
-            left: 0;
-            position: absolute;
-            width: 100%
-        }
-
-        .new-on-cdoe-container .btn-icon.btn-icon-primary:focus {
-            background-color: #00262b !important;
-            box-shadow: none !important;
-            color: #fff !important;
-            outline: 0 !important
-        }
+.hi-slide > ul > li > .card{
+    width: 100% !important;
+    height: 100% !important;
+    background-position: center !important;
+}
