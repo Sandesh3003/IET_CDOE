@@ -16,110 +16,123 @@
                     <div class="container">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link px-3 py-2.5 active" id="ug-tab" data-toggle="tab"
-                                    href="#ug" role="tab" aria-controls="ug" aria-selected="true">UG
-                                    Courses</a>
+                                <a class="nav-link px-3 py-2.5 active" id="{{subhead_active.type_id}}-tab" data-toggle="tab"
+                                    href="#{{subhead_active.type_id}}" role="tab" aria-controls="{{subhead_active.type_id}}" aria-selected="false">{{subhead_active.course_type}}</a>
                             </li>
+                            {% for subhead in subheads %}
                             <li class="nav-item">
-                                <a class="nav-link px-3 py-2.5" id="pg-tab" data-toggle="tab"
-                                    href="#pg" role="tab" aria-controls="pg" aria-selected="false">PG Courses</a>
+                                <a class="nav-link px-3 py-2.5" id="{{subhead.type_id}}-tab" data-toggle="tab"
+                                    href="#{{subhead.type_id}}" role="tab" aria-controls="{{subhead.type_id}}" aria-selected="false">{{subhead.course_type}}</a>
                             </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                                    <div class="row tab-pane fade show active" id="pg" role="tabpanel" aria-labelledby="ug-tab">
-                                        <div class="col-4">
-                                        <div class="static-card-list d-flex scrollable-mobile-discovery-card-list flex-nowrap mt-5">
-                                            <div class="product-card-sizing-wrapper">
-                                                <div class="product-card "><a class="text-decoration-none text-gray-700"
-                                                        href="{% url 'course' %}"
-                                                        __tracked="true">
-                                                        <div tabindex="-1" class="pgn__card card"><img
-                                                                class="lazy card-img-top entered loaded"
-                                                                src="{{co}}"
-                                                                data-src="https://cdn.edx.2u.com/card/header/cybersecurity_managing_risk_in_the_information_age_course_card_image.jpg"
-                                                                alt="" aria-hidden="true" data-ll-status="loaded">
-                                                            <div
-                                                                class="pgn__card-body d-flex flex-column justify-content-between pb-3.5 mt-2 card-body">
-                                                                <div>
-                                                                    <div class="h5 mb-2 card-title"><span
-                                                                            width="0"><span><span>Cybersecurity:
-                                                                                    Managing</span><br><span><span>Risk
-                                                                                        in the Information
-                                                                                        A…</span></span></span><span
-                                                                                style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div><span class="bg-light-300 badge badge-light">Executive
-                                                                        Education</span></div>
-                                                            </div>
-                                                            <div
-                                                                class="d-flex justify-content-between align-items-start card-footer pgn__card-footer vertical" style="color: #07294d">
-                                                                    <span class="text-primary-700">More Info</span>
-                                                                </p><span class="pgn__icon"><svg width="24" height="24"
-                                                                        viewBox="0 0 24 24" fill="none"
-                                                                        xmlns="http://www.w3.org/2000/svg" role="img"
-                                                                        focusable="false" aria-hidden="true">
-                                                                        <path
-                                                                            d="M19 19H5V5h7V3H3v18h18v-9h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
-                                                                            fill="currentColor"></path>
-                                                                    </svg><span class="sr-only">Opens a link in
-                                                                        a new tab</span></span>
-                                                            </div>
-                                                        </div>
-                                                    </a></div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                    </div>
+                            {% endfor %}
                             
-                            <div class="row tab-pane fade" id="ug" role="tabpanel" aria-labelledby="ug-tab">
-                                <div class="col-4">
-                                <div class="static-card-list d-flex scrollable-mobile-discovery-card-list flex-nowrap mt-5">
-                                    <div class="product-card-sizing-wrapper">
-                                        <div class="prod uct-card "><a class="text-decoration-none text-gray-700"
-                                                href="{% url 'course' %}"
-                                                __tracked="true">
-                                                <div tabindex="-1" class="pgn__card card"><img
-                                                        class="lazy card-img-top entered loaded"
-                                                        src="https://cdn.edx.2u.com/card/header/cybersecurity_managing_risk_in_the_information_age_course_card_image.jpg"
-                                                        data-src="https://cdn.edx.2u.com/card/header/cybersecurity_managing_risk_in_the_information_age_course_card_image.jpg"
-                                                        alt="" aria-hidden="true" data-ll-status="loaded">
-                                                    <div
-                                                        class="pgn__card-body d-flex flex-column justify-content-between pb-3.5 mt-2 card-body">
-                                                        <div>
-                                                            <div class="h5 mb-2 card-title"><span
-                                                                    width="0"><span><span>Data Science:
-                                                                            Managing</span><br><span><span>Risk
-                                                                                in the Information
-                                                                                A…</span></span></span><span
-                                                                        style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
+                        </ul>
+                        
+                        <div class="tab-content" id="myTabContent">
+                            <div
+                            class="tab-pane fade show active"
+                             id="{{subhead_active.type_id}}" 
+                             role="tabpanel" 
+                             aria-labelledby="{{subhead_active.type_id}}-tab">
+                                    {% for course in courses %}
+                                        {% if course.course_type.course_type == subhead_active.course_type %}
+                                        <div class="col-4">
+                                            <div class="static-card-list d-flex scrollable-mobile-discovery-card-list flex-nowrap mt-5">
+                                                <div class="product-card-sizing-wrapper">
+                                                    <div class="product-card "><a class="text-decoration-none text-gray-700"
+                                                            href="{% url 'course' %}"
+                                                            __tracked="true">
+                                                            <div tabindex="-1" class="pgn__card card"><img
+                                                                    class="lazy card-img-top entered loaded"
+                                                                    src="{{course.card_image.url}}"
+                                                                    data-src="https://cdn.edx.2u.com/card/header/cybersecurity_managing_risk_in_the_information_age_course_card_image.jpg"
+                                                                    alt="" aria-hidden="true" data-ll-status="loaded">
+                                                                <div
+                                                                    class="pgn__card-body d-flex flex-column justify-content-between pb-3.5 mt-2 card-body">
+                                                                    <div>
+                                                                        <div class="h5 mb-2 card-title"><span
+                                                                                width="0"><span><span>{{course.course_name}}</span></span></span><span
+                                                                                    style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div><span class="bg-light-300 badge badge-light">Executive
+                                                                            Education</span></div>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-start card-footer pgn__card-footer vertical" style="color: #07294d">
+                                                                        <span class="text-primary-700">More Info</span>
+                                                                    </p><span class="pgn__icon"><svg width="24" height="24"
+                                                                            viewBox="0 0 24 24" fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg" role="img"
+                                                                            focusable="false" aria-hidden="true">
+                                                                            <path
+                                                                                d="M19 19H5V5h7V3H3v18h18v-9h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                                                                                fill="currentColor"></path>
+                                                                        </svg><span class="sr-only">Opens a link in
+                                                                            a new tab</span></span>
+                                                                </div>
                                                             </div>
-                                                            
-                                                        </div>
-                                                        <div><span class="bg-light-300 badge badge-light">Executive
-                                                                Education</span></div>
-                                                    </div>
-                                                    <div
-                                                        class="d-flex justify-content-between align-items-start card-footer pgn__card-footer vertical" style="color: #07294d;">
-                                                            <span class="text-primary-700">More Info</span>
-                                                        </p><span class="pgn__icon"><svg width="24" height="24"
-                                                                viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg" role="img"
-                                                                focusable="false" aria-hidden="true">
-                                                                <path
-                                                                    d="M19 19H5V5h7V3H3v18h18v-9h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
-                                                                    fill="currentColor"></path>
-                                                            </svg><span class="sr-only">Opens a link in
-                                                                a new tab</span></span>
-                                                    </div>
+                                                        </a></div>
                                                 </div>
-                                            </a></div>
-                                    </div>
-                                    
+                                                
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
-                            </div>
-                            </div>
+
+                            {% for subhead in subheads %}
+        
+                                <div class="tab-pane fade " id="{{subhead.type_id}}" role="tabpanel" aria-labelledby="{{subhead.type_id}}-tab">
+                                    {% for course in courses %}
+                                        {% if course.course_type.course_type == subhead.course_type %}
+                                        <div class="col-4">
+                                            <div class="static-card-list d-flex scrollable-mobile-discovery-card-list flex-nowrap mt-5">
+                                                <div class="product-card-sizing-wrapper">
+                                                    <div class="product-card "><a class="text-decoration-none text-gray-700"
+                                                            href="{{course.card_image.url}}"
+                                                            __tracked="true">
+                                                            <div tabindex="-1" class="pgn__card card"><img
+                                                                    class="lazy card-img-top entered loaded"
+                                                                    src="{{course.card_image.url}}"
+                                                                    data-src="https://cdn.edx.2u.com/card/header/cybersecurity_managing_risk_in_the_information_age_course_card_image.jpg"
+                                                                    alt="" aria-hidden="true" data-ll-status="loaded">
+                                                                <div
+                                                                    class="pgn__card-body d-flex flex-column justify-content-between pb-3.5 mt-2 card-body">
+                                                                    <div>
+                                                                        <div class="h5 mb-2 card-title"><span
+                                                                                width="0"><span><span>{{course.course_name}}
+                                                                                            </span></span></span><span
+                                                                                    style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div><span class="bg-light-300 badge badge-light">Executive
+                                                                            Education</span></div>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-start card-footer pgn__card-footer vertical" style="color: #07294d">
+                                                                        <span class="text-primary-700">More Info</span>
+                                                                    </p><span class="pgn__icon"><svg width="24" height="24"
+                                                                            viewBox="0 0 24 24" fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg" role="img"
+                                                                            focusable="false" aria-hidden="true">
+                                                                            <path
+                                                                                d="M19 19H5V5h7V3H3v18h18v-9h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                                                                                fill="currentColor"></path>
+                                                                        </svg><span class="sr-only">Opens a link in
+                                                                            a new tab</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </a></div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                               
                         </div>
                     </div>
                 </div>

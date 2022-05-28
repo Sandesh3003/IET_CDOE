@@ -43,6 +43,11 @@
 ===========================*/
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700');
+
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -3699,7 +3704,7 @@ p {
     color: #07294d;
 }
 
-.course-features {
+/* .course-features {
     background-color: #fff;
     padding: 30px 35px;
     border-radius: 5px;
@@ -3753,9 +3758,9 @@ p {
 
 .course-features .price-button .main-btn {
     float: right;
-}
+} */
 
-.You-makelike {
+/* .You-makelike {
     background-color: #fff;
     padding: 25px 30px 30px;
     border-radius: 5px;
@@ -3820,7 +3825,8 @@ p {
 
 .You-makelike .single-makelike .cont ul li a i {
     margin-right: 3px;
-}
+} */
+
 
 /*=====================================================
     24. EVENT PAGE css 
