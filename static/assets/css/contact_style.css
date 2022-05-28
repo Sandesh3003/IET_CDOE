@@ -2029,7 +2029,8 @@
         justify-content: center; }
       .form-inline .custom-control-label {
         margin-bottom: 0; } }
-  
+
+       
   .btn {
     display: inline-block;
     font-weight: 400;
@@ -6707,7 +6708,7 @@
   .pr-2,
   .px-2 {
     padding-right: 0.5rem !important; }
-  
+           
   .pb-2,
   .py-2 {
     padding-bottom: 0.5rem !important; }
@@ -8186,7 +8187,7 @@
     background: #fff;
     color: rgba(0, 0, 0, 0.8);
     font-size: 14px;
-    border-radius: 2px;
+    border-radius: 5px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     border: none; }
@@ -8212,7 +8213,10 @@
     width: 100%; }
   
   .contact-wrap {
-    background: #e8edf0; }
+    background:#07294d;
+    border-radius: 15px;
+    
+   }
   
   .dbox {
     width: 100%;
@@ -8276,15 +8280,15 @@
       -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
       box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important; }
     .btn.btn-primary {
-      background: #07294d !important;
-      border-color: #07294d !important;
+      background: #ffc600!important;
+      border-color: #ffc600 !important;
       color: #fff; }
       .btn.btn-primary:hover, .btn.btn-primary:focus {
         border-color: #ffc600 !important;
         background: #ffc600 !important; }
   
   .contactForm .label {
-    color: #000;
+    color: #f8f9fa;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600; }
