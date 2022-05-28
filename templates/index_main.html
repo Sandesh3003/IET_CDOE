@@ -95,26 +95,27 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item">
-                                        <a class="" href="{% url 'index' %}">Home</a>
+                                        <a class="nav-link" href="{% url 'index' %}">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{% url 'index' %}#about-part">About Us</a>
+                                        <a class="nav-link" href="{% url 'index' %}#about-part">About Us</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="">Programs</a>
+                                        <a class="nav-link">Programs</a>
                                         <ul class="sub-menu">
-                                            <li><a class="" href="{% url 'comingsoon' %}">Distance Learning</a></li>
-                                            <li><a href="{% url 'online_programs' %}">Online</a></li>
+                                            {% for program in programs %}
+                                            <li><a class="" href="{% url 'programs' program.program_name %}">{{program.program_name}}</a></li>
+                                            {% endfor %}
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="" href="{% url 'faculty' %}">Faculty</a>
+                                        <a class="nav-link" href="{% url 'faculty' %}">Faculty</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{% url 'notices' %}">Notices</a>
+                                        <a class="nav-link" href="{% url 'notices' %}">Notices</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{% url 'contact'%}">Contact</a>
+                                        <a class="nav-link" href="{% url 'contact'%}">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -137,23 +138,7 @@
 
     <!--====== HEADER PART ENDS ======-->
 
-    <!--====== SEARCH BOX PART START ======-->
-
-    <div class="search-box">
-        <div class="search-form">
-            <div class="closebtn">
-                <span></span>
-                <span></span>
-            </div>
-            <form action="#">
-                <input type="text" placeholder="Search by keyword">
-                <button><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        <!-- search form -->
-    </div>
-
-    <!--====== SEARCH BOX PART ENDS ======-->
+    
     {% block main %}
     {% endblock %}
     
@@ -182,8 +167,8 @@
                             <ul>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-angle-right"></i>Home</a></li>
                                 <li><a href="{% url 'index' %}#about-part"><i class="fa fa-angle-right"></i>About us</a></li>
-                                <li><a href="{% url 'comingsoon' %}"><i class="fa fa-angle-right"></i>Distance Learning Programs</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Online Programs</a></li>
+                                <!-- <li><a href="#"><i class="fa fa-angle-right"></i>Distance Learning Programs</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i>Online Programs</a></li> -->
                                 <li><a href="{% url 'faculty' %}"><i class="fa fa-angle-right"></i>Faculty</a></li>
                                 <li><a href="{% url 'contact' %}"><i class="fa fa-angle-right"></i>Contact</a></li>
                             </ul>
@@ -203,7 +188,7 @@
                                         <i class="fa fa-home"></i>
                                     </div>
                                     <div class="cont">
-                                        <p>{{index.address}}</p>
+                                        <a href="{{index.map_link}}" target="_blank"><p>{{index.address}}</p></a>
                                     </div>
                                 </li>
                                 <li>
@@ -211,7 +196,7 @@
                                         <i class="fa fa-phone"></i>
                                     </div>
                                     <div class="cont">
-                                        <p>{{index.contact_num}}</p>
+                                        <a href="tel://{{index.contact_num}}" target="_blank"><p>{{index.contact_num}}</p></a>
                                     </div>
                                 </li>
                                 <li>
@@ -219,7 +204,7 @@
                                         <i class="fa fa-envelope-o"></i>
                                     </div>
                                     <div class="cont">
-                                        <p>{{index.email_id}}</p>
+                                        <a href="mailto://{{index.email_id}}" target="_blank"><p>{{index.email_id}}</p></a>
                                     </div>
                                 </li>
                             </ul>
@@ -283,6 +268,17 @@
 
     <!--====== Main js ======-->
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!--Navbar active link script-->
+    <script>
+    document.querySelectorAll('.nav-link').forEach(link=>{
+    if(link.href === window.location.href)
+    {
+        link.style.color = '#ffc600';
+    }
+})
+</script>
+
     {% block script %}
     {% endblock %}
 </body>

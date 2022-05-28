@@ -1,3 +1,4 @@
+from contextlib import nullcontext
 import email
 import imp
 from django.http import HttpResponseRedirect
@@ -18,33 +19,58 @@ from main import forms
 
 
 def index(request):
-    program=Program.objects.all()
+    
     index=Index.objects.filter()[:1].get()
     announcement=Announcement.objects.all()
-    context={'programs':program, 'announcements': announcement,'index':index}
+    programs=Programs.objects.all()
+    context={'announcements': announcement,'index':index,'programs':programs}
     return render(request, 'index.html',context)
 
 def comingsoon(request):
     index=Index.objects.filter()[:1].get()
+    programs=Programs.objects.all()
+    context={'form': forms.ComingsoonForm(),'index':index,'programs':programs}
     if request.method == 'POST':
         emailid = request.POST['email']
-        sub = ComingSoonMailList(email=emailid)
-        sub.save()
-        return render(request, 'coming_soon.html', {'form': forms.ComingsoonForm(), 'index': index})
+        validate=ComingSoonMailList.objects.filter(email=emailid).all()
+        if(len(validate)!=0):
+            context['status']= 'Email ID already exist'
+            return render(request, 'coming_soon.html',context)
+        else:
+            sub = ComingSoonMailList(email=emailid)
+            sub.save()
+            context['status']= 'Email ID added'
+            return render(request, 'coming_soon.html',context)
     else:
-        return render(request, 'coming_soon.html', {'form': forms.ComingsoonForm(), 'index': index}) 
+        return render(request, 'coming_soon.html', context) 
 
 def faculty(request):
     index=Index.objects.filter()[:1].get()
-    return render(request, 'faculty.html', {'faculty': Faculty.objects.all(), 'index': index})
+    programs=Programs.objects.all()
+    context={'faculty': Faculty.objects.all(),'index':index,'programs':programs}
+    return render(request, 'faculty.html', context)
 
-def online_programs(request):
-    index=Index.objects.filter()[:1].get()
-    return render(request, 'coming_soon.html', {'index': index})
 
-def distance_learning_programs(request):
+def programs(request,pk):
     index=Index.objects.filter()[:1].get()
-    return render(request, 'coming_soon.html', {'index': index})
+    programs=Programs.objects.all()
+    context={'index':index,'programs':programs}
+    subheads=course_type.objects.all()
+    courses=course_head.objects.filter(program_name=pk).all()
+    
+    subhead_active = subheads[0]
+    subheads = subheads[1:]
+
+    context={'index':index,'programs':programs,
+            'courses':courses,'subheads':subheads, 
+            'subhead_active': subhead_active,}
+    if(len(courses)==0):
+        return comingsoon(request) 
+    else:
+        return render(request, 'courses.html', context)
+    
+         
+
 
 def notices(request):
     notice=Notice.objects.all()
@@ -55,7 +81,7 @@ def course(request):
     index=Index.objects.filter()[:1].get()
     return render(request, 'course.html', {'index': index})
 
-def courses(request):
+def courses(request,pk,ic):
     index=Index.objects.filter()[:1].get()
     return render(request, 'courses.html', {'index': index})
 
