@@ -37,6 +37,17 @@ class Index(models.Model):
 #     Course_objective=models.TextField(null=True,blank=True)
 #     fees=models.CharField(max_length=200)
 #     apply_now=models.CharField(max_length=200)
+class Faculty(models.Model):
+
+    name = models.CharField(max_length=100, blank=False)
+    post = models.CharField(max_length=100, blank=False)
+    linked_in = models.URLField(blank=True)
+    facebook = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
+    
+
+    def __str__(self) :
+        return (self.name)
 class Programs(models.Model):
     program_id=models.CharField(max_length=100)
     program_name=models.CharField(primary_key='True',max_length=200)
@@ -56,6 +67,19 @@ class course_head(models.Model):
     course_type=models.ForeignKey(course_type,on_delete=models.CASCADE)
     def __str__(self):
         return (self.course_name)
+class course_categories(models.Model):
+    category_id=models.CharField(max_length=100)
+    category_name=models.CharField(primary_key='True',max_length=200)
+    def __str__(self):
+        return (self.category_name)
+class course_details(models.Model):
+    course_name=models.ForeignKey(course_head,on_delete=models.CASCADE)
+    faculty=models.ForeignKey(Faculty,on_delete=models.CASCADE)
+    display_title=models.CharField(max_length=200)
+    category=models.ForeignKey(course_categories,on_delete=models.CASCADE)
+    display_image=models.ImageField(upload_to='images/course_image/display_images/')
+    def __str__(self):
+        return (self.course_name.course_name)
     
 
 class Announcement(models.Model):
@@ -76,16 +100,7 @@ class Notice(models.Model):
     def __str__(self) :
         return (self.subject)
 
-class Faculty(models.Model):
 
-    name = models.CharField(max_length=100, blank=False)
-    post = models.CharField(max_length=100, blank=False)
-    linked_in = models.URLField(blank=True)
-    facebook = models.URLField(blank=True)
-    twitter = models.URLField(blank=True)
-
-    def __str__(self) :
-        return (self.name)
 
 class ComingSoonMailList(models.Model):
 
