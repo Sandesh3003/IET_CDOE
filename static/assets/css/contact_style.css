@@ -3460,6 +3460,7 @@
     padding-bottom: 0.3125rem;
     margin-right: 1rem;
     font-size: 1.25rem;
+    width: 300px;
     line-height: inherit;
     white-space: nowrap; }
     .navbar-brand:hover, .navbar-brand:focus {
