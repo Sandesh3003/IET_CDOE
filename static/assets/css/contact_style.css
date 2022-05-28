@@ -8245,7 +8245,7 @@
       transition: .3s;
     }
 
-      .dbox .icon:hover{
+      .dbox .text:hover .icon{
         background: #ffc600;
       }
 

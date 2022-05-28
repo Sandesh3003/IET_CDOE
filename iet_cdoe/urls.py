@@ -30,5 +30,6 @@ urlpatterns = [
     path('programs/<str:pk>/<str:ic>', views.course, name="course"),
     path('notices', views.notices, name="notices"),
     path('course', views.course, name="course"),
+    path('temp', views.temp, name="temp"),
     # path('<str:pk>/',views.prog,name="course")
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

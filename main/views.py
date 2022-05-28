@@ -86,6 +86,15 @@ def course(request,pk,ic):
     context={'index':index,'programs':programs,'course_detail':course_det}
     
     return render(request, 'course.html', context)
+
+def temp(request):
+    index=Index.objects.filter()[:1].get()
+    programs=Programs.objects.all()
+    
+    course_det=course_details.objects.filter()[:1].get()
+    context={'index':index,'programs':programs,'course_detail':course_det}
+    
+    return render(request, 'course.html', context)
     
 
 
