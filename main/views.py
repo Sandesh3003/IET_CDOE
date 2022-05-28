@@ -63,7 +63,8 @@ def programs(request,pk):
 
     context={'index':index,'programs':programs,
             'courses':courses,'subheads':subheads, 
-            'subhead_active': subhead_active,}
+            'subhead_active': subhead_active,
+            'program_name': pk}
     if(len(courses)==0):
         return comingsoon(request) 
     else:
@@ -77,15 +78,19 @@ def notices(request):
     index=Index.objects.filter()[:1].get()
     return render(request, 'notices.html', {'notices': notice, 'index': index})
 
-def course(request):
+def course(request,pk,ic):
     index=Index.objects.filter()[:1].get()
-    return render(request, 'course.html', {'index': index})
+    programs=Programs.objects.all()
+    
+    course_det=course_details.objects.filter(course_name__course_name=ic).filter(course_name__program_name=pk).get()
+    context={'index':index,'programs':programs,'course_detail':course_det}
+    
+    return render(request, 'course.html', context)
+    
 
-def courses(request,pk,ic):
-    index=Index.objects.filter()[:1].get()
-    return render(request, 'courses.html', {'index': index})
 
 def mail(request):
+
     return render(request, 'comingsoon_response.html')
 
 def contact(request):

@@ -4,6 +4,8 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(Programs)
+admin.site.register(course_details)
+admin.site.register(course_categories)
 admin.site.register(course_type)
 admin.site.register(course_head)
 admin.site.register(Announcement)
