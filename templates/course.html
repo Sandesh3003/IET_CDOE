@@ -112,18 +112,12 @@
                                 aria-labelledby="overview-tab">
                                 <div class="overview-description">
                                     <div class="single-description pt-40">
-                                        <h6>Course Summery</h6>
-                                        <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum
-                                            auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh
-                                            vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
-                                            tellus .</p>
+                                        <h6>Course Summary</h6>
+                                        <p>{{course_detail.course_summary}}</p>
                                     </div>
                                     <div class="single-description pt-40">
-                                        <h6>Requrements</h6>
-                                        <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum
-                                            auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh
-                                            vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
-                                            tellus .</p>
+                                        <h6>Pre-Riquisites</h6>
+                                        <p>{{course_detail.course_prerequisites}}</p>
                                     </div>
                                 </div> <!-- overview description -->
                             </div>
@@ -486,9 +480,9 @@
                 </div> <!-- courses single left -->
                 <div class="col-lg-12 mt-4 text-center">
                     <div class="price-button pt-10 mb-4">
-                        <span style="font-size: 18px; color: #24486e; font-family: 'Montserrat', sans-serif; font-weight: 700;">Price : <b style="color: #ffc600;">$25</b></span><br>
+                        <span style="font-size: 18px; color: #24486e; font-family: 'Montserrat', sans-serif; font-weight: 700;">Price : <b style="color: #ffc600;">{{course_detail.course_price}}</b></span><br>
                     </div>
-                    <a href="#" class="main-btn">Apply Now</a>
+                    <a href={{course_detail.apply_link}} class="main-btn">Apply now</a>
                 </div>
 
                 <!-- <div class="col-lg-4">
