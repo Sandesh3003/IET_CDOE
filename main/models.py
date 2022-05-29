@@ -1,4 +1,6 @@
+from distutils.command import upload
 from email.mime import image
+from email.policy import default
 from re import template
 from tkinter import CASCADE
 from django.db import models
@@ -12,6 +14,7 @@ class Slide(models.Model):
 
 class Index(models.Model):
     #home section
+    logo=models.ImageField(upload_to='images/index/',default='images/index/cdoe1.png')
     slides = models.ManyToManyField(Slide)
     welcome_header=models.CharField(max_length=200)
     slider_text=models.CharField(max_length=200)
@@ -45,7 +48,7 @@ class Faculty(models.Model):
     linked_in = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
-    
+    faculty_image=models.ImageField(upload_to='images/faculty/',default='images/faculty/team.png')
 
     def __str__(self) :
         return (self.name)
