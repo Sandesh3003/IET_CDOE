@@ -82,6 +82,10 @@ class course_details(models.Model):
     display_title=models.CharField(max_length=200)
     category=models.ForeignKey(course_categories,on_delete=models.CASCADE)
     display_image=models.ImageField(upload_to='images/course_image/display_images/')
+    course_price=models.CharField(max_length=200,default='Free')
+    apply_link=models.URLField(default='#')
+    course_summary=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    course_prerequisites=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     def __str__(self):
         return (self.course_name.course_name)
     
