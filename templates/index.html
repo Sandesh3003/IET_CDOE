@@ -2,84 +2,184 @@
 {% load static %}
 {% block main %}
 <!--====== MODAL PART START ======-->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color: #ffc600; color: #07294d;">
-          <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-bell fa-pad  faa-ring animated" aria-hidden="true"></i>&nbsp;Announcements</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"><i class="fa fa-times-circle" aria-hidden="true">
+
+<!-- Modal -->
+<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #ffc600; color: #07294d;">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-bell fa-pad  faa-ring animated"
+            aria-hidden="true"></i>&nbsp;Announcements</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fa fa-times-circle" aria-hidden="true">
             </i></span>
-          </button>
+        </button>
+      </div>
+      <div class="modal-body bg-light text-dark">
+        {% for announcement in announcements %}
+        <div class="card m-2 p-2 d-flex flex-row justify-content-start align-items-center">
+          {{announcement.title}} &nbsp;<a href="{{ announcement.link }}" class='modal-link'>Click Here to View </a>
+          &nbsp; {% if announcement.new is True %}<img src="{% static 'assets/images/new.gif' %}" alt="new_gif"
+            width="24rem" height="24em">{% endif %}
         </div>
-        <div class="modal-body bg-light text-dark">
-            {% for announcement in announcements %}
-          <div class="card m-2 p-2 d-flex flex-row justify-content-start align-items-center">
-            {{announcement.title}} &nbsp;<a href="{{ announcement.link }}">Click Here to View </a> &nbsp; {% if announcement.new is True %}<img src="{% static 'assets/images/new.gif' %}" alt="new_gif" width="24rem" height="24em">{% endif %}
-          </div>
-          {% endfor %}
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
+</div>
 
-      <!--====== MODAL PART END ======-->
-    <!--====== SLIDER PART START ======-->
+<!--====== MODAL PART END ======-->
+<!--====== SLIDER PART START ======-->
 
-    <section id="slider-part" class="slider-active" style="height: 85vh;">
-      {% for slide in index.slides.all %}
-      <div class="single-slider bg_cover pt-150" style="height:85vh; background-image: url({{slide.image.url}})" data-overlay="4">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-7 col-lg-9">
-                    <div class="slider-cont">
-                        <h1 class='text-white' data-animation="fadeInLeft" data-delay="1s">{{index.welcome_header}}</h1>
-                        <p data-animation="fadeInUp" data-delay="1.3s">{{index.slider_text}}</p>
-                    </div>
-                </div>
-            </div>
-            <!-- row -->
+<section id="slider-part" class="slider-active" style="height: 85vh;">
+  {% for slide in index.slides.all %}
+  <div class="single-slider bg_cover pt-150" style="height:85vh; background-image: url({{slide.image.url}})"
+    data-overlay="4">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-7 col-lg-9">
+          <div class="slider-cont">
+            <h1 class='text-white' data-animation="fadeInLeft" data-delay="1s">{{index.welcome_header}}</h1>
+            <p data-animation="fadeInUp" data-delay="1.3s">{{index.slider_text}}</p>
+          </div>
         </div>
-        <!-- container -->
+      </div>
+      <!-- row -->
     </div>
+    <!-- container -->
+  </div>
+  </div>
+  {% endfor %}
+</section>
+
+<!--====== SLIDER PART ENDS ======-->
+
+<!--====== ABOUT PART START ======-->
+
+<section id="about-part" class="pt-50">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="section-title">
+          <h5 style='font-size:2.5rem'>About <span style='color: #ffc600;'>CDOE</span> </h5>
         </div>
-      {% endfor %}
-    </section>
+        <!-- section title -->
+        <div class="about-cont">
+          <p>{{index.about_body}}</p>
+        </div>
+      </div>
+      <!-- about cont -->
+      <div class="col-lg-5 d-flex flex-column justify-content-center align-items-center">
+        <div class="about-event mt-30">
+          <div class="event-title">
+            <img src="{{index.header_image.url}}" alt="About">
+          </div>
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <div class="row">
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-danger">278</h3>
+                <p class="mb-0">New Projects</p>
+              </div>
+              <div class="align-self-center">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-success">156</h3>
+                <p class="mb-0">New Clients</p>
+              </div>
+              <div class="align-self-center">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-warning">64.89 %</h3>
+                <p class="mb-0">Conversion Rate</p>
+              </div>
+              <div class="align-self-center">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-info">423</h3>
+                <p class="mb-0">Support Tickets</p>
+              </div>
+              <div class="align-self-center">
+                <i class="fa fa-instagram"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!--====== ABOUT PART ENDS ======-->
 
-    <!--====== SLIDER PART ENDS ======-->
-
-    <!--====== ABOUT PART START ======-->
-
-    <section id="about-part" class="pt-50">
+<!-- <section id="about-part" class="" data-animation="fadeInUp" data-delay="1.3s">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
-                    <div class="section-title mt-50">
-                      <h5 style='font-size:2.5rem'>About <span style='color: #ffc600;'>CDOE</span> </h5>
-                    </div>
-                    <!-- section title -->
-                    <div class="about-cont">
-                        <p>{{index.about_body}}</p>
+                    <div class="section-title">
+                      <h5 style='font-size:2.5rem'>Our <span style='color: #ffc600;'>Faculty</span> </h5>
                     </div>
                 </div>
-                <!-- about cont -->
-                <div class="col-lg-5 d-flex flex-column justify-content-center align-items-center">
-                    <div class="about-event mt-30">
-                        <div class="event-title">
-                            <img src="{{index.header_image.url}}" alt="About">
-                        </div>
+                <div class="faculty-slider row pt-4">
+                    <div class="col-3">
+                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
+                    </div>
+                    <div class="col-3">
+                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
+                    </div>
+                    <div class="col-3">
+                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
+                    </div>
+                    <div class="col-3">
+                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
+                    </div>
+                    <div class="col-3">
+                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
+                    </div>
+                    <div class="col-3">
+                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
+                    </div>
+                    <div class="col-3">
+                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
+                    </div>
+                    <div class="col-3">
+                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
+                    </div>
                 </div>
             </div>
-            <!-- row -->
         </div>
-        <!-- about bg img -->
-        {% comment %} <div class="about-bg">
-        <img src="images/about/bg-1.png" alt="About">
-        </div> {% endcomment %}
-    </section>
-
-    <!--====== ABOUT PART ENDS ======-->
+    </section> -->
 
 {% endblock %}

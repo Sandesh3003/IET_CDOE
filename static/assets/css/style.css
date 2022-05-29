@@ -187,7 +187,9 @@ p {
 
 /*===== All Section Title Style =====*/
 
-.section-title {}
+.section-title {
+    color:#07294d
+}
 
 .section-title h5 {
     color: #07294d;
@@ -2490,6 +2492,11 @@ p {
 
 .footer-address ul li .cont p {
     color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.footer-address ul li .cont p:hover {
+    color: #ffc600;
 }
 
 .footer-copyright {

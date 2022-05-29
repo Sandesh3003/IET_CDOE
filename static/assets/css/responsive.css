@@ -855,7 +855,7 @@
         left: 80%;
     }
     .logo {
-        text-align: center;
+        /* text-align: center; */
     }
     .header-contact ul li {
         display: block;

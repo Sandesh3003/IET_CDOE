@@ -76,7 +76,8 @@ def programs(request,pk):
 def notices(request):
     notice=Notice.objects.all()
     index=Index.objects.filter()[:1].get()
-    return render(request, 'notices.html', {'notices': notice, 'index': index})
+    programs=Programs.objects.all()
+    return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs})
 
 def course(request,pk,ic):
     index=Index.objects.filter()[:1].get()
@@ -104,6 +105,7 @@ def mail(request):
 
 def contact(request):
     index=Index.objects.filter()[:1].get()
+    programs=Programs.objects.all()
 
     if request.method == 'POST':
         name = request.POST['name']
@@ -120,4 +122,4 @@ def contact(request):
         return HttpResponseRedirect('contact')
 
     else:
-        return render(request, 'contact.html', {'index': Index.objects.filter()[:1].get()})
+        return render(request, 'contact.html', {'index': Index.objects.filter()[:1].get(), 'programs':programs})
