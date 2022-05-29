@@ -1,18 +1,18 @@
-  {% extends 'index_main.html' %}
-  {% load static %}
+{% extends 'index_main.html' %}
+{% load static %}
 
-  {% block head %}
-    <link rel="stylesheet" href="{% static 'assets/css/faculty_style.css' %}">
-  {% endblock %}
-  
-  {% block main %}
-  <section class="team-section">
-      <div class="containerfac">
-          <div class="row">
-              <div class="section-title">
-                  <h1 class="section-title">&nbspFaculty&nbsp&nbsp</h1>
-                </div>
-            </div>
+{% block head %}
+  <link rel="stylesheet" href="{% static 'assets/css/faculty_style.css' %}">
+{% endblock %}
+
+{% block main %}
+<section class="team-section">
+    <div class="containerfac">
+        <div class="row">
+            <div class="section-title">
+                <h1>&nbspFaculty&nbsp&nbsp</h1>
+              </div>
+          </div>
             <div class="row">
                 {%  for faculty in faculty %}
                 <div class="card">
@@ -23,7 +23,7 @@
                     <p>{{faculty.post}}</p> 
                     <div class="socials">
                         {% if faculty.linked_in %}
-                    <button class="buttonli"><span id="outside"><a href="{{faculty.linked_in}}"><span class="fa fa-linkedin"></span></a></span></button>
+                        <div  ><a href="{{index.insta_link}}"><i id="linkedin" style="color: white" class="fa fa-linkedin"></i></a></div>
                     {% endif %}
                 </div> 
             </div>
