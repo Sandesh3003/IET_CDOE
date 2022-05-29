@@ -5332,3 +5332,28 @@ a.loginhere-link:hover {
 .active-nav-link{
     color:#ffc600;
 }
+
+.nav-link:after{
+    content: '';
+    background-color: #ffc600;
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0;
+    height: 4px;
+    transition: .3s all;
+}
+.active-nav-link:after{
+    content: '';
+    background-color: #ffc600;
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 100%;
+    height: 4px;
+    transition: .3s all;
+}
+
+.nav-link:hover:after{
+    width: 100%;
+}
