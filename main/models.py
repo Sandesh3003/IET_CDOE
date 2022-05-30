@@ -1,6 +1,7 @@
 from distutils.command import upload
 from email.mime import image
 from email.policy import default
+from random import choices
 from re import template
 from tkinter import CASCADE
 from django.db import models
@@ -8,6 +9,7 @@ from django.conf import settings
 from django.core.mail import EmailMultiAlternatives, send_mail
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator 
 
 class Slide(models.Model):
     image = models.ImageField(upload_to='images/slides/')
@@ -108,7 +110,18 @@ class Notice(models.Model):
     def __str__(self) :
         return (self.subject)
 
+class Review(models.Model):
+    
+    review_id=models.AutoField(primary_key='True')
+    reviewer_name=models.CharField(max_length=200,default="anonymus")
+    reviewer_image=models.ImageField(upload_to="images/review/",default='images/review/team.png')
+    date=models.DateField(auto_now_add='True')
+    rating=models.IntegerField(choices=[(0,0),(1,1),(2,2),(3,3),(4,4),(5,5)],validators=[MinValueValidator(1), MaxValueValidator(5)])
+    review=models.TextField(max_length=200)
 
+    def __str__(self):
+        return (self.reviewer_name)
+    
 
 class ComingSoonMailList(models.Model):
 
