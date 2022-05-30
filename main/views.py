@@ -94,14 +94,15 @@ def course(request,pk,ic):
         else:
             val[rating[rate]['rating']]=0
     maxi=0
-    maxi=max(val.values())
-    # for rate in range(len(val.values())):
-    #     if(maxi<val.values()[rate]):
-    #         maxi=val.values()[rate]
+    if(len(rating)!=0):
+        maxi=max(val.values())
+        num_of_reviews=len(rating)
+    else:
+        num_of_reviews="NO"
     over_rate=range(maxi)
     negative=range(5-maxi)
     course_det=course_details.objects.filter(course_name__course_name=ic).filter(course_name__program_name=pk).get()
-    context={'index':index,'programs':programs,'course_detail':course_det,'overall_rating':over_rate,'negative':negative,'num_of_reviews':len(reviews),'reviews':reviews}
+    context={'index':index,'programs':programs,'course_detail':course_det,'overall_rating':over_rate,'negative':negative,'num_of_reviews':num_of_reviews,'reviews':reviews}
     
     if request.method == 'POST':
         first_name = request.POST['first_name']
