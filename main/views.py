@@ -9,6 +9,8 @@ from django.template.loader import render_to_string
 from .models import *
 import random
 from main import forms
+import numpy as np
+
 
 
 # Create your views here.
@@ -82,9 +84,24 @@ def notices(request):
 def course(request,pk,ic):
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
+    rating=Review.objects.filter(course_name__program_name=pk).filter(course_name__course_name=ic).values('rating').all()
+    reviews=Review.objects.filter(course_name__program_name=pk).filter(course_name__course_name=ic).all()
     
+    val=dict()
+    for rate in range(len(rating)):
+        if rating[rate]['rating'] in val.keys():
+            val[rating[rate]['rating']]=val[rating[rate]['rating']]+1
+        else:
+            val[rating[rate]['rating']]=0
+    maxi=0
+    maxi=max(val.values())
+    # for rate in range(len(val.values())):
+    #     if(maxi<val.values()[rate]):
+    #         maxi=val.values()[rate]
+    over_rate=range(maxi)
+    negative=range(5-maxi)
     course_det=course_details.objects.filter(course_name__course_name=ic).filter(course_name__program_name=pk).get()
-    context={'index':index,'programs':programs,'course_detail':course_det}
+    context={'index':index,'programs':programs,'course_detail':course_det,'overall_rating':over_rate,'negative':negative,'num_of_reviews':len(reviews),'reviews':reviews}
     
     return render(request, 'course.html', context)
 

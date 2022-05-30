@@ -113,6 +113,7 @@ class Notice(models.Model):
 class Review(models.Model):
     
     review_id=models.AutoField(primary_key='True')
+    course_name=models.ForeignKey(course_head,on_delete=models.CASCADE,default='Introduction To Data Science')
     reviewer_name=models.CharField(max_length=200,default="anonymus")
     reviewer_image=models.ImageField(upload_to="images/review/",default='images/review/team.png')
     date=models.DateField(auto_now_add='True')
