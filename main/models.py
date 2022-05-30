@@ -7,6 +7,7 @@ from tkinter import CASCADE
 from django.db import models
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives, send_mail
+from django.forms import CharField, EmailField, IntegerField
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator 
@@ -29,7 +30,10 @@ class Index(models.Model):
     address=models.TextField()
     map_link=models.URLField(max_length=200)
     contact_num=models.CharField(max_length=12)
-    email_id=models.EmailField() 
+    email_id=models.EmailField()
+
+    def __str__(self):
+        return(self.about_head) 
 
 # class Program(models.Model):
 #     program_id=models.CharField(max_length=200)
@@ -78,6 +82,7 @@ class course_categories(models.Model):
     category_name=models.CharField(primary_key='True',max_length=200)
     def __str__(self):
         return (self.category_name)
+
 class course_details(models.Model):
     course_name=models.ForeignKey(course_head,on_delete=models.CASCADE)
     faculty=models.ForeignKey(Faculty,on_delete=models.CASCADE)
@@ -149,3 +154,15 @@ class Newsletter(models.Model):
             mail.content_subtype = 'html'
             mail.send()
 
+class Student(models.Model):
+    enrollment_id=models.AutoField(primary_key='True')
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    mobile_number = models.CharField(max_length=100, help_text = "Enter 10 digit Mobile number")
+    emailid = models.EmailField(max_length=200)
+    qualification = models.CharField(max_length=200)
+    course_enrolling_for = models.CharField(max_length=200)
+    enroll_on = models.DateField(auto_now_add='True')
+
+    def __str__(self):
+        return self.first_name + ' ' +self.last_name

@@ -103,6 +103,15 @@ def course(request,pk,ic):
     course_det=course_details.objects.filter(course_name__course_name=ic).filter(course_name__program_name=pk).get()
     context={'index':index,'programs':programs,'course_detail':course_det,'overall_rating':over_rate,'negative':negative,'num_of_reviews':len(reviews),'reviews':reviews}
     
+    if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        mobile_number = request.POST['mobile_number']
+        emailid = request.POST['emailid']
+        qualification = request.POST['qualification']
+        sub = Student(first_name=first_name, last_name=last_name, mobile_number=mobile_number, emailid=emailid, qualification=qualification, course_enrolling_for = ic)
+        sub.save()
+        
     return render(request, 'course.html', context)
 
 def temp(request):
