@@ -66,12 +66,14 @@
                                 <div class="review">
                                     <span>Review</span>
                                     <ul>
+                                        {% for rate in overall_rating %}
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="rating">(20 Reviws)</li>
+                                        {% endfor %}
+                                        {% for rate in negative %}
+                                        <li><a href="#"><i class="fa-light fa-star"></i></a></li>
+                                        {% endfor %}
+                                        
+                                        <li class="rating">({{num_of_reviews}} Reviews)</li>
                                     </ul>
                                 </div>
                             </li>
@@ -340,90 +342,36 @@
                                         <h6>Student Reviews</h6>
                                     </div>
                                     <ul>
+                                        {% for review in reviews %}
                                         <li>
                                             <div class="single-reviews">
                                                 <div class="reviews-author">
                                                     <div class="author-thum">
-                                                        <img src="images/review/r-1.jpg" alt="Reviews">
+                                                        <img src="{{review.reviewer_image.url}}" alt="Reviews">
                                                     </div>
                                                     <div class="author-name">
-                                                        <h6>Bobby Aktar</h6>
-                                                        <span>April 03, 2019</span>
+                                                        <h6>{{review.reviewer_name}}</h6>
+                                                        <span>{{review.date}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="reviews-description pt-20">
-                                                    <p>There are many variations of passages of Lorem Ipsum available,
-                                                        but the majority have suffered alteration in some form, by
-                                                        injected humour, or randomised words which.</p>
+                                                    <p>{{review.review}}</p>
                                                     <div class="rating">
                                                         <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
+                                                            {% for rate in overall_rating %}
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            {% endfor %}
+                                                            {% for rate in negative %}
+                                                            <li><a href="#"><i class="fa-light fa-star"></i></a></li>
+                                                            {% endfor %}
                                                         </ul>
-                                                        <span>/ 5 Star</span>
+                                                        <span>/ {{review.rating}} Star</span>
                                                     </div>
                                                 </div>
                                             </div> <!-- single reviews -->
                                         </li>
-                                        <li>
-                                            <div class="single-reviews">
-                                                <div class="reviews-author">
-                                                    <div class="author-thum">
-                                                        <img src="images/review/r-2.jpg" alt="Reviews">
-                                                    </div>
-                                                    <div class="author-name">
-                                                        <h6>Humayun Ahmed</h6>
-                                                        <span>April 13, 2019</span>
-                                                    </div>
-                                                </div>
-                                                <div class="reviews-description pt-20">
-                                                    <p>There are many variations of passages of Lorem Ipsum available,
-                                                        but the majority have suffered alteration in some form, by
-                                                        injected humour, or randomised words which.</p>
-                                                    <div class="rating">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                        <span>/ 5 Star</span>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- single reviews -->
-                                        </li>
-                                        <li>
-                                            <div class="single-reviews">
-                                                <div class="reviews-author">
-                                                    <div class="author-thum">
-                                                        <img src="images/review/r-3.jpg" alt="Reviews">
-                                                    </div>
-                                                    <div class="author-name">
-                                                        <h6>Tania Aktar</h6>
-                                                        <span>April 20, 2019</span>
-                                                    </div>
-                                                </div>
-                                                <div class="reviews-description pt-20">
-                                                    <p>There are many variations of passages of Lorem Ipsum available,
-                                                        but the majority have suffered alteration in some form, by
-                                                        injected humour, or randomised words which.</p>
-                                                    <div class="rating">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                        <span>/ 5 Star</span>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- single reviews -->
-                                        </li>
+                                        {% endfor %}
+                                        
                                     </ul>
                                     <div class="title pt-15">
                                         <h6>Leave A Comment</h6>
