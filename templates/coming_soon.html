@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{%static 'assets/css/comingsoon.css'%}" />
 <style>
   .comingsoon {
-    background-image:url("{% static 'assets/images/back-01.png' %}")
+    background-image:url("{% static 'assets/images/abstract_bg.jpg' %}")
   }
 </style>
 {% endblock %}
@@ -22,7 +22,7 @@
       </form>
     </div>
   </div>
-  <img src="{%static 'assets/images/rocket-01.png'%}" class="rocket">
+  {% comment %} <img src="{%static 'assets/images/rocket-01.png'%}" class="rocket"> {% endcomment %}
 </div>
 <script>
   const msg = 'Please provide a valid email address';
