@@ -43,7 +43,7 @@
                     <div class="title">
                         <h3>{{course_detail.display_title}}</h3>
                     </div> <!-- title -->
-                    <div class="course-terms">
+                    <!-- <div class="course-terms">
                         <ul class="d-md-flex justify-content-around">
                             <li>
                                 <div class="teacher-name">
@@ -81,13 +81,13 @@
                                 <div class="apply">
                                     <a href="#" class="main-btn">Enroll Now</a>
                                 </div>
-                            </li> -->
+                            </li> 
                         </ul>
-                    </div> <!-- course terms -->
+                    </div> course terms -->
 
-                    <div class="courses-single-image pt-50">
+                    <!-- <div class="courses-single-image pt-50">
                         <img src="{{course_detail.display_image.url}}" alt="Courses">
-                    </div> <!-- courses single image -->
+                    </div> courses single image -->
 
                     <div class="courses-tab mt-30">
                         <ul class="nav nav-justified" id="myTab" role="tablist">
@@ -100,8 +100,16 @@
                                     aria-controls="curriculam" aria-selected="false">Curriculam</a>
                             </li>
                             <li class="nav-item">
+                                <a id="eligibility-tab" data-toggle="tab" href="#eligibility" role="tab"
+                                    aria-controls="eligibility" aria-selected="false">Eligibility</a>
+                            </li>
+                            <li class="nav-item">
                                 <a id="instructor-tab" data-toggle="tab" href="#instructor" role="tab"
                                     aria-controls="instructor" aria-selected="false">Instructor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="fee-tab" data-toggle="tab" href="#fee" role="tab"
+                                    aria-controls="fee" aria-selected="false">Fee Structure</a>
                             </li>
                             <li class="nav-item">
                                 <a id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"
@@ -341,7 +349,7 @@
                                         <li>
                                             <div class="single-reviews">
                                                 <div class="reviews-author">
-                                                    <div class="author-thum">
+                                                    <div class="author-thum img-fluid">
                                                         <img src="{{review.reviewer_image.url}}" alt="Reviews">
                                                     </div>
                                                     <div class="author-name">
