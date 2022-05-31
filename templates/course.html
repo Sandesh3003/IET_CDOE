@@ -70,7 +70,7 @@
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         {% endfor %}
                                         {% for rate in negative %}
-                                        <li><a href="#"><i class="fa-light fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa-light fa-star" ></i></a></li>
                                         {% endfor %}
                                         
                                         <li class="rating">({{num_of_reviews}} Reviews)</li>
@@ -311,13 +311,13 @@
                                 <div class="instructor-cont">
                                     <div class="instructor-author">
                                         <div class="author-thum">
-                                            <img src="images/instructor/i-1.jpg" alt="Instructor">
+                                            <img src="{{course_detail.faculty.faculty_image.url}}" alt="Instructor">
                                         </div>
                                         <div class="author-name">
                                             <a href="#">
-                                                <h5>Sumon Hasan</h5>
+                                                <h5>{{course_detail.faculty.name}}</h5>
                                             </a>
-                                            <span>Senior WordPress Developer</span>
+                                            <span>{{course_detail.faculty.post}}</span>
                                             <ul class="social">
                                                 <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -327,12 +327,7 @@
                                         </div>
                                     </div>
                                     <div class="instructor-description pt-25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga
-                                            ratione molestiae unde provident quibusdam sunt, doloremque. Error omnis
-                                            mollitia, ex dolor sequi. Et, quibusdam excepturi. Animi assumenda,
-                                            consequuntur dolorum odio sit inventore aliquid, optio fugiat alias.
-                                            Veritatis minima, dicta quam repudiandae repellat non sit, distinctio,
-                                            impedit, expedita tempora numquam?</p>
+                                        <p>{{course_detail.faculty.about_faculty}}</p>
                                     </div>
                                 </div> <!-- instructor cont -->
                             </div>
@@ -362,7 +357,7 @@
                                                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                             {% endfor %}
                                                             {% for rate in negative %}
-                                                            <li><a href="#"><i class="fa-light fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa-light fa-star" aria-hidden="true"></i></a></li>
                                                             {% endfor %}
                                                         </ul>
                                                         <span>/ {{review.rating}} Star</span>
@@ -376,51 +371,47 @@
                                     <div class="title pt-15">
                                         <h6>Leave A Comment</h6>
                                     </div>
-                                    <div class="reviews-form">
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-single">
-                                                        <input type="text" placeholder="Fast name">
-                                                    </div>
+                                    <form method="POST" id="ReviewForm" name="ReviewForm" class="ReviewForm">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label font-weight-bold" for="Name">Name</label>
+                                                    <input type="text" class="form-control form-control-lg" name="name" id="name"
+                                                        placeholder="Name" maxlength="200" required>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-single">
-                                                        <input type="text" placeholder="Last Name">
-                                                    </div>
+                                            </div>
+                                            </div>
+                                            <div class="row">    
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label font-weight-bold" for="rating">rating</label>
+                                                    <input type="number" class="form-control form-control-lg" name="rating" id="rating"
+                                                        placeholder="rating on scale of 5" maxlength="200" required>
                                                 </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-single">
-                                                        <div class="rate-wrapper">
-                                                            <div class="rate-label">Your Rating:</div>
-                                                            <div class="rate">
-                                                                <div class="rate-item"><i class="fa fa-star"
-                                                                        aria-hidden="true"></i></div>
-                                                                <div class="rate-item"><i class="fa fa-star"
-                                                                        aria-hidden="true"></i></div>
-                                                                <div class="rate-item"><i class="fa fa-star"
-                                                                        aria-hidden="true"></i></div>
-                                                                <div class="rate-item"><i class="fa fa-star"
-                                                                        aria-hidden="true"></i></div>
-                                                                <div class="rate-item"><i class="fa fa-star"
-                                                                        aria-hidden="true"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            </div>
+                                            </div>
+                                            <div class="row"></div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label font-weight-bold" for="review">review</label>
+                                                    <input type="text" class="form-control form-control-lg" name="review" id="review"
+                                                        placeholder="pls enter your review" maxlength="500" required>
                                                 </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-single">
-                                                        <textarea placeholder="Comment"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-single">
-                                                        <button type="button" class="main-btn">Post Comment</button>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- row -->
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <input type="submit" value="submit review" class="btn main-btn">
+                                                  <div class="submitting"></div>
+                                              </div>
+                                          </div>
+                                        </div>
                                         </form>
-                                    </div>
+                                    
                                 </div> <!-- reviews cont -->
                             </div>
                         </div> <!-- tab content -->

@@ -9,7 +9,6 @@ from django.template.loader import render_to_string
 from .models import *
 import random
 from main import forms
-import numpy as np
 
 
 
@@ -82,6 +81,23 @@ def notices(request):
     return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs})
 
 def course(request,pk,ic):
+    if request.method == 'POST':
+        if 'first_name' in request.POST:
+            first_name = request.POST.get('first_name')
+            last_name = request.POST.get('last_name')
+            mobile_number = request.POST.get('mobile_number')
+            emailid = request.POST.get('emailid')
+            qualification = request.POST.get('qualification')
+            sub = Student(first_name=first_name, last_name=last_name, mobile_number=mobile_number, emailid=emailid, qualification=qualification, course_enrolling_for = ic)
+            sub.save()
+        else:
+            name = request.POST.get('name')
+            rates = request.POST.get('rating')
+            rev = request.POST.get('review')
+            c_nm=course_head.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
+            
+            sub = Review.objects.create(reviewer_name=name, rating=rates, review=rev, course_name = c_nm)
+            sub.save()
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
     rating=Review.objects.filter(course_name__program_name=pk).filter(course_name__course_name=ic).values('rating').all()
@@ -92,10 +108,16 @@ def course(request,pk,ic):
         if rating[rate]['rating'] in val.keys():
             val[rating[rate]['rating']]=val[rating[rate]['rating']]+1
         else:
-            val[rating[rate]['rating']]=0
+            val[rating[rate]['rating']]=1
     maxi=0
     if(len(rating)!=0):
-        maxi=max(val.values())
+        maxi=0
+        fcount=0
+        for x in val.keys():
+             if(val[x]>fcount):
+                 fcount=val[x]
+                 maxi=x
+
         num_of_reviews=len(rating)
     else:
         num_of_reviews="NO"
@@ -104,15 +126,8 @@ def course(request,pk,ic):
     course_det=course_details.objects.filter(course_name__course_name=ic).filter(course_name__program_name=pk).get()
     context={'index':index,'programs':programs,'course_detail':course_det,'overall_rating':over_rate,'negative':negative,'num_of_reviews':num_of_reviews,'reviews':reviews}
     
-    if request.method == 'POST':
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        mobile_number = request.POST['mobile_number']
-        emailid = request.POST['emailid']
-        qualification = request.POST['qualification']
-        sub = Student(first_name=first_name, last_name=last_name, mobile_number=mobile_number, emailid=emailid, qualification=qualification, course_enrolling_for = ic)
-        sub.save()
-        
+    
+    
     return render(request, 'course.html', context)
 
 def temp(request):
