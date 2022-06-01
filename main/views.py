@@ -88,7 +88,8 @@ def course(request,pk,ic):
             mobile_number = request.POST.get('mobile_number')
             emailid = request.POST.get('emailid')
             qualification = request.POST.get('qualification')
-            sub = Student(first_name=first_name, last_name=last_name, mobile_number=mobile_number, emailid=emailid, qualification=qualification, course_enrolling_for = ic)
+            c_nm=course_head.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
+            sub = Student(first_name=first_name, last_name=last_name, mobile_number=mobile_number, emailid=emailid, qualification=qualification, course_enrolling_for = c_nm)
             sub.save()
         else:
             name = request.POST.get('name')
