@@ -3,6 +3,10 @@ from django.contrib import admin
 # Register your models here.
 from .models import *
 
+
+admin.site.site_header = "CDOE - DAVV Admin Panel"
+admin.site.site_title = "CDOE - DAVV Admin Panel"
+
 admin.site.register(Programs)
 admin.site.register(course_details)
 admin.site.register(course_categories)
