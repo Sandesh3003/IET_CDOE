@@ -97,23 +97,15 @@
                             </li>
                             <li class="nav-item">
                                 <a id="curriculam-tab" data-toggle="tab" href="#curriculam" role="tab"
-                                    aria-controls="curriculam" aria-selected="false">Curriculam</a>
+                                    aria-controls="curriculam" aria-selected="false">Syllabus</a>
                             </li>
                             <li class="nav-item">
                                 <a id="eligibility-tab" data-toggle="tab" href="#eligibility" role="tab"
                                     aria-controls="eligibility" aria-selected="false">Eligibility</a>
                             </li>
                             <li class="nav-item">
-                                <a id="instructor-tab" data-toggle="tab" href="#instructor" role="tab"
-                                    aria-controls="instructor" aria-selected="false">Instructor</a>
-                            </li>
-                            <li class="nav-item">
                                 <a id="fee-tab" data-toggle="tab" href="#fee" role="tab"
                                     aria-controls="fee" aria-selected="false">Fee Structure</a>
-                            </li>
-                            <li class="nav-item">
-                                <a id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"
-                                    aria-selected="false">Reviews</a>
                             </li>
                         </ul>
 
@@ -126,7 +118,7 @@
                                         <p>{{course_detail.course_summary}}</p>
                                     </div>
                                     <div class="single-description pt-40">
-                                        <h6>Pre-Riquisites</h6>
+                                        <h6>Pre-Requisites</h6>
                                         <p>{{course_detail.course_prerequisites}}</p>
                                     </div>
                                 </div> <!-- overview description -->
@@ -315,146 +307,18 @@
                                     </div>
                                 </div> <!-- curriculam cont -->
                             </div>
-                            <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
-                                <div class="instructor-cont">
-                                    <div class="instructor-author">
-                                        <div class="author-thum">
-                                            <img src="{{course_detail.faculty.faculty_image.url}}" alt="Instructor">
-                                        </div>
-                                        <div class="author-name">
-                                            <a href="#">
-                                                <h5>{{course_detail.faculty.name}}</h5>
-                                            </a>
-                                            <span>{{course_detail.faculty.post}}</span>
-                                            <ul class="social">
-                                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="instructor-description pt-25">
-                                        <p>{{course_detail.faculty.about_faculty}}</p>
-                                    </div>
-                                </div> <!-- instructor cont -->
-                            </div>
-                            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                                <div class="reviews-cont">
-                                    <div class="title">
-                                        <h6>Student Reviews</h6>
-                                    </div>
-                                    <ul>
-                                        {% for review in reviews %}
-                                        <li>
-                                            <div class="single-reviews">
-                                                <div class="reviews-author">
-                                                    <div class="author-thum img-fluid">
-                                                        <img src="{{review.reviewer_image.url}}" alt="Reviews">
-                                                    </div>
-                                                    <div class="author-name">
-                                                        <h6>{{review.reviewer_name}}</h6>
-                                                        <span>{{review.date}}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="reviews-description pt-20">
-                                                    <p>{{review.review}}</p>
-                                                    <div class="rating">
-                                                        <ul>
-                                                            {% for rate in overall_rating %}
-                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                            {% endfor %}
-                                                            {% for rate in negative %}
-                                                            <li><a href="#"><i class="fa-light fa-star" aria-hidden="true"></i></a></li>
-                                                            {% endfor %}
-                                                        </ul>
-                                                        <span>/ {{review.rating}} Star</span>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- single reviews -->
-                                        </li>
-                                        {% endfor %}
-                                        
-                                    </ul>
-                                    <div class="title pt-15">
-                                        <h6>Leave A Comment</h6>
-                                    </div>
-                                    <form method="POST" id="ReviewForm" name="ReviewForm" class="ReviewForm">
-                                        {% csrf_token %}
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="label font-weight-bold" for="Name">Name</label>
-                                                    <input type="text" class="form-control form-control-lg" name="name" id="name"
-                                                        placeholder="Name" maxlength="200" required>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <div class="row">    
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="label font-weight-bold" for="rating">rating</label>
-                                                    <input type="number" class="form-control form-control-lg" name="rating" id="rating"
-                                                        placeholder="rating on scale of 5" maxlength="200" required>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <div class="row"></div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="label font-weight-bold" for="review">review</label>
-                                                    <input type="text" class="form-control form-control-lg" name="review" id="review"
-                                                        placeholder="pls enter your review" maxlength="500" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                    
-                                        <div class="row">
-                                          <div class="col-md-6">
-                                              <div class="form-group">
-                                                  <input type="submit" value="submit review" class="btn main-btn">
-                                                  <div class="submitting"></div>
-                                              </div>
-                                          </div>
-                                        </div>
-                                        </form>
-                                    
-                                </div> <!-- reviews cont -->
-                            </div>
+                            
                         </div> <!-- tab content -->
                     </div>
                 </div> <!-- courses single left -->
-                <!div class="col-lg-12 mt-4 text-center">
+                <div class="col-lg-12 mt-4 text-center">
                     <div class="price-button pt-10 mb-4">
-                        <span style="font-size: 18px; color: #24486e; font-family: 'Montserrat', sans-serif; font-weight: 700;">Price : <b style="color: #ffc600;">{{course_detail.course_price}}</b></span><br>
                         <button type="button" class="btn main-btn" data-toggle="modal" data-target="#applyModal">
                             Appy Now
                           </button>
                 </div>
                 </div>
                 
-                
-                <!-- <div class="col-lg-4">
-                <div class="row">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="course-features mt-30">
-                            <h4>Course Features </h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>Duaration : <span>10 Hours</span></li>
-                                <li><i class="fa fa-clone"></i>Leactures : <span>09</span></li>
-                                <li><i class="fa fa-beer"></i>Quizzes : <span>05</span></li>
-                                <li><i class="fa fa-user-o"></i>Students : <span>100</span></li>
-                            </ul>
-                            <div class="price-button pt-10">
-                                <span>Price : <b>$25</b></span>
-                                <a href="#" class="main-btn">Enroll Now</a>
-                            </div>
-                        </div> course features 
-                    </div>
-                    
-                </div>
-            </div> -->
         </div> <!-- row -->
     </div> <!-- container -->
 </section>
