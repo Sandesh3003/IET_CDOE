@@ -163,8 +163,13 @@ button {
 
 @media only screen and (max-width: 468px){
 .content h1{
-  font-size:45px;
+  font-size:36px;
 }
+
+.content h2 {
+    font-size: 25px!important;
+    margin-top: 20px!important;
+	}
 }
 
 @media only screen and (max-width: 1024px){
@@ -188,4 +193,9 @@ button {
 form button[type="submit"]:hover {
     background-color: #ffc600;
     color: #07294d;
+}
+
+@media only screen and (max-width: 321px) {
+	
+	
 }
