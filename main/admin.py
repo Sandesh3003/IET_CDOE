@@ -3,6 +3,10 @@ from django.contrib import admin
 # Register your models here.
 from .models import *
 
+
+admin.site.site_header = "CDOE - DAVV Admin Panel"
+admin.site.site_title = "CDOE - DAVV Admin Panel"
+
 admin.site.register(Programs)
 admin.site.register(course_details)
 admin.site.register(course_categories)
@@ -15,6 +19,7 @@ admin.site.register(Faculty)
 admin.site.register(Index)
 admin.site.register(ComingSoonMailList)
 admin.site.register(Slide)
+admin.site.register(Student)
 
 def send_newsletter(modeladmin, request, queryset):
     for newsletter in queryset:

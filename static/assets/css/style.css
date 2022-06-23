@@ -2569,9 +2569,13 @@ p {
     display: none;
 }
 
-.back-to-top:hover, .footer_copyright {
+.footer_copyright {
     color: #fff;
     background-color: #021d3a;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
 }
 
 .footer_copyright a{
@@ -3420,16 +3424,16 @@ p {
 
 .courses-tab .nav .nav-item a {
     font-size: 16px;
-    color: #24486e;
+    color: #edf0f2;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     padding: 20px 0;
     display: block;
-    background-color: #edf0f2;
+    background-color:#24486e;
 }
 
 .courses-tab .nav .nav-item a.active {
-    background-color: #fff;
+    background-color: #ffc600;
 }
 
 .overview-description {
@@ -3565,6 +3569,8 @@ p {
 .instructor-cont .instructor-author .author-thum {
     float: left;
     margin-right: 30px;
+    width: 10px;
+    height: 10px;
 }
 
 .instructor-cont .instructor-author .author-name {
@@ -4458,7 +4464,7 @@ p {
 }
 
 .blog-comment .comment .comment-author .author-thum img {
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
 .blog-comment .comment .comment-author .comment-name {
@@ -5404,3 +5410,7 @@ a.loginhere-link:hover {
 .nav-link:hover:after{
     width: 100%;
 }}
+
+.fa-angle-up{
+    color: #07294d;
+}

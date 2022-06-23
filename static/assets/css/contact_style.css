@@ -2074,7 +2074,6 @@
     pointer-events: none; }
   
   .btn-primary {
-    color: #fff;
     background-color: #007bff;
     border-color: #007bff; }
     .btn-primary:hover {
@@ -8219,7 +8218,10 @@
   .contact-wrap {
     background:#07294d;
     border-radius: 15px;
-    
+   }
+
+   .contact-wrap h3 {
+     color: #fafafa;
    }
   
   .dbox {
@@ -8286,16 +8288,18 @@
     .btn.btn-primary {
       background: #ffc600!important;
       border-color: #ffc600 !important;
-      color: #fff; }
+      color: #07294d;
+      }
       .btn.btn-primary:hover, .btn.btn-primary:focus {
         border-color: #ffc600 !important;
         background: #ffc600 !important; }
   
   .contactForm .label {
-    color: #f8f9fa;
+    color: #fafafa;
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: 600; }
+    font-weight: 600;
+    }
   
   .contactForm .form-control {
     border: none; }
