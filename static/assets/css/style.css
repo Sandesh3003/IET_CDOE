@@ -1595,6 +1595,48 @@ p {
     bottom: -30px;
     left: 85px;
 }
+.mission p{
+    padding-top: 30px;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #021d3a;
+    padding-left: 50px;
+     
+}
+.vision p{
+    padding-top: 30px;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color:#021d3a;
+    padding-left: 30px;
+    
+}
+
+#container {
+    max-width: 500px;
+  
+    /* Center the container in middle on horizontal axis */
+    margin: 0 auto;
+  
+    /* Add empty space above the container (20% of the view height) */
+    margin-top: 20vh;
+  }
+  .card {
+    /* Change background color */
+    background-color:white;
+  
+    /* Add border */
+    border: 1px solid #bacdd8;
+  
+    /* Add space between the border and the content */
+    padding: 8px;
+  
+    border-radius: 12px;
+  }
 
 /*=====================================================
     6. APPLY css 
