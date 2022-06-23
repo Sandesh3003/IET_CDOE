@@ -161,7 +161,7 @@ class Student(models.Model):
     mobile_number = models.CharField(max_length=100, help_text = "Enter 10 digit Mobile number")
     emailid = models.EmailField(max_length=200)
     qualification = models.CharField(max_length=200)
-    course_enrolling_for = models.CharField(max_length=200)
+    course_enrolling_for = models.ForeignKey(course_head ,on_delete=models.CASCADE)
     enroll_on = models.DateField(auto_now_add='True')
 
     def __str__(self):
