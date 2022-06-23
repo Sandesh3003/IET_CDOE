@@ -55,12 +55,6 @@ class Faculty(models.Model):
     facebook = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
     faculty_image=models.ImageField(upload_to='images/faculty/',default='images/faculty/team.png')
-    about_faculty=models.TextField(max_length=300, default='''Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga
-                                            ratione molestiae unde provident quibusdam sunt, doloremque. Error omnis
-                                            mollitia, ex dolor sequi. Et, quibusdam excepturi. Animi assumenda,
-                                            consequuntur dolorum odio sit inventore aliquid, optio fugiat alias.
-                                            Veritatis minima, dicta quam repudiandae repellat non sit, distinctio,
-                                            impedit, expedita tempora numquam?''')
 
     def __str__(self) :
         return (self.name)

@@ -24,7 +24,7 @@ def index(request):
     index=Index.objects.filter()[:1].get()
     announcement=Announcement.objects.all()
     programs=Programs.objects.all()
-    context={'announcements': announcement,'index':index,'programs':programs}
+    context={'announcements': announcement,'index':index,'programs':programs, 'faculty': Faculty.objects.all(),}
     return render(request, 'index.html',context)
 
 def comingsoon(request):

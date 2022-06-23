@@ -19,7 +19,8 @@
       <div class="modal-body bg-light text-dark">
         {% for announcement in announcements %}
         <div class="card m-2 p-2 d-flex flex-row justify-content-start align-items-center">
-          {{announcement.title}} &nbsp;<a href="{{ announcement.link }}" class='modal-link' target='_blank'>Click Here to View </a>
+          {{announcement.title}} &nbsp;<a href="{{ announcement.link }}" class='modal-link' target='_blank'>Click Here
+            to View </a>
           &nbsp; {% if announcement.new is True %}<img src="{% static 'assets/images/new.gif' %}" alt="new_gif"
             width="24rem" height="24em">{% endif %}
         </div>
@@ -79,6 +80,52 @@
       </div>
       <!-- row -->
     </div>
+
+    <div class="row mt-30 d-flex flex-direction-row justify-content-center align-items-center">
+      <div class="col-12 col-md-6 m-4 m-md-0">
+        <div class="card">
+          <div class="mission">
+
+            <h5 style='font-size:2.5rem; text-align: center;'> Mission <svg xmlns="http://www.w3.org/2000/svg"
+                width="50" height="50" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
+                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+                <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+              </svg> </h5>
+            <p>
+              Lorem ipsum dolor sit amet. Sed fugiat natus et soluta natus sed earum illo et ratione saepe. Est tenetur
+              doloremque aut voluptatum porro et pariatur iusto nam quidem dolor hic velit ipsum.
+
+              Et labore numquam ut voluptatibus commodi ut debitis consequatur et architecto quo maiores illo ut illo
+              fugiat. Est eius accusamus sed nisi odit aut quis velit qui deleniti provident 33 voluptatum velit eos
+              modi illum. Aut quos atque in dignissimos pariatur 33 fugit excepturi ut omnis consectetur est omnis omnis
+              nam tenetur laborum sed temporibus quod.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 m-4 m-md-0">
+        <div class="card">
+          <div class="vision">
+
+            <h5 style='font-size:2.5rem; text-align: center;'> Vision <svg xmlns="http://www.w3.org/2000/svg" width="60"
+                height="60" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+              </svg> </h5>
+            <p>
+              Lorem ipsum dolor sit amet. Sed fugiat natus et soluta natus sed earum illo et ratione saepe. Est tenetur
+              doloremque aut voluptatum porro et pariatur iusto nam quidem dolor hic velit ipsum.
+
+              Et labore numquam ut voluptatibus commodi ut debitis consequatur et architecto quo maiores illo ut illo
+              fugiat. Est eius accusamus sed nisi odit aut quis velit qui deleniti provident 33 voluptatum velit eos
+              modi illum. Aut quos atque in dignissimos pariatur 33 fugit excepturi ut omnis consectetur est omnis omnis
+              nam tenetur laborum sed temporibus quod.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
     <div class="row mt-30">
       <div class="col-xl-3 col-sm-6 col-12 mb-4">
         <div class="card">
@@ -89,7 +136,11 @@
                 <p class="mb-0">Online Courses</p>
               </div>
               <div class="align-self-center">
-                <i class="fa fa-laptop" style="font-size:3rem"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                  viewBox="0 0 640 512">
+                  <path
+                    d="M128 96h384v256h64v-272c0-26.38-21.62-48-48-48h-416c-26.38 0-48 21.62-48 48V352h64V96zM624 383.1h-608c-8.75 0-16 7.25-16 16v16c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16C640 391.2 632.8 383.1 624 383.1z" />
+                </svg>
               </div>
             </div>
           </div>
@@ -104,7 +155,11 @@
                 <p class="mb-0">DL Courses</p>
               </div>
               <div class="align-self-center">
-                <i class="fa fa-laptop" style="font-size:3rem"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                  viewBox="0 0 512 512">
+                  <path
+                    d="M0 219.2v212.5c0 14.25 11.62 26.25 26.5 27C75.32 461.2 180.2 471.3 240 511.9V245.2C181.4 205.5 79.99 194.8 29.84 192C13.59 191.1 0 203.6 0 219.2zM482.2 192c-50.09 2.848-151.3 13.47-209.1 53.09C272.1 245.2 272 245.3 272 245.5v266.5c60.04-40.39 164.7-50.76 213.5-53.28C500.4 457.9 512 445.9 512 431.7V219.2C512 203.6 498.4 191.1 482.2 192zM352 96c0-53-43-96-96-96S160 43 160 96s43 96 96 96S352 149 352 96z" />
+                </svg>
               </div>
             </div>
           </div>
@@ -119,7 +174,11 @@
                 <p class="mb-0">Faculties</p>
               </div>
               <div class="align-self-center">
-                <i class="fa fa-laptop" style="font-size:3rem"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                  viewBox="0 0 640 512">
+                  <path
+                    d="M144 48C144 21.49 165.5 0 192 0C218.5 0 240 21.49 240 48C240 74.51 218.5 96 192 96C165.5 96 144 74.51 144 48zM152 512C134.3 512 120 497.7 120 480V256.9L91.43 304.5C82.33 319.6 62.67 324.5 47.52 315.4C32.37 306.3 27.47 286.7 36.58 271.5L94.85 174.6C112.2 145.7 143.4 128 177.1 128H320V48C320 21.49 341.5 .0003 368 .0003H592C618.5 .0003 640 21.49 640 48V272C640 298.5 618.5 320 592 320H368C341.5 320 320 298.5 320 272V224H384V256H576V64H384V128H400C417.7 128 432 142.3 432 160C432 177.7 417.7 192 400 192H264V480C264 497.7 249.7 512 232 512C214.3 512 200 497.7 200 480V352H184V480C184 497.7 169.7 512 152 512L152 512z" />
+                </svg>
               </div>
             </div>
           </div>
@@ -134,86 +193,78 @@
                 <p class="mb-0">Enrolled Students</p>
               </div>
               <div class="align-self-center">
-                <i class="fa fa-laptop" style="font-size:3rem"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                  viewBox="0 0 640 512">
+                  <path
+                    d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z" />
+                </svg>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-          <div class="d-flex flex-direction-row justify-content-center align-items-center">
-            <div id="container">
-              <div class="card">
-            <div class="mission">
+  </div>
 
-              <h5 style='font-size:2.5rem; text-align: center;'> Mission &nbsp &nbsp <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
-                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
-                <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-              </svg> </h5>
-              <p>
-                Lorem ipsum dolor sit amet. Sed fugiat natus et soluta natus sed earum illo et ratione saepe. Est tenetur doloremque aut voluptatum porro et pariatur iusto nam quidem dolor hic velit ipsum.
 
-                Et labore numquam ut voluptatibus commodi ut debitis consequatur et architecto quo maiores illo ut illo fugiat. Est eius accusamus sed nisi odit aut quis velit qui deleniti provident 33 voluptatum velit eos modi illum. Aut quos atque in dignissimos pariatur 33 fugit excepturi ut omnis consectetur est omnis omnis nam tenetur laborum sed temporibus quod.</p> </div> 
-            </div>
-            </div>
-              <div class="vision"> 
-                <div id="container">
-                  <div class="card">
-             <h5 style='font-size:2.5rem ; text-align: center;'>Vision  &nbsp &nbsp  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-            </svg> </h5>
-             
-              <p>Lorem ipsum dolor sit amet. Sed fugiat natus et soluta natus sed earum illo et ratione saepe. Est tenetur doloremque aut voluptatum porro et pariatur iusto nam quidem dolor hic velit ipsum.
+</section>
 
-                Et labore numquam ut voluptatibus commodi ut debitis consequatur et architecto quo maiores illo ut illo fugiat. Est eius accusamus sed nisi odit aut quis velit qui deleniti provident 33 voluptatum velit eos modi illum. Aut quos atque in dignissimos pariatur 33 fugit excepturi ut omnis consectetur est omnis omnis nam tenetur laborum sed temporibus quod.</p>
-          </div>
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h5 style='font-size:2.5rem'>Useful <span style='color: #ffc600;'>Links</span> </h5>
+    </div>
+    <div class=" mt-30 container">
+      <div class="row">
+        <div class="col" style="margin: 0;">
+          <div class="brands_slider_container">
+            <div class="owl-carousel owl-theme brands_slider">
+              <div class="owl-item">
+                <div class="brands_item d-flex flex-column justify-content-center">
+                  <a href="https://www.mponline.gov.in/portal/" target="_blank"><img
+                    src="https://dsc.mponline.gov.in/Images/logoMPO.png" alt=""></a></div>
               </div>
+              <div class="owl-item">
+                <div class="brands_item d-flex flex-column justify-content-center">
+                  <a href="http://www.mphighereducation.nic.in/" target="_blank"><img
+                    src="http://www.mphighereducation.nic.in/Portal/img/HED_Banner1.JPG" alt=""></a></div>
               </div>
-          </div>
-          
-        </section>
-    
-<!--====== ABOUT PART ENDS ======-->
-
-<!-- <section id="about-part" class="" data-animation="fadeInUp" data-delay="1.3s">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="section-title">
-                      <h5 style='font-size:2.5rem'>Our <span style='color: #ffc600;'>Faculty</span> </h5>
-                    </div>
-                </div>
-                <div class="faculty-slider row pt-4">
-                    <div class="col-3">
-                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
-                    </div>
-                    <div class="col-3">
-                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
-                    </div>
-                    <div class="col-3">
-                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
-                    </div>
-                    <div class="col-3">
-                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
-                    </div>
-                    <div class="col-3">
-                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
-                    </div>
-                    <div class="col-3">
-                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
-                    </div>
-                    <div class="col-3">
-                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
-                    </div>
-                    <div class="col-3">
-                      <div class="faculy-img card"><img width="500px" src="{% static 'assets/images/team.png' %}" alt=""></div>
-                    </div>
-                </div>
+              <div class="owl-item">
+                <div class="brands_item d-flex flex-column justify-content-center">
+                  <a href="https://swayam.gov.in/" target="_blank"><img
+                    src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/swayam_logo.png" alt=""></a></div>
+              </div>
+              <div class="owl-item">
+                <div class="brands_item d-flex flex-column justify-content-center">
+                  <a href="https://epgp.inflibnet.ac.in/Home" target="_blank"><img
+                    src="https://epgp.inflibnet.ac.in/images/logo.png" alt=""></a></div>
+              </div>
+              <div class="owl-item">
+                <div class="brands_item d-flex flex-column justify-content-center">
+                  <a href="https://www.aicte-india.org/" target="_blank"><img
+                    src="https://www.aicte-india.org/sites/default/files/logo_new.png" alt=""></a></div>
+              </div>
+              <div class="owl-item">
+                <div class="brands_item d-flex flex-column justify-content-center">
+                  <a href="https://www.ugc.ac.in/" target="_blank"><img
+                    src="https://www.ugc.ac.in/img/ugc_logo.png" alt=""></a></div>
+              </div>
+              <div class="owl-item">
+                <div class="brands_item d-flex flex-column justify-content-center">
+                  <a href="http://peb.mp.gov.in/" target="_blank"><img
+                    src="http://peb.mp.gov.in/new_look_images/new_logo.jpg" alt=""></a></div>
+              </div>
             </div>
+          </div>
         </div>
-    </section> -->
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+</section>
+
+<!--====== ABOUT PART ENDS ======-->
 
 {% endblock %}
