@@ -91,14 +91,15 @@ def course(request,pk,ic):
             c_nm=course_head.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
             sub = Student(first_name=first_name, last_name=last_name, mobile_number=mobile_number, emailid=emailid, qualification=qualification, course_enrolling_for = c_nm)
             sub.save()
-        else:
-            name = request.POST.get('name')
-            rates = request.POST.get('rating')
-            rev = request.POST.get('review')
-            c_nm=course_head.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
+           
+        # else:
+        #     name = request.POST.get('name')
+        #     rates = request.POST.get('rating')
+        #     rev = request.POST.get('review')
+        #     c_nm=course_head.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
             
-            sub = Review.objects.create(reviewer_name=name, rating=rates, review=rev, course_name = c_nm)
-            sub.save()
+        #     sub = Review.objects.create(reviewer_name=name, rating=rates, review=rev, course_name = c_nm)
+        #     sub.save()
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
     rating=Review.objects.filter(course_name__program_name=pk).filter(course_name__course_name=ic).values('rating').all()

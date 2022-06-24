@@ -14,6 +14,12 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Slide(models.Model):
     image = models.ImageField(upload_to='images/slides/')
+class useful_links(models.Model):
+    name=models.CharField(max_length=200,null=True)
+    display_image=models.ImageField(upload_to='images/useful_links/')
+    goto_link=models.URLField(blank=True)
+    def __str__(self):
+        return(self.name)
 
 class Index(models.Model):
     #home section
@@ -24,6 +30,15 @@ class Index(models.Model):
     about_head=models.CharField(max_length=200)
     about_body=models.TextField(null=False,blank=False)
     header_image=models.ImageField(null=True ,upload_to='images/index/')
+    mission_head=models.CharField(max_length=200,default="Mission");
+    mission_text=models.CharField(max_length=500,default=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ")
+    vission_head=models.CharField(max_length=200,default='Vision');
+    vission_text=models.CharField(max_length=500,default=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ")
+    num_of_online_courses=models.IntegerField(validators=[MinValueValidator(0)],default=0)
+    num_of_dl_courses=models.IntegerField(validators=[MinValueValidator(0)],default=0)
+    num_of_faculties=models.IntegerField(validators=[MinValueValidator(0)],default=0)
+    num_of_students=models.IntegerField(validators=[MinValueValidator(0)],default=0)
+    useful_link=models.ManyToManyField(useful_links,null=True)
     fb_link=models.URLField()
     twitter_link=models.URLField()
     insta_link=models.URLField()
@@ -31,6 +46,7 @@ class Index(models.Model):
     map_link=models.URLField(max_length=200)
     contact_num=models.CharField(max_length=12)
     email_id=models.EmailField()
+
 
     def __str__(self):
         return(self.about_head) 
@@ -47,6 +63,9 @@ class Index(models.Model):
 #     Course_objective=models.TextField(null=True,blank=True)
 #     fees=models.CharField(max_length=200)
 #     apply_now=models.CharField(max_length=200)
+
+
+
 class Faculty(models.Model):
 
     name = models.CharField(max_length=100, blank=False)
@@ -93,6 +112,7 @@ class course_details(models.Model):
     apply_link=models.URLField(default='#')
     course_summary=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     course_prerequisites=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    course_eligibility=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     def __str__(self):
         return (self.course_name.course_name)
     
@@ -161,7 +181,7 @@ class Student(models.Model):
     mobile_number = models.CharField(max_length=100, help_text = "Enter 10 digit Mobile number")
     emailid = models.EmailField(max_length=200)
     qualification = models.CharField(max_length=200)
-    course_enrolling_for = models.ForeignKey(course_head ,on_delete=models.CASCADE)
+    course_enrolling_for = models.ForeignKey(course_details,on_delete=models.CASCADE)
     enroll_on = models.DateField(auto_now_add='True')
 
     def __str__(self):

@@ -86,7 +86,7 @@
         <div class="card">
           <div class="mission">
 
-            <h5 style='font-size:2.5rem; text-align: center;'> Mission <svg xmlns="http://www.w3.org/2000/svg"
+            <h5 style='font-size:2.5rem; text-align: center;'> {{index.mission_head}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg"
                 width="50" height="50" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                 <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
@@ -94,13 +94,7 @@
                 <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
               </svg> </h5>
             <p>
-              Lorem ipsum dolor sit amet. Sed fugiat natus et soluta natus sed earum illo et ratione saepe. Est tenetur
-              doloremque aut voluptatum porro et pariatur iusto nam quidem dolor hic velit ipsum.
-
-              Et labore numquam ut voluptatibus commodi ut debitis consequatur et architecto quo maiores illo ut illo
-              fugiat. Est eius accusamus sed nisi odit aut quis velit qui deleniti provident 33 voluptatum velit eos
-              modi illum. Aut quos atque in dignissimos pariatur 33 fugit excepturi ut omnis consectetur est omnis omnis
-              nam tenetur laborum sed temporibus quod.</p>
+              {{index.mission_text}}</p>
           </div>
         </div>
       </div>
@@ -108,19 +102,13 @@
         <div class="card">
           <div class="vision">
 
-            <h5 style='font-size:2.5rem; text-align: center;'> Vision <svg xmlns="http://www.w3.org/2000/svg" width="60"
+            <h5 style='font-size:2.5rem; text-align: center;'> {{index.vission_head}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="60"
                 height="60" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
               </svg> </h5>
             <p>
-              Lorem ipsum dolor sit amet. Sed fugiat natus et soluta natus sed earum illo et ratione saepe. Est tenetur
-              doloremque aut voluptatum porro et pariatur iusto nam quidem dolor hic velit ipsum.
-
-              Et labore numquam ut voluptatibus commodi ut debitis consequatur et architecto quo maiores illo ut illo
-              fugiat. Est eius accusamus sed nisi odit aut quis velit qui deleniti provident 33 voluptatum velit eos
-              modi illum. Aut quos atque in dignissimos pariatur 33 fugit excepturi ut omnis consectetur est omnis omnis
-              nam tenetur laborum sed temporibus quod.</p>
+              {{index.vission_text}}</p>
           </div>
         </div>
       </div>
@@ -132,7 +120,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between px-md-1">
               <div>
-                <h3 class="text-danger">278</h3>
+                <h3 class="text-danger">{{index.num_of_online_courses}}</h3>
                 <p class="mb-0">Online Courses</p>
               </div>
               <div class="align-self-center">
@@ -151,7 +139,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between px-md-1">
               <div>
-                <h3 class="text-success">156</h3>
+                <h3 class="text-success">{{index.num_of_dl_courses}}</h3>
                 <p class="mb-0">DL Courses</p>
               </div>
               <div class="align-self-center">
@@ -170,7 +158,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between px-md-1">
               <div>
-                <h3 class="text-warning">64</h3>
+                <h3 class="text-warning">{{index.num_of_faculties}}</h3>
                 <p class="mb-0">Faculties</p>
               </div>
               <div class="align-self-center">
@@ -189,7 +177,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between px-md-1">
               <div>
-                <h3 class="text-info">1223</h3>
+                <h3 class="text-info ">{{index.num_of_students}}</h3>
                 <p class="mb-0">Enrolled Students</p>
               </div>
               <div class="align-self-center">
@@ -219,12 +207,14 @@
         <div class="col" style="margin: 0;">
           <div class="brands_slider_container">
             <div class="owl-carousel owl-theme brands_slider">
+              {% for useful in index.useful_link.all %}
               <div class="owl-item">
                 <div class="brands_item d-flex flex-column justify-content-center">
-                  <a href="https://www.mponline.gov.in/portal/" target="_blank"><img
-                    src="https://dsc.mponline.gov.in/Images/logoMPO.png" alt=""></a></div>
+                  <a href="{{useful.goto_link}}" target="_blank"><img
+                    src="{{useful.display_image.url}}" alt=""></a></div>
               </div>
-              <div class="owl-item">
+              {% endfor %}
+              <!-- <div class="owl-item">
                 <div class="brands_item d-flex flex-column justify-content-center">
                   <a href="http://www.mphighereducation.nic.in/" target="_blank"><img
                     src="http://www.mphighereducation.nic.in/Portal/img/HED_Banner1.JPG" alt=""></a></div>
@@ -253,7 +243,7 @@
                 <div class="brands_item d-flex flex-column justify-content-center">
                   <a href="http://peb.mp.gov.in/" target="_blank"><img
                     src="http://peb.mp.gov.in/new_look_images/new_logo.jpg" alt=""></a></div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
