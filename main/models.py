@@ -2,7 +2,7 @@ from distutils.command import upload
 from email.mime import image
 from email.policy import default
 from random import choices
-from re import template
+from re import T, template
 from tkinter import CASCADE
 from django.db import models
 from django.conf import settings
@@ -113,6 +113,9 @@ class course_details(models.Model):
     course_summary=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     course_prerequisites=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     course_eligibility=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    course_syllabus=models.FileField(upload_to="pdf/syllabus/",null=True ,default='pdf/syllabus.pdf')
+    course_fee_structure=models.FileField(upload_to="pdf/fee/",null=True ,default='pdf/fee structure.pdf')
+
     def __str__(self):
         return (self.course_name.course_name)
     
