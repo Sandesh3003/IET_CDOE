@@ -20,12 +20,12 @@ from main import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
     path('admin-webcd0e/', admin.site.urls),
     path('', views.index, name='index'),
     path('contact', views.contact, name="contact"),
     path('faculty', views.faculty, name="faculty"),
+    path('teams_s', views.team, name="team"),
     path('programs/<str:pk>', views.programs, name="programs"),
     path('programs/<str:pk>/<str:ic>', views.course, name="course"),
     path('notices', views.notices, name="notices"),

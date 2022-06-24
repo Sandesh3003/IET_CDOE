@@ -24,7 +24,7 @@ def index(request):
     index=Index.objects.filter()[:1].get()
     announcement=Announcement.objects.all()
     programs=Programs.objects.all()
-    context={'announcements': announcement,'index':index,'programs':programs, 'faculty': Faculty.objects.all(),}
+    context={'announcements': announcement,'index':index,'programs':programs}
     return render(request, 'index.html',context)
 
 def comingsoon(request):
@@ -62,7 +62,7 @@ def programs(request,pk):
     programs=Programs.objects.all()
     context={'index':index,'programs':programs}
     subheads=course_type.objects.all()
-    courses=course_head.objects.filter(program_name=pk).all()
+    courses=course_details.objects.filter(program_name=pk).all()
     
     subhead_active = subheads[0]
     subheads = subheads[1:]
@@ -107,34 +107,31 @@ def course(request,pk,ic):
         #     sub.save()
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
-    rating=Review.objects.filter(course_name__program_name=pk).filter(course_name__course_name=ic).values('rating').all()
-    reviews=Review.objects.filter(course_name__program_name=pk).filter(course_name__course_name=ic).all()
+    # rating=Review.objects.filter(program_name__program_name=pk).filter(course_name=ic).values('rating').all()
+    # reviews=Review.objects.filter(program_name__program_name=pk).filter(course_name=ic).all()
     
-    val=dict()
-    for rate in range(len(rating)):
-        if rating[rate]['rating'] in val.keys():
-            val[rating[rate]['rating']]=val[rating[rate]['rating']]+1
-        else:
-            val[rating[rate]['rating']]=1
-    maxi=0
-    if(len(rating)!=0):
-        maxi=0
-        fcount=0
-        for x in val.keys():
-             if(val[x]>fcount):
-                 fcount=val[x]
-                 maxi=x
+    # val=dict()
+    # for rate in range(len(rating)):
+    #     if rating[rate]['rating'] in val.keys():
+    #         val[rating[rate]['rating']]=val[rating[rate]['rating']]+1
+    #     else:
+    #         val[rating[rate]['rating']]=1
+    # maxi=0
+    # if(len(rating)!=0):
+    #     maxi=0
+    #     fcount=0
+    #     for x in val.keys():
+    #          if(val[x]>fcount):
+    #              fcount=val[x]
+    #              maxi=x
 
-        num_of_reviews=len(rating)
-    else:
-        num_of_reviews="NO"
-    over_rate=range(maxi)
-    negative=range(5-maxi)
-    course_det=course_details.objects.filter(course_name__course_name=ic).filter(course_name__program_name=pk).get()
-    context={'index':index,'programs':programs,'course_detail':course_det,'overall_rating':over_rate,'negative':negative,'num_of_reviews':num_of_reviews,'reviews':reviews}
-    
-    
-    
+    #     num_of_reviews=len(rating)
+    # else:
+    #     num_of_reviews="NO"
+    # over_rate=range(maxi)
+    # negative=range(5-maxi)
+    course_det=course_details.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
+    context={'index':index,'programs':programs,'course_detail':course_det}
     return render(request, 'course.html', context)
 
 def temp(request):

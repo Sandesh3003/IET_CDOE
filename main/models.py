@@ -38,7 +38,7 @@ class Index(models.Model):
     num_of_dl_courses=models.IntegerField(validators=[MinValueValidator(0)],default=0)
     num_of_faculties=models.IntegerField(validators=[MinValueValidator(0)],default=0)
     num_of_students=models.IntegerField(validators=[MinValueValidator(0)],default=0)
-    useful_link=models.ManyToManyField(useful_links,null=True)
+    useful_link=models.ManyToManyField(useful_links)
     fb_link=models.URLField()
     twitter_link=models.URLField()
     insta_link=models.URLField()
@@ -74,7 +74,6 @@ class Faculty(models.Model):
     facebook = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
     faculty_image=models.ImageField(upload_to='images/faculty/',default='images/faculty/team.png')
-
     def __str__(self) :
         return (self.name)
 
@@ -98,14 +97,14 @@ class course_type(models.Model):
     def __str__(self):
         return (self.course_type) 
 
-class course_head(models.Model):
-    course_id=models.CharField(max_length=100)  
-    program_name=models.ForeignKey(Programs,on_delete=models.CASCADE)
-    course_name=models.CharField(primary_key='True',max_length=200)
-    card_image=models.ImageField(upload_to='images/course_image/',null=True)
-    course_type=models.ForeignKey(course_type,on_delete=models.CASCADE)
-    def __str__(self):
-        return (self.course_name)
+# class course_head(models.Model):
+#     course_id=models.CharField(max_length=100)  
+#     program_name=models.ForeignKey(Programs,on_delete=models.CASCADE)
+#     course_name=models.CharField(primary_key='True',max_length=200)
+#     card_image=models.ImageField(upload_to='images/course_image/',null=True)
+#     course_type=models.ForeignKey(course_type,on_delete=models.CASCADE)
+#     def __str__(self):
+#         return (self.course_name)
 class course_categories(models.Model):
     category_id=models.CharField(max_length=100)
     category_name=models.CharField(primary_key='True',max_length=200)
@@ -113,11 +112,15 @@ class course_categories(models.Model):
         return (self.category_name)
 
 class course_details(models.Model):
-    course_name=models.ForeignKey(course_head,on_delete=models.CASCADE)
+    course_id=models.CharField(primary_key='True',max_length=100,default='001')
+    program_name=models.ForeignKey(Programs,on_delete=models.CASCADE,default='offline')
+    course_name=models.CharField(max_length=200,default=" enter course name")
+    card_image=models.ImageField(upload_to='images/course_image/',null=True)
+    course_type=models.ForeignKey(course_type,on_delete=models.CASCADE,default='undergrad')
     faculty=models.ForeignKey(Faculty,on_delete=models.CASCADE)
     display_title=models.CharField(max_length=200)
     category=models.ForeignKey(course_categories,on_delete=models.CASCADE)
-    display_image=models.ImageField(upload_to='images/course_image/display_images/')
+    # display_image=models.ImageField(upload_to='images/course_image/display_images/')
     course_price=models.CharField(max_length=200,default='Free')
     apply_link=models.URLField(default='#')
     course_summary=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
@@ -127,7 +130,7 @@ class course_details(models.Model):
     course_fee_structure=models.FileField(upload_to="pdf/fee/",null=True ,default='pdf/fee structure.pdf')
 
     def __str__(self):
-        return (self.course_name.course_name)
+        return (self.course_name)
     
 
 class Announcement(models.Model):
@@ -148,18 +151,18 @@ class Notice(models.Model):
     def __str__(self) :
         return (self.subject)
 
-class Review(models.Model):
+# class Review(models.Model):
     
-    review_id=models.AutoField(primary_key='True')
-    course_name=models.ForeignKey(course_head,on_delete=models.CASCADE,default='Introduction To Data Science')
-    reviewer_name=models.CharField(max_length=200,default="anonymus")
-    reviewer_image=models.ImageField(upload_to="images/review/",default='images/review/team.png')
-    date=models.DateField(auto_now_add='True')
-    rating=models.IntegerField(choices=[(0,0),(1,1),(2,2),(3,3),(4,4),(5,5)],validators=[MinValueValidator(1), MaxValueValidator(5)])
-    review=models.TextField(max_length=200)
+#     review_id=models.AutoField(primary_key='True')
+#     course_name=models.ForeignKey(course_head,on_delete=models.CASCADE,default='Introduction To Data Science')
+#     reviewer_name=models.CharField(max_length=200,default="anonymus")
+#     reviewer_image=models.ImageField(upload_to="images/review/",default='images/review/team.png')
+#     date=models.DateField(auto_now_add='True')
+#     rating=models.IntegerField(choices=[(0,0),(1,1),(2,2),(3,3),(4,4),(5,5)],validators=[MinValueValidator(1), MaxValueValidator(5)])
+#     review=models.TextField(max_length=200)
 
-    def __str__(self):
-        return (self.reviewer_name)
+#     def __str__(self):
+#         return (self.reviewer_name)
     
 
 class ComingSoonMailList(models.Model):
@@ -194,7 +197,7 @@ class Student(models.Model):
     mobile_number = models.CharField(max_length=100, help_text = "Enter 10 digit Mobile number")
     emailid = models.EmailField(max_length=200)
     qualification = models.CharField(max_length=200)
-    course_enrolling_for = models.ForeignKey(course_details,on_delete=models.CASCADE)
+    course_enrolling_for = models.ForeignKey(course_details,on_delete=models.CASCADE,default='oo')
     enroll_on = models.DateField(auto_now_add='True')
 
     def __str__(self):
