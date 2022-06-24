@@ -77,6 +77,16 @@ class Faculty(models.Model):
 
     def __str__(self) :
         return (self.name)
+
+class Team(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    post = models.CharField(max_length=100, blank=False)
+    linked_in = models.URLField(blank=True)
+    instagram = models.URLField(blank=True)
+    team_image=models.ImageField(upload_to='images/team/',default='images/team/team.png')
+    def __str__(self) :
+        return (self.name)
+
 class Programs(models.Model):
     program_id=models.CharField(max_length=100)
     program_name=models.CharField(primary_key='True',max_length=200)

@@ -13,10 +13,10 @@
 
     <!--====== Title ======-->
     <title>DAVV - CDOE</title>
-  
+
     {% block head %}
     {% endblock %}
-    
+
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" type="image/png">
 
@@ -46,16 +46,17 @@
 
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
-    
+
     <!-- Contact Us CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/contact_style.css' %}">
-    
+
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
     <!--====== Owl carousel css ======-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
 
 
 </head>
@@ -79,115 +80,117 @@
 
     <!--====== PRELOADER PART END ======-->
 
-    
+
 
     <!--====== NAV BAR ======-->
-        <div class="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand py-3" href="{% url 'index' %}">
-                                <img src="{{index.logo.url}}" alt="Logo">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand py-3" href="{% url 'index' %}">
+                            <img src="{{index.logo.url}}" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
 
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'index' %}">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'index' %}#about-part">About Us</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link">Programs</a>
-                                        <ul class="sub-menu">
-                                            {% for program in programs %}
-                                            <li><a class="" href="{% url 'programs' program.program_name %}">{{program.program_name}}</a></li>
-                                            {% endfor %}
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'faculty' %}">Faculty</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'notices' %}">Notices</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'contact'%}">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- <div class="right-icon text-right">
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'index' %}#about-part">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link">Programs</a>
+                                    <ul class="sub-menu">
+                                        {% for program in programs %}
+                                        <li><a class=""
+                                                href="{% url 'programs' program.program_name %}">{{program.program_name}}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'faculty' %}">Faculty</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'notices' %}">Notices</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact'%}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="right-icon text-right">
                                 <ul>
                                     <li><a href="javascript:void(0)" id="search"><i class="fa fa-search"></i></a></li>
                                     <li><a href="#"><i class="fa fa-shopping-bag"></i><span>0</span></a></li>
                                 </ul>
                             </div> -->
-                            <!-- right icon -->
-                        </nav>
-                        <!-- nav -->
-                    </div>
+                        <!-- right icon -->
+                    </nav>
+                    <!-- nav -->
                 </div>
-                <!-- row -->
             </div>
-            <!-- container -->
+            <!-- row -->
         </div>
+        <!-- container -->
+    </div>
     </header>
 
     <!--====== HEADER PART ENDS ======-->
 
-    
+
     {% block main %}
     {% endblock %}
-    
+
     <footer id="footer-part">
         <div class="footer-top pt-40 pb-70">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-md-4 col-12">
                         <div class="footer-about mt-40">
                             <div class="logo">
-                                <a href="{% url 'index' %}" style="color: #ffc600;"><h1>DAVV - CDOE</a>
+                                <a href="{% url 'index' %}">
+                                    <h1 style="color: #ffc600;">DAVV - CDOE</h1>
+                                </a>
                             </div>
                             <ul class="mt-20">
                                 <li><a href="{{index.insta_link}}"><i class="fa fa-facebook-f"></i></a></li>
                                 <li><a href="{{index.twitter_link}}"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="{{index.insta_link}}"><i class="fa fa-instagram"></i></a></li>
                             </ul>
-                            <!-- <div class="d-flex flex-row justify-content-start align-items-center mt-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: #fff" fill="currentColor" viewBox="0 0 512 512"><path d="M256-.0078C260.7-.0081 265.2 1.008 269.4 2.913L457.7 82.79C479.7 92.12 496.2 113.8 496 139.1C495.5 239.2 454.7 420.7 282.4 503.2C265.7 511.1 246.3 511.1 229.6 503.2C57.25 420.7 16.49 239.2 15.1 139.1C15.87 113.8 32.32 92.12 54.3 82.79L242.7 2.913C246.8 1.008 251.4-.0081 256-.0078V-.0078zM256 444.8C393.1 378 431.1 230.1 432 141.4L256 66.77L256 444.8z"/></svg>
-                                <p class="px-2" style="font-size: 1.5rem;">
-                                    SSL Secured
-                                </p>
-                            </div> -->
+                            <img class="pt-4" width="100" src="{% static 'assets/images/ssl_badge.png' %}" alt="">
                         </div>
                         <!-- footer about -->
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="col-md-2 col-12">
                         <div class="footer-link mt-40">
                             <div class="footer-title pb-25">
                                 <h6>Sitemap</h6>
                             </div>
                             <ul>
                                 <li><a href="{% url 'index' %}"><i class="fa fa-angle-right"></i>Home</a></li>
-                                <li><a href="{% url 'index' %}#about-part"><i class="fa fa-angle-right"></i>About us</a></li>
+                                <li><a href="{% url 'index' %}#about-part"><i class="fa fa-angle-right"></i>About us</a>
+                                </li>
                                 <!-- <li><a href="#"><i class="fa fa-angle-right"></i>Distance Learning Programs</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right"></i>Online Programs</a></li> -->
                                 <li><a href="{% url 'faculty' %}"><i class="fa fa-angle-right"></i>Faculty</a></li>
                                 <li><a href="{% url 'contact' %}"><i class="fa fa-angle-right"></i>Contact</a></li>
                             </ul>
-                           
+
                         </div>
                         <!-- footer link -->
                     </div>
-                    
-                    <div class="col-lg-3 col-md-6">
+
+                    <div class="col-md-3 col-12">
                         <div class="footer-address mt-40">
                             <div class="footer-title pb-25">
                                 <h6>Contact Us</h6>
@@ -198,7 +201,9 @@
                                         <i class="fa fa-home"></i>
                                     </div>
                                     <div class="cont">
-                                        <a href="{{index.map_link}}" target="_blank"><p>{{index.address}}</p></a>
+                                        <a href="{{index.map_link}}" target="_blank">
+                                            <p>{{index.address}}</p>
+                                        </a>
                                     </div>
                                 </li>
                                 <li>
@@ -206,7 +211,9 @@
                                         <i class="fa fa-phone"></i>
                                     </div>
                                     <div class="cont">
-                                        <a href="tel://{{index.contact_num}}" target="_blank"><p>{{index.contact_num}}</p></a>
+                                        <a href="tel://{{index.contact_num}}" target="_blank">
+                                            <p>{{index.contact_num}}</p>
+                                        </a>
                                     </div>
                                 </li>
                                 <li>
@@ -214,12 +221,22 @@
                                         <i class="fa fa-envelope-o"></i>
                                     </div>
                                     <div class="cont">
-                                        <a href="mailto://{{index.email_id}}" target="_blank"><p>{{index.email_id}}</p></a>
+                                        <a href="mailto://{{index.email_id}}" target="_blank">
+                                            <p>{{index.email_id}}</p>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <!-- footer address -->
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="footer-title pb-25 mt-40">
+                            <h6>Search</h6>
+                        </div>
+                        <script async src="https://cse.google.com/cse.js?cx=f01742feb11c38990">
+                        </script>
+                        <div class="gcse-search"></div>
                     </div>
                 </div>
                 <!-- row -->
@@ -227,12 +244,13 @@
             <!-- container -->
         </div>
         <!-- footer top -->
-        
+
         <div class="text-center p-3 footer_copyright">
             © 2022, Devi Ahilya Vishwavidyalaya, Indore (MP) India 452001 | Developed by
-            <a class="" href="https://suyash143.pythonanywhere.com" target="_blank"> EDC Acropolis </a>
-          </div>
-        
+            <a class="" href="https://suyash143.pythonanywhere.com" target="_blank"> EDC Acropolis </a> | Developement
+            <a class="" href="{% url 'team' %}"> Team </a>
+        </div>
+
         <!-- footer copyright -->
     </footer>
 
@@ -285,15 +303,15 @@
 
     <!--Navbar active link script-->
     <script>
-    document.querySelectorAll('.nav-link').forEach(link=>{
-    if(link.href === window.location.href)
-    {
-        link.style.color = '#ffc600';
-    }
-})
-</script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.style.color = '#ffc600';
+            }
+        })
+    </script>
 
     {% block script %}
     {% endblock %}
 </body>
+
 </html>

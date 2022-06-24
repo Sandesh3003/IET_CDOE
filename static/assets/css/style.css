@@ -5419,11 +5419,14 @@ a.loginhere-link:hover {
     margin-bottom: 40px;
     padding-bottom: 40px;
     background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .brands_slider {
     height: 100%;
-    margin-top: 30px
+    margin-top: 55px;
 }
 
 .brands_item {

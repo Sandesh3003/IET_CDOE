@@ -21,6 +21,7 @@ admin.site.register(ComingSoonMailList)
 admin.site.register(Slide)
 admin.site.register(Student)
 admin.site.register(useful_links)
+admin.site.register(Team)
 
 def send_newsletter(modeladmin, request, queryset):
     for newsletter in queryset:

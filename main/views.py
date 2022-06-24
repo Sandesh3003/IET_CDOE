@@ -51,6 +51,11 @@ def faculty(request):
     context={'faculty': Faculty.objects.all(),'index':index,'programs':programs}
     return render(request, 'faculty.html', context)
 
+def team(request):
+    index=Index.objects.filter()[:1].get()
+    programs=Programs.objects.all()
+    context={'team': Team.objects.all(),'index':index,'programs':programs}
+    return render(request, 'teams_s.html', context)
 
 def programs(request,pk):
     index=Index.objects.filter()[:1].get()
