@@ -61,20 +61,23 @@ def programs(request,pk):
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
     context={'index':index,'programs':programs}
-    subheads=course_type.objects.all()
+    subheads=course_details.objects.filter(program_name=pk).values('course_type').distinct().all()
+    su=list()
+    for i in range(len(subheads)):
+        x=subheads[i]['course_type']
+        su.append(course_type.objects.filter(course_type=x).get())
     courses=course_details.objects.filter(program_name=pk).all()
-    
-    subhead_active = subheads[0]
-    subheads = subheads[1:]
-
+    if(len(courses)==0):
+        return comingsoon(request)
+    subhead_active = su[0]
+    subheads = su[1:]
+    print(subheads)
     context={'index':index,'programs':programs,
             'courses':courses,'subheads':subheads, 
             'subhead_active': subhead_active,
             'program_name': pk}
-    if(len(courses)==0):
-        return comingsoon(request) 
-    else:
-        return render(request, 'courses.html', context)
+    return render(request, 'courses.html', context)
+    
     
          
 
