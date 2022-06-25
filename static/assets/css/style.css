@@ -723,6 +723,25 @@ p {
     background-color: #07294d  !important;
 }
 
+.navbar-header {
+    display: none !important;
+    height: 5vh;
+    background-color: #021d3a;
+    box-shadow: rgb(255 255 255 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+}
+
+@media (min-width:960px) {
+    .navbar-header {
+        display: flex !important;
+    }
+}
+
+.admin-btn{
+    background-color: #ffc600;
+    border-radius: 4px;
+    color: #021d3a !important;
+}
+
 .navigation.sticky {
     position: fixed;
     top: 0;

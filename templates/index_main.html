@@ -80,10 +80,47 @@
 
     <!--====== PRELOADER PART END ======-->
 
-
+    <div id="google_translate_element" style=" display:none"></div>
 
     <!--====== NAV BAR ======-->
-    <div class="navigation">
+    <div class="navbar-header d-flex align-items-center h-25 px-5 text-white" style="justify-content: space-between;">
+        <div class="top-left-link d-flex justify-content-center align-items-center">
+            <div class="clock d-flex align-items-center px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-clock-fill " viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                  </svg>&nbsp;&nbsp<iframe src="https://free.timeanddate.com/clock/i8dyba8m/n1532/tlin/fn17/fcfff/tct/pct/ahl/tt0/ta1"
+                    frameborder="0" width="245" height="19" allowtransparency="true"></iframe>
+            </div>
+                |
+                <a class="text-white px-3" href="javascript:toggleTranslate()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                    <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+                    <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+                  </svg>&nbsp;Translate</a>
+                |
+                <a class="text-white px-3" href="#about-part"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                  </svg>&nbsp;Skip to main content</a>
+                |
+                <a class="text-white px-3" href="#footer-part"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                    </svg>&nbsp;Skip to footer</a>
+        </div>
+        <div class="top-right-links d-flex align-items-center my-3">
+            <a class="text-white px-3" href="#footer-part"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg></a>
+            |
+            <a class="text-white admin-btn px-1 m-2" href="{% url 'index' %}admin-webcd0e"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                    <path fill-rule="evenodd"
+                        d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                </svg>&nbsp;Admin Login</a>
+        </div>
+    </div>
+    <div class="navigation" id="nav-bar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -102,7 +139,13 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                                    <a class="nav-link  d-flex flex-row align-items-center justify-content-center"
+                                        href="{% url 'index' %}" style="vertical-align: baseline;"><svg
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20"
+                                            height="20" viewBox="0 0 576 512">
+                                            <path
+                                                d="M511.8 287.6L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L416 100.7V64C416 46.33 430.3 32 448 32H480C497.7 32 512 46.33 512 64V185L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6L511.8 287.6z" />
+                                        </svg>&nbsp;&nbsp;Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'index' %}#about-part">About Us</a>
@@ -128,13 +171,14 @@
                                 </li>
                             </ul>
                         </div>
-                        
+
                     </nav>
                     <!-- nav -->
                 </div>
             </div>
             <!-- row -->
         </div>
+        <div class="container"></div>
         <!-- container -->
     </div>
     </header>
@@ -192,7 +236,7 @@
                             <ul>
                                 <li>
                                     <div class="icon">
-                                        <i class="fa fa-home"></i>
+                                        <i class="fa fa-map-marker"></i>
                                     </div>
                                     <div class="cont">
                                         <a href="{{index.map_link}}" target="_blank">
@@ -307,45 +351,72 @@
     <!-- Clock Script -->
 
     <script>
-        $(document).ready(function() {
-        setInterval( function() {
-        var hours = new Date().getHours();
-        $(".hours").html(( hours < 10 ? "0" : "" ) + hours);
-        }, 1000);
-        setInterval( function() {
-        var minutes = new Date().getMinutes();
-        $(".min").html(( minutes < 10 ? "0" : "" ) + minutes);
-        },1000);
-        setInterval( function() {
-        var seconds = new Date().getSeconds();
-        $(".sec").html(( seconds < 10 ? "0" : "" ) + seconds);
-        },1000);
+        $(document).ready(function () {
+            setInterval(function () {
+                var hours = new Date().getHours();
+                $(".hours").html((hours < 10 ? "0" : "") + hours);
+            }, 1000);
+            setInterval(function () {
+                var minutes = new Date().getMinutes();
+                $(".min").html((minutes < 10 ? "0" : "") + minutes);
+            }, 1000);
+            setInterval(function () {
+                var seconds = new Date().getSeconds();
+                $(".sec").html((seconds < 10 ? "0" : "") + seconds);
+            }, 1000);
         });
+    </script>
+
+    <style>
+        .gsc-control-cse {
+            padding: 0;
+        }
+
+        .gsc-input-box {
+            width: 16rem;
+            border-radius: .5rem;
+        }
+
+        .gsc-search-button {
+            padding: .8rem 1.5rem .8rem 1.5rem;
+            border-radius: .5rem;
+            margin-left: -1.5rem;
+        }
+
+        .gsc-search-button-v2:hover {
+            transform: scale(1.2);
+            transition: all .3s ease-in-out;
+        }
+
+        .gsc-search-button-v2 svg {
+            fill: #021d3a;
+        }
+    </style>
+
+    <!-- Google Translate Added to website -->
+    <script>
+
+        function googleTranslateElementInit() {
+        
+        new google.translate.TranslateElement({
+        
+        pageLanguage: 'en'
+        
+        }, 'google_translate_element');
+        
+        }
+        
+        </script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Toggle translate -->
+        <script>
+            function toggleTranslate(){
+                if(document.getElementById('google_translate_element').style.display == 'none')
+                    document.getElementById('google_translate_element').style.display = 'initial';
+                else
+                document.getElementById('google_translate_element').style.display = 'none';
+            }
         </script>
-
-        <style>
-            .gsc-control-cse{
-                padding: 0;
-            }
-            .gsc-input-box{
-                width: 16rem;
-                border-radius: .5rem;
-            }
-            .gsc-search-button{
-                padding: .8rem 1.5rem .8rem 1.5rem;
-                border-radius: .5rem;
-                margin-left: -1.5rem;
-            }
-            .gsc-search-button-v2:hover{
-                transform: scale(1.2);
-                transition: all .3s ease-in-out;
-            }
-
-            .gsc-search-button-v2 svg{
-                fill: #021d3a;
-            }
-
-        </style>
 
     {% block script %}
     {% endblock %}

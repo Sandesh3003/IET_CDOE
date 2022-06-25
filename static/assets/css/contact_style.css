@@ -170,7 +170,8 @@
   
   svg {
     overflow: hidden;
-    vertical-align: middle; }
+    vertical-align: middle;
+    }
   
   table {
     border-collapse: collapse; }
@@ -3632,7 +3633,8 @@
         display: -ms-flexbox !important;
         display: flex !important;
         -ms-flex-preferred-size: auto;
-        flex-basis: auto; }
+        flex-basis: auto;
+        }
       .navbar-expand-lg .navbar-toggler {
         display: none; } }
   
@@ -6509,7 +6511,8 @@
     width: auto !important; }
   
   .h-25 {
-    height: 25% !important; }
+    height: 5vh !important;
+    }
   
   .h-50 {
     height: 50% !important; }
