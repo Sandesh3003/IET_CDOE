@@ -7,9 +7,9 @@
 
 {% block main %}
     <section class="teams">
-        <div class="container">
+        <div class="containerteams">
             <div class="heading">
-                <h2><strong>OUR TEAM</strong></h2>
+                <h2>&nbspOur Team&nbsp&nbsp</strong></h2>
             </div>
             <div class="row">
                 {%  for team in team %}
@@ -24,10 +24,10 @@
                         </div>
                         <div class="social">
                             {% if team.linked_in %}
-                                <div  ><a href="{{team.linked_in}}"><i id="linkedin" style="color: white" class="fab fa-linkedin"></i></a></div>
+                                <div class="icon" ><a href="{{team.linked_in}}"><i id="linked_in" class="fa fa-linkedin"></i></a></div>
                             {% endif %}
                             {% if team.instagram %}
-                                <div  ><a href="{{team.instagram}}"><i id="instagram" style="color: white" class="fab fa-instagram"></i></a></div>
+                                <div class="icon" ><a href="{{team.instagram}}"><i id="instagram" class="fa fa-instagram"></i></a></div>
                             {% endif %}
                         </div>
                     </div>
@@ -36,3 +36,5 @@
             </div>
     </section>
 {% endblock %}
+
+
