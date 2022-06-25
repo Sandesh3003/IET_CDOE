@@ -23,7 +23,7 @@ class useful_links(models.Model):
 
 class Index(models.Model):
     #home section
-    announcements = models.BooleanField(default=False)
+    announcements_on_load = models.BooleanField(default=False)
     logo=models.ImageField(upload_to='images/index/',default='images/index/cdoe1.png')
     slides = models.ManyToManyField(Slide)
     welcome_header=models.CharField(max_length=200)

@@ -29,15 +29,6 @@ $(function() {
     });
 
 
-    //===== Search
-
-    $('#search').on('click', function() {
-        $(".search-box").fadeIn(600);
-    });
-    $('.closebtn').on('click', function() {
-        $(".search-box").fadeOut(600);
-    });
-
 
     //===== Sticky
 
@@ -111,44 +102,6 @@ $(function() {
             }]
         });
 
-        $('.faculty-slider').slick({
-            autoplay: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            autoplaySpeed: 2000,
-            pauseOnHover: false,
-            dots: false,
-            arrows: true,
-            responsive: [
-                {
-                  breakpoint: 1024,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                  }
-                },
-                {
-                  breakpoint: 600,
-                  settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                  }
-                },
-                {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-              ]
-        });
-
         function doAnimations(elements) {
             var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
             elements.each(function() {
@@ -197,12 +150,7 @@ $(function() {
 
 });
 
-// MODAL JS
-$(window).load(function(){        
-    $('#noticeModal').modal('show');
-     }); 
-
-// Owl carousel
+// Useful links carousel
 $(document).ready(function(){
 
     if($('.brands_slider').length)
@@ -217,7 +165,6 @@ $(document).ready(function(){
                  nav:false,
                  dots:false,
                  autoWidth:true,
-                 items:8,
                  margin:42
              });
  

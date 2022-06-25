@@ -29,8 +29,9 @@ def index(request):
 
 def comingsoon(request):
     index=Index.objects.filter()[:1].get()
+    announcement=Announcement.objects.all()
     programs=Programs.objects.all()
-    context={'form': forms.ComingsoonForm(),'index':index,'programs':programs}
+    context={'form': forms.ComingsoonForm(),'index':index,'programs':programs, 'announcements': announcement}
     if request.method == 'POST':
         emailid = request.POST['email']
         validate=ComingSoonMailList.objects.filter(email=emailid).all()
@@ -48,19 +49,22 @@ def comingsoon(request):
 def faculty(request):
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
-    context={'faculty': Faculty.objects.all(),'index':index,'programs':programs}
+    announcement=Announcement.objects.all()
+    context={'faculty': Faculty.objects.all(),'index':index,'programs':programs, 'announcements': announcement}
     return render(request, 'faculty.html', context)
 
 def team(request):
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
-    context={'team': Team.objects.all(),'index':index,'programs':programs}
+    announcement=Announcement.objects.all()
+    context={'team': Team.objects.all(),'index':index,'programs':programs, 'announcements': announcement}
     return render(request, 'teams_s.html', context)
 
 def programs(request,pk):
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
-    context={'index':index,'programs':programs}
+    announcement=Announcement.objects.all()
+    context={'index':index,'programs':programs, 'announcements': announcement}
     subheads=course_details.objects.filter(program_name=pk).values('course_type').distinct().all()
     su=list()
     for i in range(len(subheads)):
@@ -86,7 +90,8 @@ def notices(request):
     notice=Notice.objects.all()
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
-    return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs})
+    announcement=Announcement.objects.all()
+    return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs, 'announcements': announcement})
 
 def course(request,pk,ic):
     if request.method == 'POST':
@@ -110,6 +115,7 @@ def course(request,pk,ic):
         #     sub.save()
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
+    announcement=Announcement.objects.all()
     # rating=Review.objects.filter(program_name__program_name=pk).filter(course_name=ic).values('rating').all()
     # reviews=Review.objects.filter(program_name__program_name=pk).filter(course_name=ic).all()
     
@@ -134,15 +140,16 @@ def course(request,pk,ic):
     # over_rate=range(maxi)
     # negative=range(5-maxi)
     course_det=course_details.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
-    context={'index':index,'programs':programs,'course_detail':course_det}
+    context={'index':index,'programs':programs,'course_detail':course_det, 'announcements': announcement}
     return render(request, 'course.html', context)
 
 def temp(request):
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
+    announcement=Announcement.objects.all()
     
     course_det=course_details.objects.filter()[:1].get()
-    context={'index':index,'programs':programs,'course_detail':course_det}
+    context={'index':index,'programs':programs,'course_detail':course_det, 'announcements': announcement}
     
     return render(request, 'course.html', context)
     
@@ -155,6 +162,7 @@ def mail(request):
 def contact(request):
     index=Index.objects.filter()[:1].get()
     programs=Programs.objects.all()
+    announcement=Announcement.objects.all()
 
     if request.method == 'POST':
         name = request.POST['name']
@@ -171,4 +179,4 @@ def contact(request):
         return HttpResponseRedirect('contact')
 
     else:
-        return render(request, 'contact.html', {'index': Index.objects.filter()[:1].get(), 'programs':programs})
+        return render(request, 'contact.html', {'index': Index.objects.filter()[:1].get(), 'programs':programs, 'announcements': announcement})

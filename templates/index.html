@@ -3,36 +3,6 @@
 {% block main %}
 <!--====== MODAL PART START ======-->
 
-<!-- Modal -->
-{% if index.announcements %}
-<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: #ffc600; color: #07294d;">
-        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-bell fa-pad  faa-ring animated"
-            aria-hidden="true"></i>&nbsp;Announcements</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="fa fa-times-circle" aria-hidden="true">
-            </i></span>
-        </button>
-      </div>
-      <div class="modal-body bg-light text-dark">
-        {% for announcement in announcements %}
-        <div class="card m-2 p-2 d-flex flex-row justify-content-start align-items-center">
-          {{announcement.title}} &nbsp;<a href="{{ announcement.link }}" class='modal-link' target='_blank'>Click Here
-            to View </a>
-          &nbsp; {% if announcement.new is True %}<img src="{% static 'assets/images/new.gif' %}" alt="new_gif"
-            width="24rem" height="24em">{% endif %}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
-{%endif%}
-
-<!--====== MODAL PART END ======-->
 <!--====== SLIDER PART START ======-->
 
 <section id="slider-part" class="slider-active" style="height: 85vh;">
@@ -86,7 +56,7 @@
     <div class="row mt-30 d-flex flex-direction-row justify-content-center align-items-center">
       <div class="col-12 col-md-6 m-4 m-md-0">
         <div class="card">
-          <div class="vision">
+          <div class="vision p-3">
 
             <h5 style='font-size:2.5rem; text-align: center;'> {{index.vission_head}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="60"
                 height="60" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
@@ -100,7 +70,7 @@
       </div>
       <div class="col-12 col-md-6 m-4 m-md-0">
         <div class="card">
-          <div class="mission">
+          <div class="mission p-3">
 
             <h5 style='font-size:2.5rem; text-align: center;'> {{index.mission_head}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg"
                 width="50" height="50" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
