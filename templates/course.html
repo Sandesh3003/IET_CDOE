@@ -20,10 +20,8 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Courses</a></li>
-                            <li class="breadcrumb-item"><a
-                                    href="#">{{course_detail.program_name}}</a></li>
-                            <li class="breadcrumb-item"><a
-                                    href="#">{{course_detail.course_type}}</a></li>
+                            <li class="breadcrumb-item"><a href="#">{{course_detail.program_name}}</a></li>
+                            <li class="breadcrumb-item"><a href="#">{{course_detail.course_type}}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 {{course_detail.course_name}}</li>
                         </ol>
@@ -45,7 +43,9 @@
                 <div class="courses-single-left mt-30">
                     <div class="title">
                         <h3>{{course_detail.display_title}}</h3>
-                    </div> <!-- title -->
+                        <h6>Program Coordinator : <span style="color: #ffc600;">{{course_detail.faculty.name}}</span></h6>
+                    </div> 
+                    <!-- title -->
                     <!-- <div class="course-terms">
                         <ul class="d-md-flex justify-content-around">
                             <li>
@@ -99,12 +99,20 @@
                                     aria-controls="overview" aria-selected="true">Overview</a>
                             </li>
                             <li class="nav-item">
+                                <a id="admission-tab" data-toggle="tab" href="#admission" role="tab"
+                                    aria-controls="admission" aria-selected="false">Admission</a>
+                            </li>
+                            <li class="nav-item">
                                 <a id="curriculam-tab" data-toggle="tab" href="#curriculam" role="tab"
                                     aria-controls="curriculam" aria-selected="false">Syllabus</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a id="eligibility-tab" data-toggle="tab" href="#eligibility" role="tab"
                                     aria-controls="eligibility" aria-selected="false">Eligibility</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a href="#academicCalendar" id="calendar" data-toggle="tab" aria-controls="calendar"
+                                    aria-selected="false">Academic Calendar</a>
                             </li>
                             <li class="nav-item">
                                 <a id="fee-tab" data-toggle="tab" href="#fee" role="tab" aria-controls="fee"
@@ -124,7 +132,27 @@
                                         <h6>Pre-Requisites</h6>
                                         <p>{{course_detail.course_prerequisites}}</p>
                                     </div>
+                                    <div class="single-description pt-40">
+                                        <h6>Duration</h6>
+                                        <p>{{course_detail.course_duration}}</p>
+                                    </div>
+                                    <div class="single-description pt-40">
+                                        <h6>Elgibility</h6>
+                                        <p>{{course_detail.course_eligibility}}</p>
+                                    </div>
                                 </div> <!-- overview description -->
+                            </div>
+                            <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                                <div class="admission-description">
+                                    <div class="single-description pt-40">
+                                        <h6>Admission Process</h6>
+                                        <p>{{course_detail.admission_process}}</p>
+                                    </div>
+                                    <div class="single-description pt-40">
+                                        <h6>Documents Required</h6>
+                                        <p>{{course_detail.documents_required}}</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="curriculam" role="tabpanel" aria-labelledby="curriculam-tab">
                                 <embed src="{{ course_detail.course_syllabus}}" type="application/pdf" width="100%"
@@ -135,13 +163,22 @@
                                         here to download the Syllabus</a>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="eligibility" role="tabpanel"
+                            <!-- <div class="tab-pane fade" id="eligibility" role="tabpanel"
                                 aria-labelledby="eligibility-tab">
                                 <div class="overview-description">
                                     <div class="single-description pt-40">
                                         <h6>Eligibility Criteria</h6>
                                         <p>{{course_detail.course_eligibility}}</p>
                                     </div>
+                                </div>
+                            </div> -->
+                            <div class="tab-panel fade" id="academicCalendar" role="tabpanel" aria-labelledby="calendar-tab">
+                                <embed src="{{course_detail.academic_calendar.url}}" type="application/pdf"
+                                    width="100%" height="700px">
+                                <div class="text-center">
+                                    <a href="{{course_detail.academic_calendar.url}}" class="btn btn-main"
+                                        style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">Click
+                                        here to download the Academic Calendar</a>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="fee" role="tabpanel" aria-labelledby="fee-tab">
