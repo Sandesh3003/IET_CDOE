@@ -828,7 +828,7 @@ p {
     top: 110%;
     left: 0;
     background-color: #07294d;
-    width: 200px;
+    width: 210px;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.4s linear;

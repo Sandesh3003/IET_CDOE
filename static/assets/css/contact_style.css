@@ -5772,7 +5772,8 @@
   .justify-content-start {
     -webkit-box-pack: start !important;
     -ms-flex-pack: start !important;
-    justify-content: flex-start !important; }
+    justify-content: flex-start !important;
+    }
   
   .justify-content-end {
     -webkit-box-pack: end !important;
@@ -6565,7 +6566,8 @@
   
   .mr-0,
   .mx-0 {
-    margin-right: 0 !important; }
+    margin-right: 0 !important;
+    }
   
   .mb-0,
   .my-0 {
@@ -6595,7 +6597,8 @@
     margin-left: 0.25rem !important; }
   
   .m-2 {
-    margin: 0.5rem !important; }
+    margin: 0.5rem !important;
+    }
   
   .mt-2,
   .my-2 {
