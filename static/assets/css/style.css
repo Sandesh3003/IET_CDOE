@@ -57,7 +57,7 @@ body {
 }
 
 img {
-    max-width: 55%;
+    max-width: 100%;
 }
 
 .about-event .about-title img{
@@ -68,8 +68,6 @@ a:focus,
 input:focus,
 textarea:focus,
 button:fotitle img{
-    
-}
     text-decoration: none;
     outline: none;
 }
@@ -723,7 +721,9 @@ p {
 }
 
 /*===== Header Menu =====*/
-
+.navbar-brand img{
+    max-width: 55%;
+}
 .navigation {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     background-color: #07294d  !important;
