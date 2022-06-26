@@ -47,6 +47,7 @@ class Index(models.Model):
     map_link=models.URLField(max_length=200)
     contact_num=models.CharField(max_length=12)
     email_id=models.EmailField()
+    website=models.URLField(default='#')
 
 
     def __str__(self):
