@@ -14,12 +14,10 @@
     <!--====== Title ======-->
     <title>DAVV - CDOE</title>
 
-    {% block head %}
-    {% endblock %}
-
+    
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" type="image/png">
-
+    
     <!--====== Slick css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
 
@@ -28,7 +26,7 @@
 
     <!--====== Nice Select css ======-->
     <!-- <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}"> -->
-
+    
     <!--====== Nice Number css ======-->
     <!-- <link rel="stylesheet" href="{% static 'assets/css/jquery.nice-number.min.css' %}"> -->
 
@@ -37,28 +35,30 @@
 
     <!--====== Bootstrap css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-
+    
     <!--====== Fontawesome css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
-
+    
     <!--====== Default css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
-
+    
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
-
+    
     <!-- Contact Us CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/contact_style.css' %}">
-
+    
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-
+    
     <!--====== Owl carousel css ======-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-
-
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    
+    {% block head %}
+    {% endblock %}
+    
 </head>
 
 <body oncopy="return false" onpaste="return false" oncut="return false">
@@ -189,7 +189,7 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link  d-flex flex-row align-items-center justify-content-center"
+                                    <a class="nav-link  d-md-flex flex-row align-items-center justify-content-center"
                                         href="{% url 'index' %}" style="vertical-align: baseline;"><svg
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20"
                                             height="20" viewBox="0 0 576 512">
@@ -210,9 +210,9 @@
                                         {% endfor %}
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="{% url 'faculty' %}">Faculty</a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'notices' %}">Notices</a>
                                 </li>
