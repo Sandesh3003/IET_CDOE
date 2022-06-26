@@ -8226,7 +8226,7 @@
     width: 100%; }
   
   .contact-wrap {
-    background:#07294d;
+    background: #021d3a;
     border-radius: 15px;
    }
 
@@ -8253,9 +8253,9 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: #07294d;
+      background: #021d3a;
       margin: 0 auto;
-      margin-bottom: 20px; 
+      margin-bottom: 20px;
       cursor: pointer;
       transition: .3s;
     }

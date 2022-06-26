@@ -13,7 +13,9 @@
       <div class="row">
         <div class="col-xl-7 col-lg-9">
           <div class="slider-cont">
-            <h1 class='text-white' data-animation="fadeInLeft" data-delay="1s">{{index.welcome_header}}</h1>
+            <div class="section-title my-3" data-animation="fadeInLeft" data-delay="1s">
+              <h5 class="text-white" style='font-size:3rem'>{{index.welcome_header}}<span style='color: #ffc600;'>&nbsp;{{index.welcome_header_highlighted}}</span> </h5>
+            </div>
             <p data-animation="fadeInUp" data-delay="1.3s">{{index.slider_text}}</p>
           </div>
         </div>
@@ -46,7 +48,7 @@
       <div class="col-lg-5 d-flex flex-column justify-content-center align-items-center">
         <div class="about-event">
           <div class="event-title">
-            <img src="{{index.header_image.url}}" alt="About">
+            <img class="about-img" src="{{index.header_image.url}}" alt="About">
           </div>
         </div>
       </div>
@@ -55,11 +57,12 @@
 
     <div class="row mt-30 d-flex flex-direction-row justify-content-center align-items-center">
       <div class="col-12 col-md-6 m-4 m-md-0">
-        <div class="card">
+        <div class="card" style="height: 250px; max-height: max-content;">
           <div class="vision p-3">
 
-            <h5 style='font-size:2.5rem; text-align: center;'> {{index.vission_head}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="60"
-                height="60" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+            <h5 style='font-size:2.5rem; text-align: center;'> {{index.vission_head}}&nbsp;<svg
+                xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-eye-fill"
+                viewBox="0 0 16 16">
                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
               </svg> </h5>
@@ -72,8 +75,9 @@
         <div class="card" style="padding: 23px 0;">
           <div class="mission p-3">
 
-            <h5 style='font-size:2.5rem; text-align: center;'> {{index.mission_head}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg"
-                width="50" height="50" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
+            <h5 style='font-size:2.5rem; text-align: center;'> {{index.mission_head}}&nbsp;<svg
+                xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bullseye"
+                viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                 <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
                 <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
@@ -84,10 +88,11 @@
           </div>
         </div>
       </div>
-      
+
 
     </div>
-    <div class="row mt-30">
+    <div class="row mt-30 d-flex flex-row justify-content-center">
+      {% if index.num_of_online_courses %}
       <div class="col-xl-3 col-sm-6 col-12 mb-4">
         <div class="card">
           <div class="card-body">
@@ -107,6 +112,8 @@
           </div>
         </div>
       </div>
+      {% endif %}
+      {% if index.num_of_dl_courses %}
       <div class="col-xl-3 col-sm-6 col-12 mb-4">
         <div class="card">
           <div class="card-body">
@@ -126,6 +133,8 @@
           </div>
         </div>
       </div>
+      {% endif %}
+      {% if index.num_of_faculties %}
       <div class="col-xl-3 col-sm-6 col-12 mb-4">
         <div class="card">
           <div class="card-body">
@@ -145,6 +154,8 @@
           </div>
         </div>
       </div>
+      {% endif %}
+      {% if index.num_of_students %}
       <div class="col-xl-3 col-sm-6 col-12 mb-4">
         <div class="card">
           <div class="card-body">
@@ -164,6 +175,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
     </div>
   </div>
 
@@ -183,8 +195,8 @@
               {% for useful in index.useful_link.all %}
               <div class="owl-item">
                 <div class="brands_item d-flex flex-column justify-content-center">
-                  <a href="{{useful.goto_link}}" target="_blank"><img
-                    src="{{useful.display_image.url}}" alt=""></a></div>
+                  <a href="{{useful.goto_link}}" target="_blank"><img src="{{useful.display_image.url}}" alt=""></a>
+                </div>
               </div>
               {% endfor %}
             </div>

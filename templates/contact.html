@@ -1,123 +1,181 @@
-{% extends 'index_main.html' %}
-{% load static %}
-{% block main %}
+{% extends 'index_main.html' %} {% load static %} {% block main %}
 
 <section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5">
-                <h2 class="section-title">Contact US</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="wrapper">
-                    <div class="row no-gutters mb-5">
-
-                        <div class="col-md-7">
-                            <div  class="contact-wrap w-100 p-md-5 p-4">
-        
-                                <h3 style="font-family:Montserrat, sans-serif;" class="mb-4">Contact Form</h3>
-                                <div id="form-message-warning" class="mb-4"></div>
-                                <div id="form-message-success" class="mb-4">
-                                    Your message was sent, thank you {{sender_name}}!
-                                </div>
-                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">{% csrf_token %}
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="label" for="name">Full Name</label>
-                                                <input type="text" class="form-control" name="name" id="name"
-                                                    placeholder="Name" maxlength="50" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="label" for="email">Email Address</label>
-                                                <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="Email" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="label" for="subject">Subject</label>
-                                                <input type="text" class="form-control" name="subject" id="subject"
-                                                    placeholder="Subject" maxlength="80" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="label" for="#">Message</label>
-                                                <textarea name="message" class="form-control" id="message" cols="30"
-                                                    rows="4" placeholder="Message" maxlength="200" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <input type="submit" value="Send Message" class="btn btn-primary">
-                                                <div class="submitting"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-5 d-flex align-items-stretch">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.2656451339244!2d75.87759341483995!3d22.681152885127023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcc03e36712d%3A0xb6f3c2bf734a7c!2sIET%20DAVV!5e0!3m2!1sen!2sin!4v1651141249559!5m2!1sen!2sin"
-                                style="border:0; width: 100%;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="dbox w-100 text-center">
-                                <a href="{{index.map_link}}" target="_blank"><div class="text">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-map-marker"></span>
-                                </div>
-                                    <p><span>Address:&nbsp;</span> {{index.address}}</p>
-                                </div></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="dbox w-100 text-center">
-                                <a href="tel://1234567920" target="_blank">
-                                    <div class="text">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-phone"></span>
-                                </div>
-                                    <p><span>Phone:&nbsp;</span>{{index.contact_num}}</p>
-                                </div></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="dbox w-100 text-center">
-                                <a href="mailto:info@yoursite.com" target="_blank">
-                                    <div class="text">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-paper-plane"></span>
-                                </div>
-                                    <p><span>Email:&nbsp;</span>{{index.email_id}}</p>
-                                </div></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="dbox w-100 text-center">
-                                <a href="{{index.website}}" target="_blank">
-                                    <div class="text">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-globe"></span>
-                                </div>
-                                    <p><span>Website:&nbsp;</span>{{index.website}}</p>
-                                </div></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h2 class="section-title">Contact US</h2>
+      </div>
     </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="wrapper">
+          <div class="row no-gutters mb-5">
+            <div class="col-md-7">
+              <div class="contact-wrap w-100 p-md-5 p-4">
+                <h3 style="font-family: Montserrat, sans-serif" class="mb-4">
+                  Contact Form
+                </h3>
+                <div id="form-message-warning" class="mb-4"></div>
+                <div id="form-message-success" class="mb-4">
+                  Your message was sent, thank you {{sender_name}}!
+                </div>
+                <form
+                  method="POST"
+                  id="contactForm"
+                  name="contactForm"
+                  class="contactForm"
+                >
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="name">Full Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="name"
+                          id="name"
+                          placeholder="Name"
+                          maxlength="50"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="email">Email Address</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          name="email"
+                          id="email"
+                          placeholder="Email"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" for="subject">Subject</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="subject"
+                          id="subject"
+                          placeholder="Subject"
+                          maxlength="80"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" for="#">Message</label>
+                        <textarea
+                          name="message"
+                          class="form-control"
+                          id="message"
+                          cols="30"
+                          rows="4"
+                          placeholder="Message"
+                          maxlength="200"
+                          required
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input
+                          type="submit"
+                          value="Send Message"
+                          class="btn btn-primary"
+                        />
+                        <div class="submitting"></div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-5 d-flex align-items-stretch">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.2656451339244!2d75.87759341483995!3d22.681152885127023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcc03e36712d%3A0xb6f3c2bf734a7c!2sIET%20DAVV!5e0!3m2!1sen!2sin!4v1651141249559!5m2!1sen!2sin"
+                style="border: 0; width: 100%"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          {% if index.address %}
+          <div
+            class="row d-flex flex-row justify-content-center"
+          >
+            <div class="col-md-3">
+              <div class="dbox w-100 text-center">
+                <a href="{{index.map_link}}" target="_blank"
+                  ><div class="text">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-map-marker"></span>
+                    </div>
+                    <p><span>Address:&nbsp;</span>{{index.address}}</p>
+                  </div></a
+                >
+              </div>
+            </div>
+            {% endif %} {% if index.contact_num %}
+            <div class="col-md-3">
+              <div class="dbox w-100 text-center">
+                <a href="tel://1234567920" target="_blank">
+                  <div class="text">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-phone"></span>
+                    </div>
+                    <p><span>Phone:&nbsp;</span>{{index.contact_num}}</p>
+                  </div></a
+                >
+              </div>
+            </div>
+            {% endif %} {% if index.email_id %}
+            <div class="col-md-3">
+              <div class="dbox w-100 text-center">
+                <a href="mailto:info@yoursite.com" target="_blank">
+                  <div class="text">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-paper-plane"></span>
+                    </div>
+                    <p><span>Email:&nbsp;</span>{{index.email_id}}</p>
+                  </div></a
+                >
+              </div>
+            </div>
+            {% endif %} {% if index.website %}
+            <div class="col-md-3">
+              <div class="dbox w-100 text-center">
+                <a href="{{index.website}}" target="_blank">
+                  <div class="text">
+                    <div
+                      class="icon d-flex align-items-center justify-content-center"
+                    >
+                      <span class="fa fa-globe"></span>
+                    </div>
+                    <p><span>Website:&nbsp;</span>{{index.website}}</p>
+                  </div></a
+                >
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 {% endblock%}
