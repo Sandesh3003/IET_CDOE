@@ -736,8 +736,15 @@ p {
     box-shadow: rgb(255 255 255 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
 }
 
+.nav-search{
+    display: none !important;
+}
+
 @media (min-width:960px) {
     .navbar-header {
+        display: flex !important;
+    }
+    .nav-search{
         display: flex !important;
     }
 }
