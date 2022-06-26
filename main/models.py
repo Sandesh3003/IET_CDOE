@@ -15,7 +15,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Slide(models.Model):
     image = models.ImageField(upload_to='images/slides/')
-class useful_links(models.Model):
+
+class UsefulLink(models.Model):
     name=models.CharField(max_length=200,null=True)
     display_image=models.ImageField(upload_to='images/useful_links/')
     goto_link=models.URLField(blank=True)
@@ -41,7 +42,7 @@ class Index(models.Model):
     num_of_dl_courses=models.IntegerField(validators=[MinValueValidator(0)],default=0, blank=True, null=True)
     num_of_faculties=models.IntegerField(validators=[MinValueValidator(0)],default=0, blank=True, null=True)
     num_of_students=models.IntegerField(validators=[MinValueValidator(0)],default=0, blank=True, null=True)
-    useful_link=models.ManyToManyField(useful_links)
+    useful_link=models.ManyToManyField(UsefulLink)
     fb_link=models.URLField(default='#', blank=True)
     twitter_link=models.URLField(default='#', blank=True)
     insta_link=models.URLField(default='#', blank=True)
@@ -76,23 +77,23 @@ class Team(models.Model):
     def __str__(self) :
         return (self.name)
 
-class Programs(models.Model):
+class Program(models.Model):
     program_id=models.CharField(max_length=100)
     program_name=models.CharField(primary_key='True',max_length=200)
     def __str__(self):
         return (self.program_name) 
-class course_type(models.Model):
+class CourseType(models.Model):
     type_id=models.CharField(max_length=100)
     course_type=models.CharField(primary_key='True',max_length=200)
     def __str__(self):
         return (self.course_type) 
 
-class course_details(models.Model):
+class CourseDetail(models.Model):
     course_id=models.CharField(primary_key='True',max_length=100,default='001')
-    program_name=models.ForeignKey(Programs,on_delete=models.CASCADE,default='offline')
+    program_name=models.ForeignKey(Program,on_delete=models.CASCADE,default='offline')
     course_name=models.CharField(max_length=200,default=" enter course name")
     card_image=models.ImageField(upload_to='images/course_image/',null=True)
-    course_type=models.ForeignKey(course_type,on_delete=models.CASCADE,default='undergrad')
+    course_type=models.ForeignKey(CourseType,on_delete=models.CASCADE,default='undergrad')
     faculty=models.ForeignKey(Faculty,on_delete=models.CASCADE)
     display_title=models.CharField(max_length=200)
     # display_image=models.ImageField(upload_to='images/course_image/display_images/')
@@ -167,16 +168,3 @@ class Newsletter(models.Model):
             mail = EmailMultiAlternatives(self.subject, response_email, settings.EMAIL_HOST_USER, [sub.email])
             mail.content_subtype = 'html'
             mail.send()
-
-class Student(models.Model):
-    enrollment_id=models.AutoField(primary_key='True')
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    mobile_number = models.CharField(max_length=100, help_text = "Enter 10 digit Mobile number")
-    emailid = models.EmailField(max_length=200)
-    qualification = models.CharField(max_length=200)
-    course_enrolling_for = models.ForeignKey(course_details,on_delete=models.CASCADE,default='oo')
-    enroll_on = models.DateField(auto_now_add='True')
-
-    def __str__(self):
-        return self.first_name + ' ' +self.last_name

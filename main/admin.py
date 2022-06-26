@@ -7,17 +7,16 @@ from .models import *
 admin.site.site_header = "CDOE - DAVV Admin Panel"
 admin.site.site_title = "CDOE - DAVV Admin Panel"
 
-admin.site.register(Programs)
-admin.site.register(course_details)
-admin.site.register(course_type)
+admin.site.register(Program)
+admin.site.register(CourseDetail)
+admin.site.register(CourseType)
 admin.site.register(Announcement)
 admin.site.register(Notice)
 admin.site.register(Faculty)
 admin.site.register(Index)
 admin.site.register(ComingSoonMailList)
 admin.site.register(Slide)
-admin.site.register(Student)
-admin.site.register(useful_links)
+admin.site.register(UsefulLink)
 admin.site.register(Team)
 # admin.site.register(Review)
 
