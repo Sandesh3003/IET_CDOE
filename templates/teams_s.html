@@ -9,7 +9,7 @@
     <section class="teams">
         <div class="containerteams">
             <div class="heading">
-                <h2>&nbspOur Team&nbsp&nbsp</strong></h2>
+                <h2 class="section-title">&nbspDevelopment Team&nbsp&nbsp</strong></h2>
             </div>
             <div class="row">
                 {%  for team in team %}
@@ -24,10 +24,13 @@
                         </div>
                         <div class="social">
                             {% if team.linked_in %}
-                                <div class="icon" ><a href="{{team.linked_in}}"><i id="linked_in" class="fa fa-linkedin"></i></a></div>
+                                <div class="icon" ><a href="{{team.linked_in}}" target='_blank'><i id="linked_in" class="fa fa-linkedin"></i></a></div>
+                            {% endif %}
+                            {% if team.github %}
+                                <div class="icon" ><a href="{{team.github}}" target='_blank'><i id="linked_in" class="fa fa-github"></i></a></div>
                             {% endif %}
                             {% if team.instagram %}
-                                <div class="icon" ><a href="{{team.instagram}}"><i id="instagram" class="fa fa-instagram"></i></a></div>
+                                <div class="icon" ><a href="{{team.instagram}}" target='_blank'><i id="instagram" class="fa fa-instagram"></i></a></div>
                             {% endif %}
                         </div>
                     </div>

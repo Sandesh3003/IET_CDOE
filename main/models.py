@@ -70,6 +70,7 @@ class Team(models.Model):
     name = models.CharField(max_length=100, blank=False)
     post = models.CharField(max_length=100, blank=False)
     linked_in = models.URLField(blank=True)
+    github = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     team_image=models.ImageField(upload_to='images/team/',default='images/team/team.png')
     def __str__(self) :
