@@ -23,14 +23,14 @@ def index(request):
     
     index=Index.objects.filter()[:1].get()
     announcement=Announcement.objects.all()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     context={'announcements': announcement,'index':index,'programs':programs}
     return render(request, 'index.html',context)
 
 def comingsoon(request):
     index=Index.objects.filter()[:1].get()
     announcement=Announcement.objects.all()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     context={'form': forms.ComingsoonForm(),'index':index,'programs':programs, 'announcements': announcement}
     if request.method == 'POST':
         emailid = request.POST['email']
@@ -48,29 +48,29 @@ def comingsoon(request):
 
 def faculty(request):
     index=Index.objects.filter()[:1].get()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     announcement=Announcement.objects.all()
     context={'faculty': Faculty.objects.all(),'index':index,'programs':programs, 'announcements': announcement}
     return render(request, 'faculty.html', context)
 
 def team(request):
     index=Index.objects.filter()[:1].get()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     announcement=Announcement.objects.all()
     context={'team': Team.objects.all(),'index':index,'programs':programs, 'announcements': announcement}
     return render(request, 'teams_s.html', context)
 
 def programs(request,pk):
     index=Index.objects.filter()[:1].get()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     announcement=Announcement.objects.all()
     context={'index':index,'programs':programs, 'announcements': announcement}
-    subheads=course_details.objects.filter(program_name=pk).values('course_type').distinct().all()
+    subheads=CourseDetail.objects.filter(program_name=pk).values('course_type').distinct().all()
     su=list()
     for i in range(len(subheads)):
         x=subheads[i]['course_type']
-        su.append(course_type.objects.filter(course_type=x).get())
-    courses=course_details.objects.filter(program_name=pk).all()
+        su.append(CourseType.objects.filter(course_type=x).get())
+    courses=CourseDetail.objects.filter(program_name=pk).all()
     if(len(courses)==0):
         return comingsoon(request)
     subhead_active = su[0]
@@ -82,39 +82,16 @@ def programs(request,pk):
             'program_name': pk}
     return render(request, 'courses.html', context)
     
-    
-         
-
-
 def notices(request):
     notice=Notice.objects.all()
     index=Index.objects.filter()[:1].get()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     announcement=Announcement.objects.all()
     return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs, 'announcements': announcement})
 
 def course(request,pk,ic):
-    if request.method == 'POST':
-        if 'first_name' in request.POST:
-            first_name = request.POST.get('first_name')
-            last_name = request.POST.get('last_name')
-            mobile_number = request.POST.get('mobile_number')
-            emailid = request.POST.get('emailid')
-            qualification = request.POST.get('qualification')
-            c_nm=course_head.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
-            sub = Student(first_name=first_name, last_name=last_name, mobile_number=mobile_number, emailid=emailid, qualification=qualification, course_enrolling_for = c_nm)
-            sub.save()
-           
-        # else:
-        #     name = request.POST.get('name')
-        #     rates = request.POST.get('rating')
-        #     rev = request.POST.get('review')
-        #     c_nm=course_head.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
-            
-        #     sub = Review.objects.create(reviewer_name=name, rating=rates, review=rev, course_name = c_nm)
-        #     sub.save()
     index=Index.objects.filter()[:1].get()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     announcement=Announcement.objects.all()
     # rating=Review.objects.filter(program_name__program_name=pk).filter(course_name=ic).values('rating').all()
     # reviews=Review.objects.filter(program_name__program_name=pk).filter(course_name=ic).all()
@@ -139,16 +116,16 @@ def course(request,pk,ic):
     #     num_of_reviews="NO"
     # over_rate=range(maxi)
     # negative=range(5-maxi)
-    course_det=course_details.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
+    course_det=CourseDetail.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
     context={'index':index,'programs':programs,'course_detail':course_det, 'announcements': announcement}
     return render(request, 'course.html', context)
 
 def temp(request):
     index=Index.objects.filter()[:1].get()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     announcement=Announcement.objects.all()
     
-    course_det=course_details.objects.filter()[:1].get()
+    course_det=CourseDetail.objects.filter()[:1].get()
     context={'index':index,'programs':programs,'course_detail':course_det, 'announcements': announcement}
     
     return render(request, 'course.html', context)
@@ -161,7 +138,7 @@ def mail(request):
 
 def contact(request):
     index=Index.objects.filter()[:1].get()
-    programs=Programs.objects.all()
+    programs=Program.objects.all()
     announcement=Announcement.objects.all()
 
     if request.method == 'POST':
