@@ -932,7 +932,6 @@ p {
 
 /*===== HEADER TOW =====*/
 
-.header-two {}
 
 .header-two .header-top {
     background-color: #fff;
@@ -1076,76 +1075,6 @@ p {
     color: #ffc600;
 }
 
-/*===== SEARCH BOX =====*/
-
-.search-box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(7, 41, 77, 0.5);
-    z-index: 999;
-    display: none;
-}
-
-.closebtn {
-    position: absolute;
-    top: 20px;
-    right: 50px;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-}
-
-.closebtn span {
-    width: 30px;
-    height: 2px;
-    background-color: #fff;
-    position: relative;
-    display: block;
-}
-
-.closebtn span:nth-of-type(1) {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 11px;
-}
-
-.closebtn span:nth-of-type(2) {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 9px;
-}
-
-.search-box .search-form input {
-    width: 50%;
-    height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border: 2px solid #07294d;
-    color: #07294d;
-    padding-left: 20px;
-    border-radius: 50px;
-}
-
-.search-box .search-form button {
-    position: absolute;
-    top: 50%;
-    left: 72%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    color: #07294d;
-    cursor: pointer;
-    font-size: 16px;
-}
 
 /*=====================================================
     3. SLIDER css 

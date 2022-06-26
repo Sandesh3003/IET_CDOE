@@ -86,12 +86,6 @@ class course_type(models.Model):
     def __str__(self):
         return (self.course_type) 
 
-class course_categories(models.Model):
-    category_id=models.CharField(max_length=100)
-    category_name=models.CharField(primary_key='True',max_length=200)
-    def __str__(self):
-        return (self.category_name)
-
 class course_details(models.Model):
     course_id=models.CharField(primary_key='True',max_length=100,default='001')
     program_name=models.ForeignKey(Programs,on_delete=models.CASCADE,default='offline')
@@ -100,19 +94,17 @@ class course_details(models.Model):
     course_type=models.ForeignKey(course_type,on_delete=models.CASCADE,default='undergrad')
     faculty=models.ForeignKey(Faculty,on_delete=models.CASCADE)
     display_title=models.CharField(max_length=200)
-    category=models.ForeignKey(course_categories,on_delete=models.CASCADE)
     # display_image=models.ImageField(upload_to='images/course_image/display_images/')
-    course_price=models.CharField(max_length=200,default='Free')
     apply_link=models.URLField(default='#')
     course_summary=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     course_prerequisites=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     course_eligibility=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     course_syllabus=models.FileField(upload_to="pdf/syllabus/",null=True ,default='pdf/syllabus.pdf')
     course_fee_structure=models.FileField(upload_to="pdf/fee/",null=True ,default='pdf/fee structure.pdf')
-    # course_duration=models.CharField(max_length=100, default="x-y months", blank="False")
-    # academic_calendar=models.FileField(upload_to="pdf/academicCalender/", null=True, default='pdf/academicCalender.pdf')
-    # admission_process=models.CharField(max_length=800, default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
-    # documents_required=models.CharField(max_length=500, default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    course_duration=models.CharField(max_length=100, default="x-y months", blank="False")
+    academic_calendar=models.FileField(upload_to="pdf/academicCalendar/", null=True, default='pdf/academicCalendar.pdf')
+    admission_process=models.CharField(max_length=800, default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    documents_required=models.CharField(max_length=500, default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
 
     def __str__(self):
         return (self.course_name)

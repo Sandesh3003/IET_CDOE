@@ -170,7 +170,7 @@
                 </svg>&nbsp;Admin Login</a>
         </div>
     </div>
-    <div class="navigation d-flex flex-row align-items-center justify-content-between" id="nav-bar">
+    <div class="navigation px-5 d-flex flex-row align-items-center justify-content-between" id="nav-bar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -189,7 +189,7 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link  d-md-flex flex-row align-items-center justify-content-center"
+                                    <a class="nav-link  d-lg-flex flex-row align-items-center justify-content-center"
                                         href="{% url 'index' %}" style="vertical-align: baseline;"><svg
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20"
                                             height="20" viewBox="0 0 576 512">
@@ -228,7 +228,7 @@
             </div>
             <!-- row -->
         </div>
-        <div class="pr-5 nav-search">
+        <div class="nav-search">
             <div class="gcse-search"></div>
         </div>
         
@@ -276,8 +276,6 @@
                                 <li><a href="{% url 'index' %}"><i class="fa fa-angle-right"></i>Home</a></li>
                                 <li><a href="{% url 'index' %}#about-part"><i class="fa fa-angle-right"></i>About us</a>
                                 </li>
-                                <!-- <li><a href="#"><i class="fa fa-angle-right"></i>Distance Learning Programs</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>Online Programs</a></li> -->
                                 <li><a href="{% url 'faculty' %}"><i class="fa fa-angle-right"></i>Faculty</a></li>
                                 <li><a href="{% url 'contact' %}"><i class="fa fa-angle-right"></i>Contact</a></li>
                             </ul>
@@ -439,11 +437,6 @@
             padding: .8rem 1.5rem .8rem 1.5rem;
             border-radius: .5rem;
             margin-left: -1.5rem;
-        }
-
-        .gsc-search-button-v2:hover {
-            transform: scale(1.2);
-            transition: all .3s ease-in-out;
         }
 
         .gsc-search-button-v2 svg {

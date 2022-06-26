@@ -9,7 +9,6 @@ admin.site.site_title = "CDOE - DAVV Admin Panel"
 
 admin.site.register(Programs)
 admin.site.register(course_details)
-admin.site.register(course_categories)
 admin.site.register(course_type)
 admin.site.register(Announcement)
 admin.site.register(Notice)
@@ -20,7 +19,6 @@ admin.site.register(Slide)
 admin.site.register(Student)
 admin.site.register(useful_links)
 admin.site.register(Team)
-# admin.site.register(course_head)
 # admin.site.register(Review)
 
 def send_newsletter(modeladmin, request, queryset):

@@ -184,7 +184,7 @@
         left: 0;
         width: 100%;
         z-index: 99;
-        background-color: #fff;
+        background-color: #021d3a;
         padding: 5px 10px;
     }
     .navigation .navbar .navbar-nav li {
@@ -214,10 +214,11 @@
         padding: 7px 11px;
         background: none;
         border: 0;
-        top: 0;
+        top: 19px;
         right: 0;
         cursor: pointer;
         display: block;
+        color: #fff;
     }
     .category-text {
         text-align: center;
@@ -440,7 +441,7 @@
         left: 0;
         width: 100%;
         z-index: 99;
-        background-color: #07294d;
+        background-color: #021d3a;
         padding: 5px 10px;
     }
     .navigation .navbar .navbar-nav li {
@@ -470,10 +471,11 @@
         padding: 7px 11px;
         background: none;
         border: 0;
-        top: 0;
+        top: 19px;
         right: 0;
         cursor: pointer;
         display: block;
+        color: #fff;
     }
     .logo {
         text-align: center;
@@ -529,7 +531,7 @@
         margin-top: 50px;
     }
     .navigation-3 .navbar-collapse {
-        background-color: #07294d;
+        background-color: #021d3a;
         padding: 0 15px;
     }
     .navigation-3 .navbar .navbar-nav li a {
@@ -798,7 +800,7 @@
         left: 0;
         width: 100%;
         z-index: 99;
-        background-color: #07294d;
+        background-color: #021d3a;
         padding: 5px 10px;
     }
     .main-btn {
@@ -837,11 +839,11 @@
         padding: 7px 11px;
         background: none;
         border: 0;
-        top: 0;
+        top: 25px;
         right: 0;
         cursor: pointer;
         display: block;
-        color: #e6e6e6;
+        color: #fff;
     }
     .navbar-brand img {
         width: 130px;
@@ -987,7 +989,7 @@
         margin-top: 50px;
     }
     .navigation-3 .navbar-collapse {
-        background-color: #07294d;
+        background-color: #021d3a;
         padding: 0 15px;
     }
     .navigation-3 .navbar .navbar-nav li a {
