@@ -20,6 +20,11 @@ from main import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+# from django.contrib import admin
+# from django_otp.admin import OTPAdminSite
+  
+# admin.site.__class__ = OTPAdminSite
+
 urlpatterns = [
     path('admin-webcd0e/', admin.site.urls, name='admin'),
     path('', views.index, name='index'),
