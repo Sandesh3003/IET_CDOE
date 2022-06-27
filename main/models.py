@@ -52,8 +52,8 @@ class Index(models.Model):
     website=models.URLField(default='#', null=True ,blank=True)
 
 
-    def __str__(self):
-        return(self.about_head) 
+    def __str__():
+        return("Index") 
 
 class Faculty(models.Model):
 
