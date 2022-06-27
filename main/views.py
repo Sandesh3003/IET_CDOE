@@ -92,7 +92,7 @@ def notices(request):
     announcement=Announcement.objects.all()
     return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs, 'announcements': announcement})
 
-def course(request,pk,ic):
+def course(request,pk,ic,jc):
     index=Index.objects.filter()[:1].get()
     programs=Program.objects.all()
     announcement=Announcement.objects.all()
@@ -119,7 +119,7 @@ def course(request,pk,ic):
     #     num_of_reviews="NO"
     # over_rate=range(maxi)
     # negative=range(5-maxi)
-    course_det=CourseDetail.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
+    course_det=CourseDetail.objects.filter(specialization=jc).filter(course_name=ic).filter(program_name__program_name=pk).get()
     context={'index':index,'programs':programs,'course_detail':course_det, 'announcements': announcement}
     return render(request, 'course.html', context)
 
