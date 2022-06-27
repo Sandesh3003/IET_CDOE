@@ -3286,12 +3286,6 @@ p {
 /*=====================================================
     23. COURSE single PAGE css 
 ======================================================*/
-
-.courses-single-left {
-    padding: 45px 50px;
-    background-color: #fff;
-}
-
 .courses-single-left .title {}
 
 .courses-single-left .title h3 {
@@ -3388,7 +3382,7 @@ p {
     font-family: 'Montserrat', sans-serif;
     padding: 20px 0;
     display: block;
-    background-color:#24486e;
+    background-color:#07294d;
 }
 
 .courses-tab .nav .nav-item a.active {
