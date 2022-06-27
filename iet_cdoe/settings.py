@@ -135,7 +135,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-if DEBUG :
+if DEBUG is False :
     STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
