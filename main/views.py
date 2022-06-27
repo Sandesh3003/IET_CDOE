@@ -12,7 +12,7 @@ from main import forms
 import json
 import requests
 from django.http import HttpResponse
-
+from os import environ
 
 
 # Create your views here.
@@ -141,7 +141,7 @@ def contact(request):
         #Recaptcha stuff
         
         clientKey = request.POST["g-recaptcha-response"]
-        captchaSecretKey = '6Lf1xKIgAAAAABRbsHIBGCFGdO336r6YrUVDebxA'
+        captchaSecretKey = environ.get('CAPTCHA_SECRET_KEY')
         capthchaData = {
             'secret':captchaSecretKey,
             'response':clientKey
