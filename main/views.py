@@ -1,6 +1,7 @@
 from contextlib import nullcontext
 import email
 import imp
+from multiprocessing import context
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.conf import settings
@@ -91,6 +92,14 @@ def notices(request):
     programs=Program.objects.all()
     announcement=Announcement.objects.all()
     return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs, 'announcements': announcement})
+
+def compliance(request):
+    compliance= Compliance.objects.all()
+    index=Index.objects.filter()[:1].get()
+    programs=Program.objects.all()
+    announcement=Announcement.objects.all()
+    context={'compliance': compliance, 'index': index, 'programs' : programs, 'announcements' : announcement}
+    return render(request, 'compliance.html', context)
 
 def course(request,pk,ic,jc):
     index=Index.objects.filter()[:1].get()

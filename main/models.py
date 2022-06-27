@@ -1,6 +1,7 @@
 from distutils.command import upload
 from email.mime import image
 from email.policy import default
+from pkgutil import ImpLoader
 from random import choices
 from re import T, template
 from statistics import mode
@@ -118,6 +119,13 @@ class CourseDetail(models.Model):
     def __str__(self):
         return (self.course_name+'('+self.specialization+')')
     
+class Compliance(models.Model):
+    ugc_2f=models.FileField(upload_to="pdf/ugc_2f/", null=True, default='pdf/ugc.pdf')
+    ugc_12B=models.FileField(upload_to="pdf/ugc_12B/", null=True, default="pdf/ugc.pdf")
+    naac=models.FileField(upload_to="pdf/naac/", null=True, default="pdf/ugc.pdf")
+    deb_ugc=models.FileField(upload_to="pdf/deb_ugc/", null=True, default="pdf/ugc.pdf")
+    aicte=models.FileField(upload_to="pdf/aicte/", null=True, default="pdf/ugc.pdf")
+    ciqa=models.FileField(upload_to="pdf/ciqa/", null=True, default="pdf/ugc.pdf")
 
 class Announcement(models.Model):
 
