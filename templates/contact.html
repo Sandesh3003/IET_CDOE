@@ -1,4 +1,9 @@
-{% extends 'index_main.html' %} {% load static %} {% block main %}
+{% extends 'index_main.html' %} 
+{% load static %} 
+{% block head %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
+{% block main %}
 
 <section class="ftco-section">
   <div class="container">
@@ -84,8 +89,9 @@
                         ></textarea>
                       </div>
                     </div>
+                    <div class="ml-3 py-2 g-recaptcha" data-sitekey="6LdWcqEgAAAAAOkCtVWMxSscoVsdKWB6tfiBAoal"></div>
                     <div class="col-md-12">
-                      <div class="form-group">
+                      <div class="form-group mt-3">
                         <input
                           type="submit"
                           value="Send Message"
@@ -94,14 +100,6 @@
                         <div class="submitting"></div>
                       </div>
                     </div>
-                    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdWcqEgAAAAAEymUyoeyB2C65ApaZcRKTPrxqi6"></script>
-                    <script>
-                      grecaptcha.enterprise.ready(function() {
-                          grecaptcha.enterprise.execute('6LdWcqEgAAAAAEymUyoeyB2C65ApaZcRKTPrxqi6', {action: 'login'}).then(function(token) {
-                             ...
-                          });
-                      });
-                    </script>
                   </div>
                 </form>
               </div>
