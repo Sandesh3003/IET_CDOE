@@ -814,7 +814,7 @@ p {
     text-transform: uppercase;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
-    padding: 32px 15px 32px 15px;
+    padding: 32px 25px 32px 15px;
     display: block;
 }
 

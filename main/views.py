@@ -82,7 +82,7 @@ def programs(request,pk):
     context={'index':index,'programs':programs,
             'courses':courses,'subheads':subheads, 
             'subhead_active': subhead_active,
-            'program_name': pk}
+            'program_name': pk, 'announcements': announcement}
     return render(request, 'courses.html', context)
     
 def notices(request):
@@ -122,18 +122,6 @@ def course(request,pk,ic):
     course_det=CourseDetail.objects.filter(course_name=ic).filter(program_name__program_name=pk).get()
     context={'index':index,'programs':programs,'course_detail':course_det, 'announcements': announcement}
     return render(request, 'course.html', context)
-
-def temp(request):
-    index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
-    announcement=Announcement.objects.all()
-    
-    course_det=CourseDetail.objects.filter()[:1].get()
-    context={'index':index,'programs':programs,'course_detail':course_det, 'announcements': announcement}
-    
-    return render(request, 'course.html', context)
-    
-
 
 def mail(request):
 

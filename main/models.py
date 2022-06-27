@@ -4,6 +4,7 @@ from email.policy import default
 from random import choices
 from re import T, template
 from statistics import mode
+from unicodedata import category
 from django.db import models
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives, send_mail
@@ -89,9 +90,15 @@ class CourseType(models.Model):
         return (self.course_type) 
 
 class CourseDetail(models.Model):
+    CATEGIRY_CHOICES = (
+    ('General Degree','General Degree'),
+    ('Professional Degree', 'Professional Degree'),
+    )
     course_id=models.CharField(primary_key='True',max_length=100,default='001')
     program_name=models.ForeignKey(Program,on_delete=models.CASCADE,default='offline')
     course_name=models.CharField(max_length=200,default=" enter course name")
+    specialization=models.CharField(max_length=200,default=" ", null=True, blank=True)
+    category=models.CharField(max_length=20, choices=CATEGIRY_CHOICES, default='General Degree')
     card_image=models.ImageField(upload_to='images/course_image/',null=True)
     course_type=models.ForeignKey(CourseType,on_delete=models.CASCADE,default='undergrad')
     faculty=models.ForeignKey(Faculty,on_delete=models.CASCADE)
@@ -105,11 +112,11 @@ class CourseDetail(models.Model):
     course_fee_structure=models.FileField(upload_to="pdf/fee/",null=True ,default='pdf/fee structure.pdf')
     course_duration=models.CharField(max_length=100, default="x-y months", blank="False")
     academic_calendar=models.FileField(upload_to="pdf/academicCalendar/", null=True, default='pdf/academicCalendar.pdf')
-    admission_process=models.CharField(max_length=800, default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
-    documents_required=models.CharField(max_length=500, default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    admission_process=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    documents_required=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
 
     def __str__(self):
-        return (self.course_name)
+        return (self.course_name+'('+self.specialization+')')
     
 
 class Announcement(models.Model):
