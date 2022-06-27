@@ -9,6 +9,9 @@ from django.template.loader import render_to_string
 from .models import *
 import random
 from main import forms
+import json
+import requests
+from django.http import HttpResponse
 
 
 
@@ -147,13 +150,32 @@ def contact(request):
         subject = request.POST['subject']
         message = request.POST['message']
 
-        response_email = render_to_string('response_email.html', {'name': name})
-        mail = EmailMultiAlternatives('Thanks for response', response_email, settings.EMAIL_HOST_USER, [email,'shadmirza100@gmail.com'])
-        mail.content_subtype = 'html'
-        mail.send()
+        #Recaptcha stuff
+        
+        clientKey = request.POST["g-recaptcha-response"]
+        captchaSecretKey = '6Lf1xKIgAAAAABRbsHIBGCFGdO336r6YrUVDebxA'
+        capthchaData = {
+            'secret':captchaSecretKey,
+            'response':clientKey
+            }
 
-        send_mail('Message from CDOE Contact Form | Subject: '+subject, 'Name: '+name+'\n'+'Email: '+email+'\n'+'Subject: '+subject+'\n'+'Message: '+message, settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
-        return HttpResponseRedirect('contact')
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify',data=capthchaData)
+        response = json.loads(r.text)
+        verify = response['success']
+        print('Captcha verification success :',verify)
+        if verify:
+            response_email = render_to_string('response_email.html', {'name': name})
+            mail = EmailMultiAlternatives('Thanks for response', response_email, settings.EMAIL_HOST_USER, [email,'shadmirza100@gmail.com'])
+            mail.content_subtype = 'html'
+            mail.send()
 
+            send_mail('Message from CDOE Contact Form | Subject: '+subject, 'Name: '+name+'\n'+'Email: '+email+'\n'+'Subject: '+subject+'\n'+'Message: '+message, settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
+            
+            
+            return HttpResponseRedirect('contact')
+        else:
+            return render(request, 'contact.html', {'index': Index.objects.filter()[:1].get(), 'programs':programs, 'announcements': announcement, 'verify':verify})
+            # return HttpResponse('<script>alert("Captcha verification Failed");</script>')
+        
     else:
         return render(request, 'contact.html', {'index': Index.objects.filter()[:1].get(), 'programs':programs, 'announcements': announcement})

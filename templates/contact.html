@@ -12,6 +12,14 @@
         <h2 class="section-title">Contact US</h2>
       </div>
     </div>
+    {% if verify is False %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Captcha <strong>verification failed</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
     <div class="row justify-content-center">
       <div class="col-md-12">
         <div class="wrapper">
@@ -89,7 +97,7 @@
                         ></textarea>
                       </div>
                     </div>
-                    <div class="ml-3 py-2 g-recaptcha" data-sitekey="6LdWcqEgAAAAAOkCtVWMxSscoVsdKWB6tfiBAoal"></div>
+                    <div class="ml-3 py-2 g-recaptcha" data-sitekey="6Lf1xKIgAAAAABWFL3wMT7t6UPsEQDItw1EUbDB1"></div>
                     <div class="col-md-12">
                       <div class="form-group mt-3">
                         <input
