@@ -45,9 +45,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     
     <!--====== Owl carousel css ======-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.css' %}">
     
 </head>
 
@@ -342,59 +341,6 @@
 
     <!--====== BACK TO TP PART ENDS ======-->
 
-
-
-
-
-
-
-    <!--====== jquery js ======-->
-    <script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
-
-    <!--====== Bootstrap js ======-->
-    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-
-    <!--====== Slick js ======-->
-    <script src="{% static 'assets/js/slick.min.js' %}"></script>
-
-    <!--====== Owl js ======-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
-
-    <!--====== Nice Select js ======-->
-    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
-
-    <!--====== Main js ======-->
-    <script src="{% static 'assets/js/main.js' %}"></script>
-
-    <!--Navbar active link script-->
-    <script>
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.href === window.location.href) {
-                link.style.color = '#ffc600';
-            }
-        })
-    </script>
-
-    <!-- Clock Script -->
-
-    <script>
-        $(document).ready(function () {
-            setInterval(function () {
-                var hours = new Date().getHours();
-                $(".hours").html((hours < 10 ? "0" : "") + hours);
-            }, 1000);
-            setInterval(function () {
-                var minutes = new Date().getMinutes();
-                $(".min").html((minutes < 10 ? "0" : "") + minutes);
-            }, 1000);
-            setInterval(function () {
-                var seconds = new Date().getSeconds();
-                $(".sec").html((seconds < 10 ? "0" : "") + seconds);
-            }, 1000);
-        });
-    </script>
-
     <style>
         .gsc-control-cse {
             padding: 0;
@@ -416,48 +362,95 @@
         }
     </style>
 
-    <!-- Google Translate Added to website -->
-    <script>
-
-        function googleTranslateElementInit() {
-
-            new google.translate.TranslateElement({
-
-                pageLanguage: 'en'
-
-            }, 'google_translate_element');
-
-        }
-
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- Toggle translate -->
-    <script>
-        function toggleTranslate() {
-            if (document.getElementById('google_translate_element').style.display == 'none')
-                document.getElementById('google_translate_element').style.display = 'initial';
-            else
-                document.getElementById('google_translate_element').style.display = 'none';
-        }
-    </script>
-
-    <!-- MODAL JS -->
-    <script>
-        function loadNoticeModal() {
-            $('#noticeModal').modal('show');
-        }
-    </script>
-
-    {% if index.announcements_on_load %}
-    <script>
-        if (window.location.pathname == '/')
-            $(window).load(loadNoticeModal()); 
-    </script>
-    {% endif %}
-
-    {% block script %}
-    {% endblock %}
 </body>
+<!--====== jquery js ======-->
+<script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+
+<!--====== Bootstrap js ======-->
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+<!--====== Slick js ======-->
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+
+<!--====== Owl js ======-->
+<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+
+<!--====== Nice Select js ======-->
+<script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+
+<!--====== Main js ======-->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<!--Navbar active link script-->
+<script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.href === window.location.href) {
+            link.style.color = '#ffc600';
+        }
+    })
+</script>
+
+<!-- Clock Script -->
+
+<script>
+    $(document).ready(function () {
+        setInterval(function () {
+            var hours = new Date().getHours();
+            $(".hours").html((hours < 10 ? "0" : "") + hours);
+        }, 1000);
+        setInterval(function () {
+            var minutes = new Date().getMinutes();
+            $(".min").html((minutes < 10 ? "0" : "") + minutes);
+        }, 1000);
+        setInterval(function () {
+            var seconds = new Date().getSeconds();
+            $(".sec").html((seconds < 10 ? "0" : "") + seconds);
+        }, 1000);
+    });
+</script>
+
+<!-- Google Translate -->
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+
+    function googleTranslateElementInit() {
+
+        new google.translate.TranslateElement({
+
+            pageLanguage: 'en'
+
+        }, 'google_translate_element');
+
+    }
+
+</script>
+
+<!-- Toggle translate -->
+<script>
+    function toggleTranslate() {
+        if (document.getElementById('google_translate_element').style.display == 'none')
+            document.getElementById('google_translate_element').style.display = 'initial';
+        else
+            document.getElementById('google_translate_element').style.display = 'none';
+    }
+</script>
+
+<!-- MODAL JS -->
+<script>
+    function loadNoticeModal() {
+        $('#noticeModal').modal('show');
+    }
+</script>
+
+{% if index.announcements_on_load %}
+<script>
+    if (window.location.pathname == '/')
+        $(window).load(loadNoticeModal()); 
+</script>
+{% endif %}
+
+{% block script %}
+{% endblock %}
 
 </html>
