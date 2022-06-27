@@ -9,8 +9,7 @@
 <!-- body content goes below -->
 
 <!--====== PAGE BANNER PART START ======-->
-<section id="page-banner" class="pb-3 pt-1 bg_cover" data-overlay="8"
-    style="background-image: url(images/page-banner-2.jpg)">
+<section id="page-banner" class="pb-3 pt-1 bg_cover" data-overlay="8">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -44,52 +43,6 @@
                         <h3>{{course_detail.display_title}}</h3>
                         <h6>Program Coordinator : <span style="color: #ffc600;">{{course_detail.faculty.name}}</span></h6>
                     </div> 
-                    <!-- title -->
-                    <!-- <div class="course-terms">
-                        <ul class="d-md-flex justify-content-around">
-                            <li>
-                                <div class="teacher-name">
-                                    <div class="thum">
-                                        <img src="{{course_detail.faculty.faculty_image.url}}" alt="Teacher">
-                                    </div>
-                                    <div class="name">
-                                        <span>Teacher</span>
-                                        <h6>{{course_detail.faculty.name}}</h6>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="course-category">
-                                    <span>Category</span>
-                                    <h6>{{course_detail.category.category_name}} </h6>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="review">
-                                    <span>Review</span>
-                                    <ul>
-                                        {% for rate in overall_rating %}
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        {% endfor %}
-                                        {% for rate in negative %}
-                                        <li><a href="#"><i class="fa-light fa-star" ></i></a></li>
-                                        {% endfor %}
-                                        
-                                        <li class="rating">({{num_of_reviews}} Reviews)</li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <!-- <li>
-                                <div class="apply">
-                                    <a href="#" class="main-btn">Enroll Now</a>
-                                </div>
-                            </li> 
-                        </ul>
-                    </div> course terms -->
-
-                    <!-- <div class="courses-single-image pt-50">
-                        <img src="{{course_detail.display_image.url}}" alt="Courses">
-                    </div> courses single image -->
 
                     <div class="courses-tab mt-30">
                         <ul class="nav nav-justified" id="myTab" role="tablist">
@@ -138,7 +91,7 @@
                                 </div> <!-- overview description -->
                             </div>
                             <div class="tab-pane fade" id="admission" role="tabpanel" aria-labelledby="admission-tab">
-                                <div class="admission-description">
+                                <div class="overview-description admission-description">
                                     <div class="single-description pt-40">
                                         <h6>Admission Process</h6>
                                         <p>{{course_detail.admission_process}}</p>
@@ -175,8 +128,6 @@
                                         style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">Click
                                         here to download the Fee Structure</a>
                                 </div>
-
-
                             </div>
                         </div> <!-- tab content -->
                     </div>
@@ -190,5 +141,4 @@
             </div> <!-- row -->
         </div> <!-- container -->
 </section>
-<script src="{% static 'assets/js/course.js' %}"></script>
 {% endblock %}
