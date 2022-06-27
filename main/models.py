@@ -98,7 +98,7 @@ class CourseDetail(models.Model):
     course_id=models.CharField(primary_key='True',max_length=100,default='001')
     program_name=models.ForeignKey(Program,on_delete=models.CASCADE,default='offline')
     course_name=models.CharField(max_length=200,default=" enter course name")
-    specialization=models.CharField(max_length=200,default=" ", null=True, blank=True)
+    # specialization=models.CharField(max_length=200,default=".", null=True, blank=True)
     category=models.CharField(max_length=20, choices=CATEGIRY_CHOICES, default='General Degree')
     card_image=models.ImageField(upload_to='images/course_image/',null=True)
     course_type=models.ForeignKey(CourseType,on_delete=models.CASCADE,default='undergrad')
@@ -117,7 +117,7 @@ class CourseDetail(models.Model):
     documents_required=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
 
     def __str__(self):
-        return (self.course_name+'('+self.specialization+')')
+        return (self.course_name)
     
 class Compliance(models.Model):
     ugc_2f=models.FileField(upload_to="pdf/ugc_2f/", null=True, default='pdf/ugc.pdf')

@@ -41,7 +41,7 @@
                                         class="static-card-list d-flex scrollable-mobile-discovery-card-list flex-nowrap mt-5">
                                         <div class="product-card-sizing-wrapper">
                                             <div class="product-card "><a class="text-decoration-none text-gray-700"
-                                                    href="{% url 'course'  program_name course.course_name course.specialization %}"
+                                                    href="{% url 'course'  program_name course.course_name %}"
                                                     __tracked="true">
                                                     <div tabindex="-1" class="pgn__card card"><img
                                                             class="lazy card-img-top entered loaded"
@@ -55,11 +55,11 @@
                                                                         width="0"><span><span>{{course.course_name}}</span></span></span><span
                                                                         style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
                                                                 </div>
-                                                                <div class="h6 mb-2 card-title"><span
+                                                                {% comment %} <div class="h6 mb-2 card-title"><span
                                                                         width="0"><span><span
                                                                                 class="text-dark">{{course.specialization}}</span></span></span><span
                                                                         style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
-                                                                </div>
+                                                                </div> {% endcomment %}
                                                             </div>
                                                             <div><span
                                                                     class="bg-light-300 badge badge-light">{{course.category}}</span>
@@ -115,11 +115,11 @@
                                                                                 </span></span></span><span
                                                                             style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
                                                                     </div>
-                                                                    <div class="h6 mb-2 card-title"><span
+                                                                    {% comment %} <div class="h6 mb-2 card-title"><span
                                                                             width="0"><span><span
                                                                                     class="text-dark">{{course.specialization}}</span></span></span><span
                                                                             style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
-                                                                    </div>
+                                                                    </div> {% endcomment %}
                                                                 </div>
                                                                 <div><span
                                                                         class="bg-light-300 badge badge-light">{{course.category}}</span>
