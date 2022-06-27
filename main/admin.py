@@ -18,6 +18,7 @@ admin.site.register(ComingSoonMailList)
 admin.site.register(Slide)
 admin.site.register(UsefulLink)
 admin.site.register(Team)
+admin.site.register(Compliance)
 # admin.site.register(Review)
 
 def send_newsletter(modeladmin, request, queryset):
