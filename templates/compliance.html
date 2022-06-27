@@ -4,8 +4,13 @@
 
 {% block main %}
 
-<section id="courses-single" class="gray-bg">
+<section id="courses-single" class="ftco-section">
     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+              <h2 class="section-title">Compliance</h2>
+            </div>
+          </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="courses-tab mt-30">
@@ -34,69 +39,50 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="ugc" role="tabpanel" aria-labelledby="ugc-tab">
                             <div class="overview-description">
-                                <div class="single-description pt-40">
-                                    <h4>UGC 2f</h4>
+                                <div class="single-description">
                                     <embed src="{{ compliance.ugc_2f.url}}" type="application/pdf" width="100%"
                                         height="700px">
                                     <div class="text-center">
-                                        <a href="{{compliance.ugc_2f.url}}" class="btn btn-main"
-                                            style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">UGC
-                                            2f</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="naac" role="tabpanel" aria-labelledby="naac-tab">
                             <div class="overview-description">
-                                <div class="single-description pt-40">
-                                    <h4>NAAC Grade Certificate</h4>
+                                <div class="single-description">
                                     <embed src="{{ compliance.naac.url}}" type="application/pdf" width="100%"
                                         height="700px">
                                     <div class="text-center">
-                                        <a href="{{compliance.naac.url}}" class="btn btn-main"
-                                            style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">NAAC
-                                            Certification</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="deb-ugc" role="tabpanel" aria-labelledby="deb-ugc-tab">
                             <div class="overview-description">
-                                <div class="single-description pt-40">
-                                    <h4>DEB-UGC Approvals</h4>
+                                <div class="single-description">
                                     <embed src="{{ compliance.deb_ugc.url}}" type="application/pdf" width="100%"
                                         height="700px">
                                     <div class="text-center">
-                                        <a href="{{compliance.deb_ugc.url}}" class="btn btn-main"
-                                            style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">DEB-UGC
-                                            Approvals</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="aicte" role="tabpanel" aria-labelledby="aicte-tab">
                             <div class="overview-description">
-                                <div class="single-description pt-40">
-                                    <h4>AICTE Approvals</h4>
+                                <div class="single-description">
                                     <embed src="{{ compliance.aicte.url}}" type="application/pdf" width="100%"
                                         height="700px">
                                     <div class="text-center">
-                                        <a href="{{compliance.aicte.url}}" class="btn btn-main"
-                                            style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">AICTE
-                                            Approvals</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="ciqa" role="tabpanel" aria-labelledby="ciqa-tab">
                             <div class="overview-description">
-                                <div class="single-description pt-40">
-                                    <h4>CIQA</h4>
+                                <div class="single-description">
                                     <embed src="{{ compliance.ciqa.url}}" type="application/pdf" width="100%"
                                         height="700px">
                                     <div class="text-center">
-                                        <a href="{{compliance.ciqa.url}}" class="btn btn-main"
-                                            style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">CIQA</a>
                                     </div>
                                 </div>
                             </div>

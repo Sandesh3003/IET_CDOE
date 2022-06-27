@@ -94,7 +94,7 @@ def notices(request):
     return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs, 'announcements': announcement})
 
 def compliance(request):
-    compliance= Compliance.objects.all()
+    compliance= Compliance.objects.filter()[:1].get()
     index=Index.objects.filter()[:1].get()
     programs=Program.objects.all()
     announcement=Announcement.objects.all()
