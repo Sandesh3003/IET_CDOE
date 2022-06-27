@@ -1,36 +1,88 @@
 {% extends 'index_main.html' %}
 {% load static %}
-
 {% block head %}
-  <link rel="stylesheet" href="{% static 'assets/css/faculty_style.css' %}">
+<!-- head content like link tags goes here -->
+<!-- <link rel="stylesheet" href="{% static 'assets/css/course.css' %}"> -->
 {% endblock %}
 
 {% block main %}
-<section class="team-section">
-    <div class="containerfac">
+<!-- body content goes below -->
+<!--====== COURSES single PART START ======-->
+<h2 class="section-title text-center mt-5">Compliances</h2>
+<section id="courses-single" class="pt-40 pb-120 courses-single">
+    <div class="container">
         <div class="row">
-            <div class="section-title">
-                <h1>&nbspFaculty&nbsp&nbsp</h1>
-              </div>
-          </div>
-            <div class="row">
-                {%  for faculty in faculty %}
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="{{faculty.faculty_image.url}}" alt="Profile image">
+            <div class="col-lg-12">
+                <div class="courses-single-left">
+                    <div class="courses-tab mt-30" >
+                        <ul class="nav nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item" style="border: 1px solid black;">
+                                <a class="active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
+                                    aria-controls="overview" aria-selected="true">UGC 2f & 12(B)</a>
+                            </li>
+                            <li class="nav-item" style="border: 1px solid black;">
+                                <a id="curriculam-tab" data-toggle="tab" href="#curriculam" role="tab"
+                                    aria-controls="curriculam" aria-selected="false">NAAC Grade Certificate</a>
+                            </li>
+                            <li class="nav-item" style="border: 1px solid black;">
+                                <a id="eligibility-tab" data-toggle="tab" href="#eligibility" role="tab"
+                                    aria-controls="eligibility" aria-selected="false">DEB-UGC Approval</a>
+                            </li>
+                            <li class="nav-item" style="border: 1px solid black;">
+                                <a id="fee-tab" data-toggle="tab" href="#fee" role="tab" aria-controls="fee"
+                                    aria-selected="false">AICTE</a>
+                            </li>
+                            <li class="nav-item" style="border: 1px solid black;">
+                                <a id="fee-tab" data-toggle="tab" href="#fee" role="tab" aria-controls="fee"
+                                    aria-selected="false">CIQA</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                aria-labelledby="overview-tab">
+                                <embed src="{{course_detail.course_fee_structure.url}}" type="application/pdf"
+                                    width="100%" height="600px" style="background-color: #fff; border: 1px solid #00000069;">
+                                <div class="text-center">
+                                    <a href="{{course_detail.course_fee_structure.url}}" class="btn btn-main"
+                                        style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">Click
+                                        here to download</a>
+                                </div> <!-- overview description -->
+                            </div>
+                            <div class="tab-pane fade" id="curriculam" role="tabpanel" aria-labelledby="curriculam-tab">
+                                <embed src="{{ course_detail.course_syllabus}}" type="application/pdf" width="100%"
+                                    height="600px" style="background-color: #fff; border: 1px solid #00000069;">
+                                <div class="text-center">
+                                    <a href="{{course_detail.course_syllabus.url}}" class="btn btn-main"
+                                        style="font-size: 20px; margin-top: 30px; color: white; background-color: #07294d;">Click
+                                        here to download</a>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="eligibility" role="tabpanel"
+                                aria-labelledby="eligibility-tab">
+                                <embed src="{{course_detail.course_fee_structure.url}}" type="application/pdf"
+                                    width="100%" height="600px" style="background-color: #fff; border: 1px solid #00000069;">
+                                <div class="text-center">
+                                    <a href="{{course_detail.course_fee_structure.url}}" class="btn btn-main"
+                                        style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">Click
+                                        here to download</a>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="fee" role="tabpanel" aria-labelledby="fee-tab">
+                                <embed src="{{course_detail.course_fee_structure.url}}" type="application/pdf"
+                                    width="100%" height="600px" style="background-color: #fff; border: 1px solid #00000069;">
+                                <div class="text-center">
+                                    <a href="{{course_detail.course_fee_structure.url}}" class="btn btn-main"
+                                        style="font-size: 20px; margin-top: 50px; color: white; background-color: #07294d;">Click
+                                        here to download</a>
+                                </div>
+                            </div>
+                        </div> <!-- tab content -->
                     </div>
-                    <p class="name">{{faculty.name}}</p>
-                    <p>{{faculty.post}}</p> 
-                    <div class="socials">
-                        {% if faculty.linked_in %}
-                        <div  ><a href="{{faculty.linked_in}}"><i id="linkedin" style="color: white" class="fa fa-linkedin"></i></a></div>
-                        {% endif %}
-                </div> 
-            </div>
-            {% endfor %}
-        </div>
-             
-         </div> 
-     </div>
-  </section>
-  {% endblock %}
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+</section>
+<script src="{% static 'assets/js/course.js' %}"></script>
+{% endblock %}
+
