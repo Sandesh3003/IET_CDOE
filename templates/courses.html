@@ -28,7 +28,7 @@
                             
                         </ul>
                         
-                        <div class="tab-content" id="myTabContent">
+                        <div class="tab-content container" id="myTabContent">
                             <div class="tab-pane row fade show active" id="id{{subhead_active.type_id}}"  role="tabpanel" aria-labelledby="id{{subhead_active.type_id}}-tab">
                                     {% for course in courses %}
                                         {% if course.course_type.course_type == subhead_active.course_type %}
@@ -80,20 +80,21 @@
                             {% for subhead in subheads %}
         
                                 <div class="tab-pane fade " id="id{{subhead.type_id}}" role="tabpanel" aria-labelledby="type_id{{subhead.type_id}}-tab">
-                                    {% for course in courses %}
+                                    <div class="row">
+                                        {% for course in courses %}
                                         {% if course.course_type.course_type == subhead.course_type %}
                                         <div class="col-4">
                                             <div class="static-card-list d-flex scrollable-mobile-discovery-card-list flex-nowrap mt-5">
                                                 <div class="product-card-sizing-wrapper">
                                                     <div class="product-card "><a class="text-decoration-none text-gray-700"
-                                                            href="{% url 'course' program_name course.course_name %}"
+                                                        href="{% url 'course' program_name course.course_name %}"
                                                             __tracked="true">
                                                             <div tabindex="-1" class="pgn__card card"><img
                                                                     class="lazy card-img-top entered loaded"
                                                                     src="{{course.card_image.url}}"
                                                                     data-src="https://cdn.edx.2u.com/card/header/cybersecurity_managing_risk_in_the_information_age_course_card_image.jpg"
                                                                     alt="" aria-hidden="true" data-ll-status="loaded">
-                                                                <div
+                                                                    <div
                                                                     class="pgn__card-body d-flex flex-column justify-content-between pb-3.5 mt-2 card-body">
                                                                     <div>
                                                                         <div class="h5 mb-2 card-title"><span
@@ -103,7 +104,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div><span class="bg-light-300 badge badge-light">Executive
-                                                                            Education</span></div>
+                                                                        Education</span></div>
                                                                 </div>
                                                                 <div
                                                                     class="d-flex justify-content-between align-items-start card-footer pgn__card-footer vertical" style="color: #07294d">
@@ -115,17 +116,18 @@
                                                                             <path
                                                                                 d="M19 19H5V5h7V3H3v18h18v-9h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
                                                                                 fill="currentColor"></path>
-                                                                        </svg><span class="sr-only">Opens a link in
+                                                                            </svg><span class="sr-only">Opens a link in
                                                                             a new tab</span></span>
                                                                 </div>
                                                             </div>
                                                         </a></div>
-                                                </div>
+                                                    </div>
                                                 
                                             </div>
                                         </div>
                                         {% endif %}
-                                    {% endfor %}
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             {% endfor %}
                                

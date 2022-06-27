@@ -4,7 +4,6 @@ from email.policy import default
 from random import choices
 from re import T, template
 from statistics import mode
-from tkinter import CASCADE
 from django.db import models
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives, send_mail
@@ -82,6 +81,7 @@ class Program(models.Model):
     program_name=models.CharField(primary_key='True',max_length=200)
     def __str__(self):
         return (self.program_name) 
+
 class CourseType(models.Model):
     type_id=models.CharField(max_length=100)
     course_type=models.CharField(primary_key='True',max_length=200)
