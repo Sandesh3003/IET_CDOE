@@ -3395,7 +3395,7 @@ p {
 }
 
 .overview-description {
-    /* padding: 0px 30px 25px; */
+    padding: 0px 30px 25px;
 }
 
 .overview-description .single-description {}
