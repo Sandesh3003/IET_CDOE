@@ -26,7 +26,7 @@ class UsefulLink(models.Model):
 
 class Index(models.Model):
     #home section
-    announcements_on_load = models.BooleanField(default=False)
+    announcements_popup_on_load = models.BooleanField(default=False)
     logo=models.ImageField(upload_to='images/index/',default='images/index/cdoe1.png')
     slides = models.ManyToManyField(Slide)
     welcome_header=models.CharField(max_length=200)
@@ -51,10 +51,10 @@ class Index(models.Model):
     map_link=models.URLField(max_length=200, null=True, blank=True)
     contact_num=models.CharField(max_length=12, null=True,blank=True)
     email_id=models.EmailField(null=True,blank=True)
-    website=models.URLField(default='#', null=True ,blank=True)
+    website=models.TextField(default='#', null=True ,blank=True)
 
 
-    def __str__():
+    def __str__(self):
         return("Index") 
 
 class Faculty(models.Model):
