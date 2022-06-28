@@ -866,7 +866,7 @@ p {
 }
 
 .navbar .navbar-toggler {
-    padding: 3px 8px;
+    padding: -3px 8px;
     margin: 18px 0;
     -webkit-transform: all 0.4s linear;
     transform: all 0.4s linear;
