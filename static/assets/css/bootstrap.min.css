@@ -7554,7 +7554,7 @@ button.bg-dark:hover {
 }
 .pl-5,
 .px-5 {
-  padding-left: 3rem !important;
+  padding: 0 3rem 0 3rem !important;
 }
 .m-auto {
   margin: auto !important;
@@ -8051,7 +8051,7 @@ button.bg-dark:hover {
   }
   .pl-md-5,
   .px-md-5 {
-    padding-left: 3rem !important;
+    /* padding-left: 3rem !important; */
   }
   .m-md-auto {
     margin: auto !important;

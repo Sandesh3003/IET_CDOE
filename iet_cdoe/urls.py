@@ -40,6 +40,7 @@ urlpatterns = [
     path('course', views.course, name="course"),
     path('team', views.team, name="team"),
     path('compliance', views.compliance, name="compliance"),
+    path('open_educational_resources', views.open_educational_resources, name="open_educational_resources"),
     path('sitemap.xml', views.sitemap, name="sitemap"),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

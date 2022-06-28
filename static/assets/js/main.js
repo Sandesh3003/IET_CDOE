@@ -172,3 +172,15 @@ $(document).ready(function(){
  
  
      });
+
+
+     // Scroll to Nav Search
+
+     function scrollToSearch() {
+        let e = document.getElementById("gcse-search");
+        e.scrollIntoView({
+          block: 'start',
+          behavior: 'smooth',
+          inline: 'start'
+        });
+      }

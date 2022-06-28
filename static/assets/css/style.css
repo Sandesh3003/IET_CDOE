@@ -44,13 +44,16 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700');
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
@@ -747,14 +750,15 @@ p {
     }
 }
 
-.admin-btn{
+.student-btn{
     background-color: #021d3a;
     border: 1px solid #ffc600;
     border-radius: 4px;
     color: #ffc600 !important;
+    transition: all .2s ease-in-out;
 }
 
-.admin-btn:hover{
+.student-btn:hover{
     background-color: #ffc600;
     color: #021d3a !important;
 }
@@ -3376,7 +3380,8 @@ p {
 
 .courses-tab .nav {}
 
-.courses-tab .nav .nav-item {}
+.courses-tab .nav .nav-item {
+}
 
 .courses-tab .nav .nav-item a {
     font-size: 16px;

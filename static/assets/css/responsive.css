@@ -291,7 +291,6 @@
         margin-top: -100px;
     }
     #about-part {
-        padding-bottom: 170px;
         padding-top: 15px;
     }
     #apply-aprt {
@@ -1116,7 +1115,7 @@
     .courses-tab .nav .nav-item {
         -ms-flex-preferred-size: auto;
         flex-basic: auto;
-        width: 50%;
+        /* width: 50%; */
     }
     .reviews-cont {
         padding: 25px 5px 30px;
@@ -1259,7 +1258,7 @@
         padding-bottom: 40px;
     }
     #about-part {
-        padding-bottom: 170px;
+        /* padding-bottom: 170px; */
         padding-top: 15px;
     }
     #apply-aprt {

@@ -104,6 +104,13 @@ def compliance(request):
     context={'compliance': compliance, 'index': index, 'programs' : programs, 'announcements' : announcement}
     return render(request, 'compliance.html', context)
 
+def open_educational_resources(request):
+    index=Index.objects.filter()[:1].get()
+    programs=Program.objects.all()
+    announcement=Announcement.objects.all()
+    context={'index': index, 'programs' : programs, 'announcements' : announcement}
+    return render(request, 'open_educational_resources.html', context)
+
 def course(request,pk,ic):
     index=Index.objects.filter()[:1].get()
     programs=Program.objects.all()
