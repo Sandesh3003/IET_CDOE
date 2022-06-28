@@ -47,8 +47,12 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'django_cleanup.apps.CleanupConfig',
     'django_otp',
-    'django_otp.plugins.otp_totp'
+    'django_otp.plugins.otp_totp',
+    # 'django.contrib.sites',
+    # 'django.contrib.sitemaps',
 ]
+
+SITE_ID = 1 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

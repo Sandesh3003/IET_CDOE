@@ -22,6 +22,9 @@ from os import environ
 #     context={'program':program}
 #     return render(request,"main\course_page.html")
 
+def sitemap(request):
+    return render(request, 'sitemap.xml', content_type='xml')
+
 
 def index(request):
     
