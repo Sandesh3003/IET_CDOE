@@ -1,107 +1,108 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://www.cdoedavv.ac.in/</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://www.cdoedavv.ac.in/</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Online%20programs%20(OL)</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Online%20programs%20(OL)</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/notices</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.cdoedavv.ac.in/notices</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/compliance</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.cdoedavv.ac.in/compliance</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/contact</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.cdoedavv.ac.in/open_educational_resources</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/faculty</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.cdoedavv.ac.in/contact</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/team</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.cdoedavv.ac.in/team</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MBA-HR</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MBA-HR</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MBA-Finance</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MBA-Finance</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MBA-Marketing</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MBA-Marketing</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MBA-Energy%20Management</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MBA-Energy%20Management</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MCA</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MCA</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MA-Economics</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MA-Economics</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MA-Sociology</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://www.cdoedavv.ac.in/programs/Open%20and%20Distance%20Learning%20(ODL)/MA-Sociology</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/media/pdf/syllabus/syllabus.pdf</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>https://www.cdoedavv.ac.in/media/pdf/ugc_2f/DAVV_UGC_2f.pdf</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/media/pdf/academicCalendar.pdf</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>https://www.cdoedavv.ac.in/media/pdf/naac/DAVV_NAAC_A_Certificate.pdf</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/media/pdf/fee%20structure.pdf</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>https://www.cdoedavv.ac.in/media/pdf/ugc.pdf</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.cdoedavv.ac.in/media/pdf/syllabus.pdf</loc>
-  <lastmod>2022-06-28T07:09:13+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>https://www.cdoedavv.ac.in/media/pdf/syllabus.pdf</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.51</priority>
 </url>
-
-
+<url>
+<loc>https://www.cdoedavv.ac.in/media/pdf/academicCalendar.pdf</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://www.cdoedavv.ac.in/media/pdf/fee%20structure.pdf</loc>
+<lastmod>2022-06-28T23:27:38+00:00</lastmod>
+<priority>0.51</priority>
+</url>
 </urlset>
