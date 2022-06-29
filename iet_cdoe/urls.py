@@ -25,8 +25,9 @@ from django.contrib.sitemaps.views import sitemap
 
 from django.contrib import admin
 from django_otp.admin import OTPAdminSite
-  
-admin.site.__class__ = OTPAdminSite
+
+if settings.DEBUG is False :
+    admin.site.__class__ = OTPAdminSite
 
 urlpatterns = [
     path('admin-webcd0e/', admin.site.urls, name='admin'),
