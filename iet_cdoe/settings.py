@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'iet_cdoe.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-if DEBUG is False :
+if DEBUG is True :
 
     DATABASES = {  
         'default': {  

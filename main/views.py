@@ -30,14 +30,14 @@ def index(request):
     
     index=Index.objects.filter()[:1].get()
     announcement=Announcement.objects.all()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     context={'announcements': announcement,'index':index,'programs':programs}
     return render(request, 'index.html',context)
 
 def comingsoon(request):
     index=Index.objects.filter()[:1].get()
     announcement=Announcement.objects.all()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     context={'form': forms.ComingsoonForm(),'index':index,'programs':programs, 'announcements': announcement}
     if request.method == 'POST':
         emailid = request.POST['email']
@@ -55,14 +55,14 @@ def comingsoon(request):
 
 def faculty(request):
     index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
     context={'faculty': Faculty.objects.all(),'index':index,'programs':programs, 'announcements': announcement}
     return render(request, 'faculty.html', context)
 
 def team(request):
     index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
     context={'team': Team.objects.all(),'index':index,'programs':programs, 'announcements': announcement}
     return render(request, 'teams_s.html', context)
@@ -92,28 +92,28 @@ def programs(request,pk):
 def notices(request):
     notice=Notice.objects.all()
     index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
     return render(request, 'notices.html', {'notices': notice, 'index': index, 'programs':programs, 'announcements': announcement})
 
 def compliance(request):
     compliance= Compliance.objects.filter()[:1].get()
     index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
     context={'compliance': compliance, 'index': index, 'programs' : programs, 'announcements' : announcement}
     return render(request, 'compliance.html', context)
 
 def open_educational_resources(request):
     index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
     context={'index': index, 'programs' : programs, 'announcements' : announcement}
     return render(request, 'open_educational_resources.html', context)
 
 def course(request,pk,ic):
     index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
     # rating=Review.objects.filter(program_name__program_name=pk).filter(course_name=ic).values('rating').all()
     # reviews=Review.objects.filter(program_name__program_name=pk).filter(course_name=ic).all()
@@ -148,7 +148,7 @@ def mail(request):
 
 def contact(request):
     index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
 
     if request.method == 'POST':
