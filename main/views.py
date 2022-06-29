@@ -69,7 +69,7 @@ def team(request):
 
 def programs(request,pk):
     index=Index.objects.filter()[:1].get()
-    programs=Program.objects.all()
+    programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
     context={'index':index,'programs':programs, 'announcements': announcement}
     subheads=CourseDetail.objects.filter(program_name=pk).values('course_type').distinct().all()
