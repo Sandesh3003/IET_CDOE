@@ -69,6 +69,7 @@ class Faculty(models.Model):
         return (self.name)
 
 class Team(models.Model):
+    
     name = models.CharField(max_length=100, blank=False)
     post = models.CharField(max_length=100, blank=False)
     linked_in = models.URLField(blank=True)
