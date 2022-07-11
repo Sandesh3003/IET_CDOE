@@ -25,13 +25,6 @@ body{
     margin:auto;
 }
 
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 .teams .heading{
     flex-basis: 100%;
     max-width: 100%;
