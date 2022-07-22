@@ -64,7 +64,7 @@ def team(request):
     index=Index.objects.filter()[:1].get()
     programs=Program.objects.all().order_by('program_id')
     announcement=Announcement.objects.all()
-    context={'team': Team.objects.all(),'index':index,'programs':programs, 'announcements': announcement}
+    context={'team': Team.objects.all().order_by('team_id'),'index':index,'programs':programs, 'announcements': announcement}
     return render(request, 'teams_s.html', context)
 
 def programs(request,pk):
