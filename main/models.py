@@ -133,7 +133,7 @@ class Announcement(models.Model):
 
     announcement_file=models.FileField(upload_to="pdf/announcement/", null=True, default="pdf/announcement.pdf")
     title = models.CharField(max_length=100, blank=False)
-    link = models.URLField(blank=False)
+    link = models.URLField(blank=True)
     new = models.BooleanField(default=True)
 
     def __str__(self) :
@@ -143,7 +143,7 @@ class Notice(models.Model):
     id = models.AutoField(primary_key=True)
     subject = models.CharField(max_length=200, blank=False)
     date = models.DateField(auto_now=True)
-    attachement = models.URLField(blank=False)
+    attachement = models.URLField(blank=True)
     notice_file=models.FileField(upload_to="pdf/notice/", null=True, default="pdf/notice.pdf")
 
     def __str__(self) :
