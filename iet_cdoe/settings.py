@@ -32,7 +32,7 @@ DEBUG = os.environ.get('DEBUG') == '1'
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 
 if DEBUG:
-    ALLOWED_HOSTS += ['192.168.29.239']
+    ALLOWED_HOSTS += ['127.0.0.1']
 
 
 # Application definition

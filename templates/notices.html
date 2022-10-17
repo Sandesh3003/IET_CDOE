@@ -29,7 +29,14 @@
                     <td style="text-align:center">{{notice.id}}</td>
                     <td>{{notice.subject}}</td>
                     <td style="text-align:center">{{notice.date}}</td>
-                    <td style="text-align:center"><a href="{{notice.attachement}}" class="attachement_btn" target="_blank">Click Here</a></td>
+                    <td style="text-align:center">
+                        {% if  notice.attachement %}
+                        <a href="{{notice.attachement}}" class="attachement_btn" target="_blank">Click Here</a>
+                        {% else %}
+                        <a href="{{notice.notice_file.url}}" class="attachement_btn" target="_blank">Click Here</a>
+                        {%endif%}
+                    </td>
+                
                 </tr>
                 {% endfor %}
             </tbody>

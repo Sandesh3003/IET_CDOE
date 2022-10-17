@@ -85,9 +85,16 @@
                 <div class="modal-body bg-light text-dark">
                     {% for announcement in announcements %}
                     <div class="card m-2 p-2 d-flex flex-row justify-content-start align-items-center">
-                        {{announcement.title}} &nbsp;<a href="{{ announcement.link }}" class='modal-link'
+                        {{announcement.title}} &nbsp;
+                        {% if announcement.link %}
+                        <a href="{{ announcement.link }}" class='modal-link'
                             target='_blank'>Click Here
                             to View </a>
+                        {% else %}
+                        <a href="{{ announcement.announcement_file.url }}" class='modal-link'
+                            target='_blank'>Click Here
+                            to View </a>
+                        {% endif %}
                         &nbsp; {% if announcement.new is True %}<img src="{% static 'assets/images/new.gif' %}"
                             alt="new_gif" width="24rem" height="24em">{% endif %}
                     </div>
@@ -146,11 +153,11 @@
                 <path fill-rule="evenodd"
                     d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
             </svg>&nbsp;Student Login</a>
-            <div class="social-links d-flex flex-row justify-content-center align-items-center">
+            <!-- <div class="social-links d-flex flex-row justify-content-center align-items-center">
                 <a href="{{index.insta_link}}" class="m-3"><i class="fa fa-facebook-f text-white"></i></a>
                 <a href="{{index.twitter_link}}" class="m-3"><i class="fa fa-twitter text-white"></i></a>
                 <a href="{{index.insta_link}}" class="m-3"><i class="fa fa-instagram text-white"></i></a>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="navigation d-flex flex-row align-items-center justify-content-between" id="nav-bar">
@@ -242,11 +249,11 @@
                                     <h1 style="color: #ffc600;">DAVV - CDOE</h1>
                                 </a>
                             </div>
-                            <ul class="mt-20">
+                            <!-- <ul class="mt-20">
                                 <li><a href="{{index.insta_link}}"><i class="fa fa-facebook-f"></i></a></li>
                                 <li><a href="{{index.twitter_link}}"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="{{index.insta_link}}"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
+                            </ul> -->
                             <!-- Visitor counter -->
                             {% comment %} <div class="visitor-counter pt-3">
                                 <p style="font-size: .8rem;">Total Unique Visitors</p>

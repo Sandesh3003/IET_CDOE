@@ -108,15 +108,15 @@ class CourseDetail(models.Model):
     display_title=models.CharField(max_length=200)
     # display_image=models.ImageField(upload_to='images/course_image/display_images/')
     apply_link=models.URLField(default='#')
-    course_summary=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
-    course_prerequisites=models.TextField(max_length=400,default="Lorem ipsum pytgravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
-    course_eligibility=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    course_summary=models.TextField(max_length=1600,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    course_prerequisites=models.TextField(max_length=1600,default="Lorem ipsum pytgravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    course_eligibility=models.TextField(max_length=1600,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
     course_syllabus=models.FileField(upload_to="pdf/syllabus/",null=True ,default='pdf/syllabus.pdf')
     course_fee_structure=models.FileField(upload_to="pdf/fee/",null=True ,default='pdf/fee structure.pdf')
-    course_duration=models.CharField(max_length=100, default="x-y months", blank="False")
+    course_duration=models.CharField(max_length=1600, default="x-y months", blank="False")
     academic_calendar=models.FileField(upload_to="pdf/academicCalendar/", null=True, default='pdf/academicCalendar.pdf')
-    admission_process=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
-    documents_required=models.TextField(max_length=400,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    admission_process=models.TextField(max_length=1600,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
+    documents_required=models.TextField(max_length=1600,default="Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .")
 
     def __str__(self):
         return (self.course_name)
@@ -131,6 +131,7 @@ class Compliance(models.Model):
 
 class Announcement(models.Model):
 
+    announcement_file=models.FileField(upload_to="pdf/announcement/", null=True, default="pdf/announcement.pdf")
     title = models.CharField(max_length=100, blank=False)
     link = models.URLField(blank=False)
     new = models.BooleanField(default=True)
@@ -139,10 +140,11 @@ class Announcement(models.Model):
         return (self.title)
 
 class Notice(models.Model):
-
+    id = models.AutoField(primary_key=True)
     subject = models.CharField(max_length=200, blank=False)
     date = models.DateField(auto_now=True)
     attachement = models.URLField(blank=False)
+    notice_file=models.FileField(upload_to="pdf/notice/", null=True, default="pdf/notice.pdf")
 
     def __str__(self) :
         return (self.subject)
