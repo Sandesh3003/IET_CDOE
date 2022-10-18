@@ -26,6 +26,8 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib import admin
 from django_otp.admin import OTPAdminSite
 
+import tinymce
+
 if settings.DEBUG is False :
     admin.site.__class__ = OTPAdminSite
 
