@@ -13,6 +13,7 @@ from django.forms import CharField, EmailField, IntegerField
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator 
+from tinymce.models import HTMLField
 
 class Slide(models.Model):
     image = models.ImageField(upload_to='images/slides/')
@@ -33,7 +34,7 @@ class Index(models.Model):
     welcome_header_highlighted=models.CharField(max_length=200, default=' ')
     slider_text=models.CharField(max_length=200)
     about_head=models.CharField(max_length=200)
-    about_body=models.TextField(null=False,blank=False)
+    about_body=HTMLField(null=False,blank=False)
     header_image=models.ImageField(null=True ,upload_to='images/index/')
     mission_head=models.CharField(max_length=200,default="Mission");
     mission_text=models.TextField(default=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ")

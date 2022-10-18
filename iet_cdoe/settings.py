@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'django_otp',
     'django_otp.plugins.otp_totp',
+    'tinymce',
     # 'django.contrib.sites',
     # 'django.contrib.sitemaps',
 ]

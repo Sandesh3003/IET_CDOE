@@ -43,5 +43,6 @@ urlpatterns = [
     path('compliance', views.compliance, name="compliance"),
     path('open_educational_resources', views.open_educational_resources, name="open_educational_resources"),
     path('sitemap.xml', views.sitemap, name="sitemap"),
+    url(r'^tinymce/', include('tinymce.urls')),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
