@@ -756,6 +756,12 @@ p {
     }
 }
 
+@media (max-width:991px) {
+    .navbar-mobile-view {
+    display: none !important;
+    }
+}
+
 .student-btn{
     background-color: #021d3a;
     border: 1px solid #ffc600;
