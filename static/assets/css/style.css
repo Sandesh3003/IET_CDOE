@@ -737,10 +737,6 @@ p {
     box-shadow: rgb(255 255 255 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
 }
 
-.navbar-mobile-view {
-    display: none !important;
- }
-
 .nav-search{
     display: none !important;
 }
@@ -748,6 +744,10 @@ p {
 @media (min-width:992px) {
     .navbar-header {
         display: flex !important;
+    }
+    
+    .navbar-mobile-view {
+    display: none !important;
     }
     
     .nav-search{
