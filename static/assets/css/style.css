@@ -741,16 +741,15 @@ p {
         display: flex !important;
     }
 
+.navbar-mobile-view {
+    display: none !important;
+    }
+
 .nav-search{
     display: none !important;
 }
 
 @media (min-width:992px) {
-    
-    
-    .navbar-mobile-view {
-    display: none !important;
-    }
     
     .nav-search{
         display: flex !important;
