@@ -79,19 +79,19 @@
                                 <div class="overview-description">
                                     <div class="single-description pt-40">
                                         <h6>Course Summary</h6>
-                                        <p>{{course_detail.course_summary}}</p>
+                                        <p>{{course_detail.course_summary | safe}}</p>
                                     </div>
                                     <div class="single-description pt-40">
                                         <h6>Pre-Requisites</h6>
-                                        <p>{{course_detail.course_prerequisites}}</p>
+                                        <p>{{course_detail.course_prerequisites | safe}}</p>
                                     </div>
                                     <div class="single-description pt-40">
                                         <h6>Duration</h6>
-                                        <p>{{course_detail.course_duration}}</p>
+                                        <p>{{course_detail.course_duration | safe}}</p>
                                     </div>
                                     <div class="single-description pt-40">
                                         <h6>Elgibility</h6>
-                                        <p>{{course_detail.course_eligibility}}</p>
+                                        <p>{{course_detail.course_eligibility | safe}}</p>
                                     </div>
                                 </div> <!-- overview description -->
                             </div>
@@ -99,11 +99,11 @@
                                 <div class="overview-description admission-description">
                                     <div class="single-description pt-40">
                                         <h6>Admission Process</h6>
-                                        <p>{{course_detail.admission_process}}</p>
+                                        <p>{{course_detail.admission_process | safe}}</p>
                                     </div>
                                     <div class="single-description pt-40">
                                         <h6>Documents Required</h6>
-                                        <p>{{course_detail.documents_required}}</p>
+                                        <p>{{course_detail.documents_required | safe}}</p>
                                     </div>
                                 </div>
                             </div>
