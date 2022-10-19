@@ -738,7 +738,7 @@ p {
 }
 
 .navbar-mobile-view {
-    display: flex !important;
+    display: none !important;
  }
 
 .nav-search{
