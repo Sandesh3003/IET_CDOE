@@ -302,8 +302,8 @@
                                         <i class="fa fa-phone"></i>
                                     </div>
                                     <div class="cont">
-                                        <a href="tel://{{index.contact_num}}" target="_blank">
-                                            <p>{{index.contact_num}}</p>
+                                        <a target="_blank">
+                                            <p>{{index.contact_num | safe}}</p>
                                         </a>
                                     </div>
                                 </li>{% endif %}

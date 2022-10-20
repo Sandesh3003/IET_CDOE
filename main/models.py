@@ -50,7 +50,7 @@ class Index(models.Model):
     insta_link=models.URLField(default='#', blank=True)
     address=models.TextField(null=True, blank=True)
     map_link=models.URLField(max_length=200, null=True, blank=True)
-    contact_num=models.CharField(max_length=12, null=True,blank=True)
+    contact_num=HTMLField(null=True,blank=True)
     email_id=models.EmailField(null=True,blank=True)
     website=models.TextField(default='#', null=True ,blank=True)
 
